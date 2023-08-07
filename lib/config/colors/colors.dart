@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter/material.dart';
 
 class AppColors {
   static const Color leftDrawerColor = Color(0xFF12163C);
