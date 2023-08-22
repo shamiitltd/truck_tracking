@@ -6,13 +6,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_compass/flutter_compass.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart' as LatLngG;
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:lite_rolling_switch/lite_rolling_switch.dart';
 import 'package:location/location.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:truck_tracking/domain/map/widgets/CustomFloatingButton.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:motion_sensors/motion_sensors.dart';
 import 'package:vector_math/vector_math_64.dart' hide Colors;
 
@@ -471,7 +469,7 @@ class MapRecordPageOSMState extends State<MapRecordPageOSM> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: mapNavColor,
+        backgroundColor:  Color(0x4A4336FF),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

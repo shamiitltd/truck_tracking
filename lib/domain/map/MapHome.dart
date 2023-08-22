@@ -4,7 +4,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_compass/flutter_compass.dart';
-import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:latlong2/latlong.dart' as latlonglib;
 import 'package:lite_rolling_switch/lite_rolling_switch.dart';
@@ -13,7 +12,6 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:truck_tracking/config/colors/colors.dart';
 import 'package:truck_tracking/domain/map/widgets/CustomFloatingButton.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:motion_sensors/motion_sensors.dart';
 import 'package:vector_math/vector_math_64.dart' hide Colors;
 
@@ -336,9 +334,9 @@ class MapHomePageState extends State<MapHomePage> {
         destination: destination);
     if (directions.polylinePoints.isNotEmpty) {
       polylineCoordinates = [];
-      directions.polylinePoints.forEach((PointLatLng point) {
+      for (var point in directions.polylinePoints) {
         polylineCoordinates.add(LatLng(point.latitude, point.longitude));
-      });
+      }
     }
     infoUpdate = true;
     _info = directions;

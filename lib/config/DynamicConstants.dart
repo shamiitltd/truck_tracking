@@ -1,7 +1,5 @@
 
 //Dynamic variables
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:location/location.dart';
 
 int selectedIndex = 0;
 int sepFlag = 0; //serperate both drawer and bottom nav
