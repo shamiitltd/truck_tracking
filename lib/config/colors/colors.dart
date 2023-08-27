@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   static const Color leftDrawerColor = Color(0xFF12163C);
+  static const Color WelcomeContainerColor = Color.fromARGB(255, 255, 255, 255);
   static const Color drawerTextColor = Color(0xFFf4f7f8);
   static const Color backgroundColor = Color.fromRGBO(255, 255, 255, 0);
   static const Color whitePageColor = Color(0xFFf4f7f8);
