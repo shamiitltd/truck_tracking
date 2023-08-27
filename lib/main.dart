@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter_android/google_maps_flutter_android.dart';
 import 'package:google_maps_flutter_platform_interface/google_maps_flutter_platform_interface.dart';
 import 'package:truck_tracking/screens/dashboard/dashboard.dart';
+import 'package:truck_tracking/total_trips/Bar_Chart_model2.dart';
 import 'package:truck_tracking/total_trips/datepicker.dart';
-import 'package:truck_tracking/total_trips/home_page.dart';
-import 'package:truck_tracking/total_trips/total_trips_Graph.dart';
+
 
 
 void main() async {
@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: SimpleSeriesLegend.withSampleData(),
     );
   }
 }
