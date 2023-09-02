@@ -1,80 +1,53 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class PickDate extends StatefulWidget {
-  const PickDate({super.key});
+class DatePicker extends StatefulWidget {
+  const DatePicker({super.key});
 
   @override
-  State<PickDate> createState() => _PickDateState();
+  State<DatePicker> createState() => _DatePickerState();
 }
 
-class _PickDateState extends State<PickDate> {
-
-   String _selectedDate = 'Tap to select date';
-
-  Future<void> _selectDate(BuildContext context) async {
-    final DateTime? d = await showDatePicker(
-      context: context,
-      initialDate: DateTime.now(),
-      firstDate: DateTime(2015),
-      lastDate: DateTime(2028),
-    );
-    if (d != null)
-      setState(() {
-        _selectedDate = new DateFormat.yMMMMd("en_US").format(d);
-      });
-  }
-
+class _DatePickerState extends State<DatePicker> {
+  TextEditingController dateInput = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("date pick"),
-      ),
-      body: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            Container(
-              decoration: const BoxDecoration(
-                  border: Border(
-                    top: BorderSide(width: 1.0, color: Colors.black),
-                    left: BorderSide(width: 1.0, color: Colors.black),
-                    right: BorderSide(width: 1.0, color: Colors.black),
-                    bottom: BorderSide(width: 1.0, color: Colors.black),
+    return Container(
+        padding: const EdgeInsets.all(15),
+            height: MediaQuery.of(context).size.width / 3,
+            child: Center(
+                child: TextField(
+              controller: dateInput,
+              //editing controller of this TextField
+              decoration: const InputDecoration(
+                  icon: Icon(Icons.calendar_today), //icon of text field
+                  labelText: "Enter Date" //label text of field
                   ),
-                  borderRadius: BorderRadius.all(Radius.circular(5))
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    InkWell(
-                      child: Text(
-                          _selectedDate,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(color: Color(0xFF000000))
-                      ),
-                      onTap: (){
-                        _selectDate(context);
-                      },
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.calendar_today),
-                      tooltip: 'Tap to open date picker',
-                      onPressed: () {
-                        _selectDate(context);
-                      },
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
+              readOnly: true,
+              //set it true, so that user will not able to edit text
+              onTap: () async {
+                DateTime? pickedDate = await showDatePicker(
+                    context: context,
+                    initialDate: DateTime.now(),
+                    firstDate: DateTime(1950),
+                    //DateTime.now() - not to allow to choose before today.
+                    lastDate: DateTime(2100));
+ 
+                if (pickedDate != null) {
+                  print(
+                      pickedDate); //pickedDate output format => 2021-03-10 00:00:00.000
+                  String formattedDate =
+                      DateFormat('yyyy-MM-dd').format(pickedDate);
+                  print(
+                      formattedDate); //formatted date output using intl package =>  2021-03-16
+                  setState(() {
+                    dateInput.text =
+                        formattedDate; //set output date to TextField value.
+                  });
+                } else {}
+              },
+            ))
     );
   }
 }
