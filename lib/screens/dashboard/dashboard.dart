@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:truck_tracking/widgets/add_driver_form.dart';
 import 'package:truck_tracking/widgets/add_vehicle_form.dart';
+import 'package:truck_tracking/widgets/stepper_widget.dart';
 
 import '../../config/colors/colors.dart';
 import '../../config/fonts/fonts.dart';
@@ -89,6 +90,25 @@ class _DashboardState extends State<Dashboard> {
                             size: 24.0,
                           ),
                           label: Text('Add Vehicle',style:AppFonts.medium.copyWith(color:Colors.black))
+                          ),
+                          ///////////////////////////////////////////////////////////////////////////////
+                          TextButton.icon(
+                          onPressed: () {
+                             showDialog(context: context, builder: (context)=>AlertDialog(
+                              title: Text("Stepper widget",style:AppFonts.bold.copyWith(color:Colors.black)),
+                              content: Stepper_widget(),
+                              actions: [
+                                TextButton(onPressed: (){}, child:Text("Submit",style:AppFonts.medium))
+                              ],
+                              )
+                             );
+                            },
+                            icon: const Icon(
+                            Icons.add ,
+                            color: Colors.black,
+                            size: 24.0,
+                          ),
+                          label: Text('Add Stepper',style:AppFonts.medium.copyWith(color:Colors.black))
                           ),
                           SizedBox(width:30)
                         ],

@@ -15,6 +15,7 @@ class AppColors {
   static const Color accentColor1 = Color(0xFFFE6070);
   static const Color accentColor2 = Color(0xFFFAC12D);
  static  const Color primaryColor = Color(0xF44336FF);
+ static  const Color primaryBlack = Color.fromARGB(244, 0, 0, 0);
 MaterialColor themeColor = Colors.indigo;
 static const Color mapNavColor = Color(0x4A4336FF);
 static const Color mapFloatingColor = Color(0x4A4336FF);

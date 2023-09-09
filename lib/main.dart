@@ -20,18 +20,16 @@ class MyApp extends StatelessWidget {
    MyApp({super.key});
     final Future<FirebaseApp> initializeApp = Firebase.initializeApp(
       options: const FirebaseOptions(
-           apiKey: "AIzaSyDcBv34SwzPx3TL01GNvwfDr9AnJ1ctK7c",
-  authDomain: "trackingsystem-c2ed5.firebaseapp.com",
-  projectId: "trackingsystem-c2ed5",
-  storageBucket: "trackingsystem-c2ed5.appspot.com",
-  messagingSenderId: "592178889466",
-  appId: "1:592178889466:web:3f5c929a439b150bb4ff43",
-  measurementId: "G-DWG74L4RBF"
+        apiKey: "AIzaSyDcBv34SwzPx3TL01GNvwfDr9AnJ1ctK7c",
+        authDomain: "trackingsystem-c2ed5.firebaseapp.com",
+        projectId: "trackingsystem-c2ed5",
+        storageBucket: "trackingsystem-c2ed5.appspot.com",
+        messagingSenderId: "592178889466",
+        appId: "1:592178889466:web:3f5c929a439b150bb4ff43",
+        measurementId: "G-DWG74L4RBF"
       )
   );
   final navigatorKey = GlobalKey<NavigatorState>();
-
-
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(

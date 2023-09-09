@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:truck_tracking/config/fonts/fonts.dart';
 
-import '../config/fonts/fonts.dart';
-
+// ignore: camel_case_types
 class Driver_Info_form extends StatelessWidget {
   const Driver_Info_form({
     super.key,
@@ -19,77 +18,67 @@ class Driver_Info_form extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Name",style:AppFonts.medium.copyWith(color:Colors.black,fontWeight:FontWeight.bold)),
-              SizedBox(height: 5,),
+              const Text("Name",style:AppFonts.vehicleformtext),
+              const SizedBox(height: 5,),
               TextField(
                 decoration: InputDecoration(
                   hintText: "Enter Your Name",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10)
-                  )
+                  border: FormTextBoxRadius.normal
                 ),                                        
               ),
               ///////////////////////////////
-              SizedBox(height: 15,),
-              Text("E-mail Adress",style:AppFonts.medium.copyWith(color:Colors.black,fontWeight:FontWeight.bold)),
-              SizedBox(height: 5,),
+              const SizedBox(height: 15,),
+              const Text("E-mail Adress",style:AppFonts.vehicleformtext),
+              const SizedBox(height: 5,),
               TextField(
                 decoration: InputDecoration(
                   hintText: "Enter Your email id",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10)
-                  )
+                  border: FormTextBoxRadius.normal
                 ),                                        
               ),
               /////////////////////////////
-              SizedBox(height: 15,),
-              Text("Contact",style:AppFonts.medium.copyWith(color:Colors.black,fontWeight:FontWeight.bold)),
-              SizedBox(height: 5,),
+              const SizedBox(height: 15,),
+              const Text("Contact",style:AppFonts.vehicleformtext),
+              const SizedBox(height: 5,),
               TextField(
                 decoration: InputDecoration(
                   hintText: "Enter Your Phone number",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10)
-                  )
+                  border:FormTextBoxRadius.normal
                 ),                                        
               ),    
               /////////////////////////////
-              SizedBox(height: 15,),
-              Text("Employee ID",style:AppFonts.medium.copyWith(color:Colors.black,fontWeight:FontWeight.bold)),
-              SizedBox(height: 5,),
+              const SizedBox(height: 15,),
+              const Text("Employee ID",style:AppFonts.vehicleformtext),
+              const SizedBox(height: 5,),
               TextField(
                 maxLength: 6,
                 decoration: InputDecoration(
                   hintText: "Enter Your Employee ID",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10)
-                  )
+                  border: FormTextBoxRadius.normal
                 ),                                        
               ), 
               /////////////////////////////
-              SizedBox(height: 15,),
-              Text("Address",style:AppFonts.medium.copyWith(color:Colors.black,fontWeight:FontWeight.bold)),
-              SizedBox(height: 5,),
+              const SizedBox(height: 15,),
+              const Text("Address",style:AppFonts.vehicleformtext),
+              const SizedBox(height: 5,),
               TextField(
                 maxLines: 3,
                 decoration: InputDecoration(
                   hintText: "Enter Your residential address",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10)
-                  )
+                  border: FormTextBoxRadius.normal
                 ),                                        
               ),
             //////////////////////////////////
-            SizedBox(height: 15,),
-            Padding(padding:EdgeInsets.all(0),child: Row(
+            const SizedBox(height: 15,),
+            const Padding(padding:EdgeInsets.all(0),child: Row(
               children: [
-                Text("Pin Code",style:AppFonts.medium.copyWith(color:Colors.black,fontWeight:FontWeight.bold)),
+                Text("Pin Code",style:AppFonts.vehicleformtext),
                 SizedBox(width:350 ,),
-                Text("State",style:AppFonts.medium.copyWith(color:Colors.black,fontWeight:FontWeight.bold)),
+                Text("State",style:AppFonts.vehicleformtext),
                 
               ],
             ), ),
-            Padding(padding: EdgeInsets.all(0),
+            Padding(padding: const EdgeInsets.all(0),
             child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -97,20 +86,16 @@ class Driver_Info_form extends StatelessWidget {
                 child: TextField(
                   decoration: InputDecoration(
                   hintText: "Enter Your Pin code",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10)
-                  )
+                  border: FormTextBoxRadius.normal
                 ), 
                   ),
               ),
-              SizedBox(width: 16), // Add some space between the text fields
+              const SizedBox(width: 16), // Add some space between the text fields
               Flexible(
                 child: TextField(
                   decoration: InputDecoration(
                   hintText: "Enter Your State",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10)
-                  )
+                  border: FormTextBoxRadius.normal
                 ), 
                 ),
               ),
