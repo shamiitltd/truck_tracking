@@ -1,10 +1,13 @@
 
-
-
 import 'package:flutter/material.dart';
 import 'package:truck_tracking/widgets/LineChartWidget.dart';
 
-class LineChartPage extends StatelessWidget {
+class LineChartPage extends StatefulWidget {
+  @override
+  State<LineChartPage> createState() => _LineChartPageState();
+}
+
+class _LineChartPageState extends State<LineChartPage> {
   @override
   Widget build(BuildContext context) => Card(
         elevation: 4,

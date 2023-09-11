@@ -4,11 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:truck_tracking/widgets/LineTitles.dart';
 
 class LineChartWidget extends StatelessWidget {
-  final List<Color> gradientColors = [
-    const Color(0xff23b6e6),
-    const Color(0xff02d39a),
-  ];
-
   @override
   Widget build(BuildContext context) => LineChart(
         LineChartData(
