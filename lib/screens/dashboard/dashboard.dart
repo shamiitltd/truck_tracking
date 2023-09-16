@@ -1,12 +1,12 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:truck_tracking/widgets/add_driver_form.dart';
-import 'package:truck_tracking/widgets/add_vehicle_form.dart';
-import 'package:truck_tracking/widgets/stepper_widget.dart';
-
-import '../../config/colors/colors.dart';
-import '../../config/fonts/fonts.dart';
-import '../../config/padding/padding.dart';
-import '../../shared/leftdrawer.dart';
+import 'package:truck_tracking/widgets/dashboard/add_driver_form.dart';
+import 'package:truck_tracking/widgets/dashboard/add_vehicle_form.dart';
+import 'package:truck_tracking/config/colors/colors.dart';
+import 'package:truck_tracking/config/fonts/fonts.dart';
+import 'package:truck_tracking/config/padding/padding.dart';
+import 'package:truck_tracking/shared/leftdrawer.dart';
+import 'package:truck_tracking/widgets/dashboard/stepper_widget.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -98,7 +98,17 @@ class _DashboardState extends State<Dashboard> {
                               title: Text("Stepper widget",style:AppFonts.bold.copyWith(color:Colors.black)),
                               content: Stepper_widget(),
                               actions: [
-                                TextButton(onPressed: (){}, child:Text("Submit",style:AppFonts.medium))
+                                TextButton(onPressed: (){
+                                  FirebaseFirestore.instance.collection('drivers').doc(Stepper_widget().email).set({
+                                    "name":Stepper_widget().name,
+                                    "email":Stepper_widget().email,
+                                    "contact":Stepper_widget().contact,
+                                    "address":Stepper_widget().address,
+                                    "pincode":Stepper_widget().pincode,
+                                    "state":Stepper_widget().state,
+                                    
+                                    });
+                                }, child:Text("Submit",style:AppFonts.medium))
                               ],
                               )
                              );
@@ -110,7 +120,9 @@ class _DashboardState extends State<Dashboard> {
                           ),
                           label: Text('Add Stepper',style:AppFonts.medium.copyWith(color:Colors.black))
                           ),
-                          SizedBox(width:30)
+                          SizedBox(width:30),
+
+                          
                         ],
                       ),
                     )

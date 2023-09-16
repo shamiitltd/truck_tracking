@@ -2,7 +2,11 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter_android/google_maps_flutter_android.dart';
 import 'package:google_maps_flutter_platform_interface/google_maps_flutter_platform_interface.dart';
+import 'package:truck_tracking/config/routes/routes.dart';
+import 'package:truck_tracking/screens/Add_shipment/add_shipment.dart';
+import 'package:truck_tracking/screens/Reports/UI/reports_screen.dart';
 import 'package:truck_tracking/screens/dashboard/dashboard.dart';
+import 'package:truck_tracking/screens/Shipping/shippingpage.dart';
 
 
 void main() async {
@@ -20,21 +24,29 @@ class MyApp extends StatelessWidget {
    MyApp({super.key});
     final Future<FirebaseApp> initializeApp = Firebase.initializeApp(
       options: const FirebaseOptions(
-        apiKey: "AIzaSyDcBv34SwzPx3TL01GNvwfDr9AnJ1ctK7c",
-        authDomain: "trackingsystem-c2ed5.firebaseapp.com",
-        projectId: "trackingsystem-c2ed5",
-        storageBucket: "trackingsystem-c2ed5.appspot.com",
-        messagingSenderId: "592178889466",
-        appId: "1:592178889466:web:3f5c929a439b150bb4ff43",
-        measurementId: "G-DWG74L4RBF"
+       apiKey: "AIzaSyB4feUvcioNMKRhgjFCMGPcDQuVIeq48T0",
+    authDomain: "newconnection-fe695.firebaseapp.com",
+    projectId: "newconnection-fe695",
+    storageBucket: "newconnection-fe695.appspot.com",
+    messagingSenderId: "123468366333",
+    appId: "1:123468366333:web:788f80b3bd43ba4ae2d994",
+    measurementId: "G-F13P9Q2S7X"
       )
   );
+  
   final navigatorKey = GlobalKey<NavigatorState>();
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Dashboard(),
-    );
+      routes: {
+        MyRoutes.dashboard:(context) => Dashboard(),
+        MyRoutes.shipping: (context) =>  ShippingPage(),
+        MyRoutes.reportscreen: (context) =>  Reports(),
+        MyRoutes.addshipmentscreen: (context) =>  AddShipping(),
+      },
+      home:  Dashboard(),
+    )
+    ;
   }
 }

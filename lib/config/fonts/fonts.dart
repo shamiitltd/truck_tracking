@@ -9,6 +9,12 @@ class AppFonts {
     fontWeight: FontWeight.bold,
     fontSize: 22,
   );
+  
+  static const TextStyle mediumBold = TextStyle(
+    fontFamily: robotoFontFamily,
+    fontWeight: FontWeight.bold,
+    fontSize: 16,
+  );
 
   static const TextStyle medium = TextStyle(
     fontFamily: robotoFontFamily,

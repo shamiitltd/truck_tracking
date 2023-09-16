@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:truck_tracking/config/routes/routes.dart';
 
 import '../config/colors/colors.dart';
 import '../config/fonts/fonts.dart';
@@ -36,6 +37,27 @@ class LeftDrawer extends StatelessWidget {
                   title: "DashBoard",
                   icon: const Icon(Icons.dashboard),
                   press: () {
+                    Navigator.pushNamed(context, MyRoutes.dashboard);
+                  },
+                ),
+                const SizedBox(
+                  height: AppDimensions.defuaultPadding,
+                ),
+                 DashboardListTile(
+                  title: "Shipping",
+                  icon: const Icon(Icons.local_shipping),
+                  press: () {
+                     Navigator.pushNamed(context, MyRoutes.shipping);
+                  },
+                ),
+                const SizedBox(
+                  height: AppDimensions.defuaultPadding,
+                ),
+                DashboardListTile(
+                  title: "Add Shipment",
+                  icon: const Icon(Icons.add_to_photos),
+                  press: () {
+                     Navigator.pushNamed(context, MyRoutes.addshipmentscreen);
                   },
                 ),
                 const SizedBox(
@@ -45,7 +67,7 @@ class LeftDrawer extends StatelessWidget {
                   title: "Report",
                   icon: const Icon(Icons.bar_chart),
                   press: () {
-                      
+                      Navigator.pushNamed(context, MyRoutes.reportscreen);
                   },
                 ),
                 const SizedBox(

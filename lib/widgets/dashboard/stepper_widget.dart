@@ -1,21 +1,34 @@
-import 'dart:io';
-
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:truck_tracking/config/fonts/fonts.dart';
 
-class Stepper_widget extends StatefulWidget {
-  const Stepper_widget({super.key});
 
+// ignore: must_be_immutable
+class Stepper_widget extends StatefulWidget {
+   Stepper_widget({super.key});
+
+  String? get email => null;
+  get name => null;
+  get contact => null;
+  get address => null;
+  get pincode => null;
+  get state => null;
+    
   @override
   State<Stepper_widget> createState() => _Stepper_widgetState();
 }
-
 class _Stepper_widgetState extends State<Stepper_widget> {
   
   int activestepindex=0;
+    TextEditingController emailController = TextEditingController();
+    TextEditingController nameController = TextEditingController();
+    TextEditingController contactController = TextEditingController();
+    TextEditingController stateProvinceController = TextEditingController();
+    TextEditingController pincodeController = TextEditingController();
+    TextEditingController addressController = TextEditingController();
+    String email='',name='',contact='',state='',pincode='',address='';
 
+    
+    
   List<Step> step_list()=>[
     Step(
       state: activestepindex<=0 ? StepState.editing:StepState.complete,
@@ -31,7 +44,8 @@ class _Stepper_widgetState extends State<Stepper_widget> {
                 decoration: InputDecoration(
                   hintText: "Enter Your Name",
                   border: FormTextBoxRadius.normal
-                ),                                        
+                ),     
+                controller: nameController,                                   
               ),
               //////////////////////////////////////////////
            const SizedBox(height: 15,),
@@ -53,6 +67,8 @@ class _Stepper_widgetState extends State<Stepper_widget> {
                   hintText: "Enter Your Contact number",
                   border: FormTextBoxRadius.normal
                 ), 
+                controller: contactController,                                   
+
                   ),
               ),
               const SizedBox(width: 16), // Add some space between the text fields
@@ -61,7 +77,8 @@ class _Stepper_widgetState extends State<Stepper_widget> {
                   decoration: InputDecoration(
                   hintText: "Enter Your  e-mail address",
                   border: FormTextBoxRadius.normal
-                ), 
+                ),
+                controller: emailController,                                   
                 ),
               ),
             ],
@@ -87,6 +104,8 @@ class _Stepper_widgetState extends State<Stepper_widget> {
                   hintText: "Enter Your Pin code",
                   border: FormTextBoxRadius.normal
                 ), 
+                controller: pincodeController,                                   
+
                   ),
               ),
               const SizedBox(width: 16), // Add some space between the text fields
@@ -96,6 +115,7 @@ class _Stepper_widgetState extends State<Stepper_widget> {
                   hintText: "Enter Your State",
                   border: FormTextBoxRadius.normal
                 ), 
+                controller: stateProvinceController,                                   
                 ),
               ),
             ],
@@ -109,7 +129,8 @@ class _Stepper_widgetState extends State<Stepper_widget> {
                 decoration: InputDecoration(
                   hintText: "Enter Your residential address",
                   border: FormTextBoxRadius.normal
-                ),                                        
+                ), 
+                controller: addressController,                                   
               ),
               ]
             )
@@ -126,6 +147,8 @@ class _Stepper_widgetState extends State<Stepper_widget> {
   
   @override
   Widget build(BuildContext context) {
+    
+
     return Container(
       width: 800,
       child: Stepper(
@@ -137,6 +160,12 @@ class _Stepper_widgetState extends State<Stepper_widget> {
             activestepindex +=1;
           }
           setState(() {
+            email=emailController.text;
+            contact=contactController.text;
+            name=nameController.text;
+            state=stateProvinceController.text;
+            pincode=pincodeController.text;
+            address=addressController.text;
 
           });
         },
@@ -154,12 +183,14 @@ class _Stepper_widgetState extends State<Stepper_widget> {
 }
 
 
-Future<void> pick_image() async{
-    if(!kIsWeb){
-      final ImagePicker _picker=ImagePicker();
-      XFile? image=await _picker.pickImage(source: ImageSource.gallery);
-      if(image != null){
-        var selected=File(image.path);
-      }
-}
-}
+// Future<void> pick_image() async{
+//     if(!kIsWeb){
+//       final ImagePicker _picker=ImagePicker();
+//       XFile? image=await _picker.pickImage(source: ImageSource.gallery);
+//       if(image != null){
+//         var selected=File(image.path);
+//       }
+// }
+// }
+
+

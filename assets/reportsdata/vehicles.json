@@ -1,0 +1,22 @@
+[
+    {
+      "driver_id": 1,
+      "driver_name": "Rajesh Kumar",
+      "vehicle_plate": "ABC 123",
+      "vehicle_make": "Volvo",
+      "vehicle_model": "VNL 760",
+      "year": 2020,
+      "cargo_capacity_kg": 20000
+    },
+    {
+      "driver_id": 2,
+      "driver_name": "Priya Sharma",
+      "vehicle_plate": "XYZ 789",
+      "vehicle_make": "Kenworth",
+      "vehicle_model": "T680",
+      "year": 2019,
+      "cargo_capacity_kg": 18000
+    }
+    
+  ]
+

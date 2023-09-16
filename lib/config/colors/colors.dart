@@ -30,6 +30,17 @@ static const Color loginIconColor = Color(0xFF0303FA);
 static const Color loginButtonColor = Color(0xFFF7F7FA);
 static const Color loginTextColor = Color(0xFF000000);
 static const Color loginButtonTextColor = Color(0xFFE507B9);
+static const Color reportSceencolor = Color.fromARGB(255, 10, 141, 145);
+static const Color reportSceenHeading = Color.fromARGB(255, 171, 193, 174);
+
+static const Color primaryWhite = Colors.white;
+static const Color black = Colors.black;
+static const Color red = Colors.red;
+static const Color grey = Colors.grey;
+static const Color indigoShade900 = Color(0xFF1A237E);
+static const Color greenShade100 = Color(0xFFC8E6C9);
+static const Color reportIconColor = Colors.black45;
+static const Color reportTextColor = Colors.black87;
 
 
 int bnBarColor = 200;

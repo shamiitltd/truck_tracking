@@ -1,0 +1,26 @@
+[
+    {
+      "driver_id": 1,
+      "name": "Rajesh Kumar",
+      "total_trips": 100,
+      "completed_trips": 90,
+      "cancellation_rate": 10,
+      "average_rating": 4.5
+    },
+    {
+      "driver_id": 2,
+      "name": "Priya Sharma",
+      "total_trips": 120,
+      "completed_trips": 110,
+      "cancellation_rate": 9,
+      "average_rating": 4.8
+    },
+    {
+      "driver_id": 3,
+      "name": "Amit Patel",
+      "total_trips": 80,
+      "completed_trips": 75,
+      "cancellation_rate": 5,
+      "average_rating": 4.3
+    }
+  ]

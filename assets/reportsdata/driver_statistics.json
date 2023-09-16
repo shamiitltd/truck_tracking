@@ -1,0 +1,29 @@
+[
+    {
+      "driver_id": 1,
+      "name": "Rajesh Kumar",
+      "total_trips": 1000,
+      "completed_trips": 980,
+      "cancellations": 20,
+      "total_distance": 5000.0,
+      "total_earnings": 1500.0
+    },
+    {
+      "driver_id": 2,
+      "name": "Priya Sharma",
+      "total_trips": 1100,
+      "completed_trips": 1080,
+      "cancellations": 20,
+      "total_distance": 5200.0,
+      "total_earnings": 1600.0
+    },
+    {
+      "driver_id": 3,
+      "name": "Amit Patel",
+      "total_trips": 900,
+      "completed_trips": 880,
+      "cancellations": 20,
+      "total_distance": 4500.0,
+      "total_earnings": 1400.0
+    }
+]
