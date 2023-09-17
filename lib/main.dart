@@ -6,6 +6,7 @@ import 'package:truck_tracking/config/routes/routes.dart';
 import 'package:truck_tracking/screens/Add_shipment/add_shipment.dart';
 import 'package:truck_tracking/screens/Reports/UI/reports_screen.dart';
 import 'package:truck_tracking/screens/dashboard/dashboard.dart';
+
 import 'package:truck_tracking/screens/Shipping/shippingpage.dart';
 
 
@@ -46,7 +47,6 @@ class MyApp extends StatelessWidget {
         MyRoutes.addshipmentscreen: (context) =>  AddShipping(),
       },
       home:  Dashboard(),
-    )
-    ;
+    );
   }
 }
