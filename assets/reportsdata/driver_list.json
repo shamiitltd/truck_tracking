@@ -1,0 +1,72 @@
+[
+    {
+      "id": 1,
+      "name": "Rajesh Kumar",
+      "age": 32,
+      "license_number": "IN-ABCD12345",
+      "phone": "+91 12345 67890"
+    },
+    {
+      "id": 2,
+      "name": "Priya Sharma",
+      "age": 28,
+      "license_number": "IN-XYZW98765",
+      "phone": "+91 98765 43210"
+    },
+    {
+      "id": 3,
+      "name": "Amit Patel",
+      "age": 35,
+      "license_number": "IN-DEFG56789",
+      "phone": "+91 55555 12345"
+    },
+    {
+      "id": 4,
+      "name": "Sneha Verma",
+      "age": 29,
+      "license_number": "IN-HIJK67890",
+      "phone": "+91 87654 32100"
+    },
+    {
+      "id": 5,
+      "name": "Vikram Singh",
+      "age": 38,
+      "license_number": "IN-LMNO12345",
+      "phone": "+91 99999 55555"
+    },
+    {
+      "id": 6,
+      "name": "Sunita Gupta",
+      "age": 45,
+      "license_number": "IN-PQRS67890",
+      "phone": "+91 77777 88888"
+    },
+    {
+      "id": 7,
+      "name": "Rahul Sharma",
+      "age": 27,
+      "license_number": "IN-TUVW12345",
+      "phone": "+91 33333 44444"
+    },
+    {
+      "id": 8,
+      "name": "Anita Devi",
+      "age": 40,
+      "license_number": "IN-XYZA56789",
+      "phone": "+91 11111 22222"
+    },
+    {
+      "id": 9,
+      "name": "Harish Mehta",
+      "age": 33,
+      "license_number": "IN-BCDE12345",
+      "phone": "+91 66666 77777"
+    },
+    {
+      "id": 10,
+      "name": "Meena Singh",
+      "age": 31,
+      "license_number": "IN-FGHI67890",
+      "phone": "+91 44444 55555"
+    }
+  ]
