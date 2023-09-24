@@ -1,7 +1,11 @@
 
 name: "Build Pipeline"
 on:
-  workflow_dispatch: # to manually run this workflow
+  push:
+    branches: [ "master", "develop" ]
+  pull_request:
+    branches: [ "master" ]
+  workflow_dispatch: # Manually run this workflow
   
 jobs:
   build:
