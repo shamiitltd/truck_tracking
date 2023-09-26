@@ -33,8 +33,8 @@ class _VehicleMaintanceState extends State<VehicleMaintance> {
             child: CircularProgressIndicator(),
           )
         : Container(
-            height: 335,
-            width: 400,
+            height: MediaQuery.sizeOf(context).height * 0.475 / 1.0,
+            width: MediaQuery.sizeOf(context).width * 0.2 / 1.1,
             decoration: BoxDecoration(
                 color: Colors.black.withOpacity(0.9),
                 borderRadius: BorderRadius.circular(10)),
@@ -49,7 +49,7 @@ class _VehicleMaintanceState extends State<VehicleMaintance> {
                       Text(
                         "FLEET events",
                         style: TextStyle(
-                            color: Colors.white.withOpacity(0.8), fontSize: 20),
+                            color: Colors.white.withOpacity(0.8), fontSize: 18),
                       ),
                       Text(
                         data.fleet.toString(),
@@ -89,7 +89,7 @@ class _VehicleMaintanceState extends State<VehicleMaintance> {
                           data.harshbreaking.toString(),
                           style: TextStyle(
                               color: Colors.white.withOpacity(0.8),
-                              fontSize: 20),
+                              fontSize: 18),
                         )
                       ],
                     ),
@@ -121,7 +121,7 @@ class _VehicleMaintanceState extends State<VehicleMaintance> {
                       Text(
                         data.excessiveidling.toString(),
                         style: TextStyle(
-                            color: Colors.white.withOpacity(0.8), fontSize: 20),
+                            color: Colors.white.withOpacity(0.8), fontSize: 18),
                       )
                     ],
                   ),
@@ -156,7 +156,7 @@ class _VehicleMaintanceState extends State<VehicleMaintance> {
                           data.harshacceleration.toString(),
                           style: TextStyle(
                               color: Colors.white.withOpacity(0.8),
-                              fontSize: 20),
+                              fontSize: 18),
                         )
                       ],
                     ),
@@ -188,7 +188,7 @@ class _VehicleMaintanceState extends State<VehicleMaintance> {
                       Text(
                         data.towing.toString(),
                         style: TextStyle(
-                            color: Colors.white.withOpacity(0.8), fontSize: 20),
+                            color: Colors.white.withOpacity(0.8), fontSize: 18),
                       )
                     ],
                   ),
@@ -223,7 +223,7 @@ class _VehicleMaintanceState extends State<VehicleMaintance> {
                           data.batterytamper.toString(),
                           style: TextStyle(
                               color: Colors.white.withOpacity(0.8),
-                              fontSize: 20),
+                              fontSize: 18),
                         )
                       ],
                     ),
