@@ -1,9 +1,9 @@
-import 'package:final_dashboard/constants/contants.dart';
-import 'package:final_dashboard/controller/MenuAppController.dart';
-import 'package:final_dashboard/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../constants/contants.dart';
+import '../controller/MenuAppController.dart';
+import '../responsive.dart';
 
 class Header extends StatelessWidget {
   const Header({

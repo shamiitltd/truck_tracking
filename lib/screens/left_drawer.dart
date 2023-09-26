@@ -1,5 +1,6 @@
-import 'package:final_dashboard/main.dart';
 import 'package:flutter/material.dart';
+
+import '../main.dart';
 
 const defaultPadding = 16.0;
 const secondaryColor = Color.fromARGB(2555, 28, 29, 33);
@@ -10,6 +11,7 @@ class LeftDrawer extends StatefulWidget {
   @override
   State<LeftDrawer> createState() => _LeftDrawerState();
 }
+
 class _LeftDrawerState extends State<LeftDrawer> {
   @override
   Widget build(BuildContext context) {
@@ -74,7 +76,7 @@ class _LeftDrawerState extends State<LeftDrawer> {
                   title: "Tracking",
                   icon: const Icon(Icons.query_stats),
                   press: () {
-                    Navigator.pushNamed(context, MyRoutes.trackingRoute);
+                    //    Navigator.pushNamed(context, MyRoutes.trackingRoute);
                   },
                 ),
                 const SizedBox(
@@ -131,7 +133,9 @@ class _LeftDrawerState extends State<LeftDrawer> {
                 DashboardListTile(
                   title: "Fatigue",
                   icon: const Icon(Icons.speed),
-                  press: () {Navigator.pushNamed(context, MyRoutes.fatigueRoute);},
+                  press: () {
+                    //       Navigator.pushNamed(context, MyRoutes.fatigueRoute);
+                  },
                 ),
                 const SizedBox(
                   height: defaultPadding,
@@ -166,7 +170,10 @@ class _LeftDrawerState extends State<LeftDrawer> {
 
 class DashboardListTile extends StatelessWidget {
   const DashboardListTile(
-      {super.key, required this.title, required this.icon, required this.press});
+      {super.key,
+      required this.title,
+      required this.icon,
+      required this.press});
   final String title;
   final Icon icon;
   final VoidCallback press;
@@ -175,11 +182,11 @@ class DashboardListTile extends StatelessWidget {
     return ListTile(
       iconColor: Colors.white,
       textColor: Colors.white,
-      visualDensity:const VisualDensity(vertical: -4),
+      visualDensity: const VisualDensity(vertical: -4),
       dense: true,
       onTap: press,
       leading: Icon(icon.icon),
       title: Text(title),
-      );
-    }
+    );
+  }
 }

@@ -1,10 +1,10 @@
-import 'package:final_dashboard/controller/MenuAppController.dart';
-import 'package:final_dashboard/dashboard/dahboard_screen.dart';
-import 'package:final_dashboard/responsive.dart';
-import 'package:final_dashboard/screens/left_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../controller/MenuAppController.dart';
+import '../dashboard/dahboard_screen.dart';
+import '../responsive.dart';
+import 'left_drawer.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});

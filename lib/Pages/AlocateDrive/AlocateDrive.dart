@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'dart:convert' as convert;
 import 'package:flutter/services.dart' show rootBundle;
@@ -48,7 +50,7 @@ class _AlocateDriverWithVehicleState extends State<AlocateDriverWithVehicle> {
   Future<void> _loadDataFromJson() async {
     try {
       String jsonData =
-          await rootBundle.loadString('asset/json/AlocateDrive.json');
+          await rootBundle.loadString('assets/json/AlocateDrive.json');
       Map<String, dynamic> jsonObject = convert.json.decode(jsonData);
 
       setState(() {
@@ -78,7 +80,7 @@ class _AlocateDriverWithVehicleState extends State<AlocateDriverWithVehicle> {
     return Scaffold(
       body: Container(
         width: 700,
-        height: 500,
+        height: 400,
         decoration: const BoxDecoration(color: Color(0xFFF5F5FA)),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
@@ -89,7 +91,7 @@ class _AlocateDriverWithVehicleState extends State<AlocateDriverWithVehicle> {
                 padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                 child: Text(
                   "Registered Vehicles",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                 ),
               ),
               DataTable(
@@ -100,9 +102,9 @@ class _AlocateDriverWithVehicleState extends State<AlocateDriverWithVehicle> {
                       'VEHICLE TYPE',
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 12,
+                        fontSize: 14,
                         fontFamily: 'Roboto',
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ),
@@ -122,9 +124,9 @@ class _AlocateDriverWithVehicleState extends State<AlocateDriverWithVehicle> {
                       'VIN NUMBER',
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 12,
+                        fontSize: 14,
                         fontFamily: 'Roboto',
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ),
@@ -133,9 +135,9 @@ class _AlocateDriverWithVehicleState extends State<AlocateDriverWithVehicle> {
                       'LICENSE PLATE',
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 12,
+                        fontSize: 14,
                         fontFamily: 'Roboto',
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ),
@@ -144,9 +146,9 @@ class _AlocateDriverWithVehicleState extends State<AlocateDriverWithVehicle> {
                       'LOCATION',
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 12,
+                        fontSize: 14,
                         fontFamily: 'Roboto',
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ),
@@ -219,11 +221,21 @@ class _AlocateDriverWithVehicleState extends State<AlocateDriverWithVehicle> {
                 ],
                 rows: drivingDataList.map((data) {
                   return DataRow(cells: [
-                    DataCell(Text(data.VehicleTtype.toString())),
+                    DataCell(Text(
+                      data.VehicleTtype.toString(),
+                      style:
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                    )),
                     //   DataCell(Text(data.Service)),
-                    DataCell(Text(data.VinNumber.toString())),
-                    DataCell(Text(data.LicensePlate.toString())),
-                    DataCell(Text(data.Location.toString())),
+                    DataCell(Text(data.VinNumber.toString(),
+                        style: TextStyle(
+                            fontSize: 14, fontWeight: FontWeight.w500))),
+                    DataCell(Text(data.LicensePlate.toString(),
+                        style: TextStyle(
+                            fontSize: 14, fontWeight: FontWeight.w500))),
+                    DataCell(Text(data.Location.toString(),
+                        style: TextStyle(
+                            fontSize: 14, fontWeight: FontWeight.w500))),
                     //     DataCell(Text(data.Status)),
                     //   DataCell(Text(data.hashAcceleration.toString())),
                     //  DataCell(Text(data.hashCornering.toString())),

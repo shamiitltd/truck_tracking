@@ -26,7 +26,7 @@ class SettingPage extends StatelessWidget {
                 children: [
                   NeedHelp(),
                   SizedBox(
-                    width: 10,
+                    width: 20,
                   ),
                   AccountSetting()
                 ],

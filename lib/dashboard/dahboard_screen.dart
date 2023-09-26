@@ -1,8 +1,10 @@
-import 'package:final_dashboard/constants/contants.dart';
-import 'package:final_dashboard/dashboard/charts_section.dart';
-import 'package:final_dashboard/dashboard/header.dart';
-import 'package:final_dashboard/dashboard/map.dart';
 import 'package:flutter/material.dart';
+
+import '../constants/contants.dart';
+import 'charts_section.dart';
+import 'header.dart';
+import 'map.dart';
+
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 
@@ -39,9 +41,8 @@ class DashboardScreen extends StatelessWidget {
                   ChartSection(),
                   Container(
                     height: 300,
-                     child:GoogleMap(),
-                  
-                   ),
+                    child: GoogleMap(),
+                  ),
                   SizedBox(height: defaultPadding),
                   Container(
                     child: Column(

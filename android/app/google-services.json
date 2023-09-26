@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "859645554932",
+    "project_id": "truck-tracking-74d58",
+    "storage_bucket": "truck-tracking-74d58.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:859645554932:android:c51a1207e91d589c31aea1",
+        "android_client_info": {
+          "package_name": "com.shamiit.truck_tracking"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBAzrGr18XqXbkSUZdMUC03Qzp56dldOg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

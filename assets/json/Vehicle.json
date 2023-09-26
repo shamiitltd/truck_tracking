@@ -1,0 +1,102 @@
+[
+    {
+      "vehicle": "Car123",
+      "device": "GPS123",
+      "driver": "John Doe",
+      "fleet": "FleetA",
+      "location": "New York",
+      "start": "09:00:00",
+      "end": "17:00:00",
+      "details": "Delivery of goods"
+    },
+    {
+      "vehicle": "Truck456",
+      "device": "GPS456",
+      "driver": "Jane Smith",
+      "fleet": "FleetB",
+      "location": "Los Angeles",
+      "start": "08:30:00",
+      "end": "16:30:00",
+      "details": "Transportation of equipment"
+    },
+    {
+      "vehicle": "Van789",
+      "device": "GPS789",
+      "driver": "Mark Johnson",
+      "fleet": "FleetA",
+      "location": "Chicago",
+      "start": "10:00:00",
+      "end": "18:00:00",
+      "details": "Pickup and delivery service"
+    },
+    {
+      "vehicle": "Car246",
+      "device": "GPS246",
+      "driver": "Emily Davis",
+      "fleet": "FleetC",
+      "location": "San Francisco",
+      "start": "07:30:00",
+      "end": "15:30:00",
+      "details": "Transportation of passengers"
+    },
+    {
+      "vehicle": "Truck135",
+      "device": "GPS135",
+      "driver": "Michael Brown",
+      "fleet": "FleetB",
+      "location": "Houston",
+      "start": "09:30:00",
+      "end": "17:30:00",
+      "details": "Delivery of supplies"
+    },
+    {
+      "vehicle": "Car789",
+      "device": "GPS789",
+      "driver": "Sophia Wilson",
+      "fleet": "FleetC",
+      "location": "Miami",
+      "start": "08:00:00",
+      "end": "16:00:00",
+      "details": "Ride-sharing service"
+    },
+    {
+      "vehicle": "Truck369",
+      "device": "GPS369",
+      "driver": "David Taylor",
+      "fleet": "FleetA",
+      "location": "Seattle",
+      "start": "11:00:00",
+      "end": "19:00:00",
+      "details": "Hauling construction materials"
+    },
+    {
+      "vehicle": "Van246",
+      "device": "GPS246",
+      "driver": "Olivia Martinez",
+      "fleet": "FleetB",
+      "location": "Dallas",
+      "start": "10:30:00",
+      "end": "18:30:00",
+      "details": "Courier service"
+    },
+    {
+      "vehicle": "Car369",
+      "device": "GPS369",
+      "driver": "Daniel Wilson",
+      "fleet": "FleetC",
+      "location": "Atlanta",
+      "start": "07:00:00",
+      "end": "15:00:00",
+      "details": "Personal transportation"
+    },
+    {
+      "vehicle": "Truck789",
+      "device": "GPS789",
+      "driver": "Sophie Brown",
+      "fleet": "FleetA",
+      "location": "Boston",
+      "start": "09:30:00",
+      "end": "17:30:00",
+      "details": "Movingservice"
+}
+  ]
