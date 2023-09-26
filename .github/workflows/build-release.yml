@@ -22,8 +22,9 @@ jobs:
         with:
           flutter-version: '3.7.7'
 
-      - name: Set Dart SDK version
-        run: flutter config --dart-sdk 2.19.6 # Replace with your desired Dart SDK version
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: 2.19.6
       - run: dart --version
       - run: flutter upgrade
       - run: flutter pub get
