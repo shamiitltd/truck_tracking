@@ -22,12 +22,13 @@ jobs:
         with:
           flutter-version: '3.7.7'
 
-      - name: Build web
-        run: flutter build web --release
-
       - uses: dart-lang/setup-dart@v1
         with:
           sdk: 2.19.6
+
+      - name: Build web
+        run: flutter build web --release
+
       - run: dart --version
       - run: flutter upgrade
       - run: flutter pub get
