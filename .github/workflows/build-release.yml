@@ -26,13 +26,14 @@ jobs:
         with:
           sdk: 2.19.6
 
-      - name: Build web
-        run: flutter build web --release
-
       - run: dart --version
       - run: flutter upgrade
+
       - run: flutter pub get
       - run: flutter test
+
+      - name: Build web
+        run: flutter build web --release
 
       - run: flutter build apk --split-per-abi
       - name: Push to Releases
