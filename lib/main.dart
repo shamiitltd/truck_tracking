@@ -2,11 +2,14 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter_android/google_maps_flutter_android.dart';
 import 'package:google_maps_flutter_platform_interface/google_maps_flutter_platform_interface.dart';
-import 'package:truck_tracking/TotalDrivingTimeLineGraph/LineChartPage.dart';
+import 'package:truck_tracking/TotalDrivingTimeLineGraph/Total_Mileague.dart';
+
+
+
 import 'package:truck_tracking/TotalDrivingTimeLineGraph/Vehicle_allocation.dart';
+import 'package:truck_tracking/TotalDrivingTimeLineGraph/driving__time.dart';
 import 'package:truck_tracking/screens/dashboard/dashboard.dart';
 import 'package:truck_tracking/total_trips/Bar_Chart_model2.dart';
-import 'package:truck_tracking/widgets/LineChartWidget.dart';
 
 
 
@@ -40,10 +43,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return  const MaterialApp(
       debugShowCheckedModeBanner: false,
      // home: SimpleSeriesLegend.withSampleData(),
-     home: LineChartPage(),
+     home: VehicalAllocation(),
     );
   }
 }

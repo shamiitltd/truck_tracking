@@ -65,7 +65,7 @@ class _LinearProgressBarState extends State<LinearProgressBar> {
       ),
       // ignore: deprecated_member_use
       linearStrokeCap: LinearStrokeCap.roundAll,
-      progressColor: Color.fromARGB(255, 176, 209, 177),
+      progressColor: Color.fromARGB(255, 73, 167, 76),
       backgroundColor: Colors.grey[300],
       leading: const Text("City 1",style: TextStyle(color: Colors.grey,fontSize: 20,),),
       trailing: Text("$percent/1234"),
@@ -89,7 +89,7 @@ class _LinearProgressBarState extends State<LinearProgressBar> {
       ),
       // ignore: deprecated_member_use
       linearStrokeCap: LinearStrokeCap.roundAll,
-      progressColor: const Color.fromARGB(255, 176, 209, 177),
+      progressColor: Color.fromARGB(255, 103, 113, 202),
       backgroundColor: Colors.grey[300],
       leading: const Text("City 2",style: TextStyle(color: Colors.grey,fontSize: 20,),),
       trailing: Text("$percent2/1234"),
@@ -110,7 +110,7 @@ class _LinearProgressBarState extends State<LinearProgressBar> {
       ),
       // ignore: deprecated_member_use
       linearStrokeCap: LinearStrokeCap.roundAll,
-      progressColor: const Color.fromARGB(255, 176, 209, 177),
+      progressColor: Color.fromARGB(255, 46, 9, 99),
       backgroundColor: Colors.grey[300],
       leading: const Text("City 3",style: TextStyle(color: Colors.grey,fontSize: 20,),),
       trailing: Text("$percent3/1234"),
@@ -173,7 +173,7 @@ class _LinearProgressBarState extends State<LinearProgressBar> {
       ),
       // ignore: deprecated_member_use
       linearStrokeCap: LinearStrokeCap.roundAll,
-      progressColor: const Color.fromARGB(255, 176, 209, 177),
+      progressColor: Color.fromARGB(255, 177, 189, 84),
       backgroundColor: Colors.grey[300],
       leading: const Text("City 6",style: TextStyle(color: Colors.grey,fontSize: 20,),),
       trailing: Text("$percent/1234"),
@@ -194,7 +194,7 @@ class _LinearProgressBarState extends State<LinearProgressBar> {
       ),
       // ignore: deprecated_member_use
       linearStrokeCap: LinearStrokeCap.roundAll,
-      progressColor: const Color.fromARGB(255, 176, 209, 177),
+      progressColor: Color.fromARGB(255, 206, 103, 175),
       backgroundColor: Colors.grey[300],
       leading: const Text("City 7",style: TextStyle(color: Colors.grey,fontSize: 20,),),
       trailing: Text("$percent/1234"),
@@ -215,7 +215,7 @@ class _LinearProgressBarState extends State<LinearProgressBar> {
       ),
       // ignore: deprecated_member_use
       linearStrokeCap: LinearStrokeCap.roundAll,
-      progressColor: const Color.fromARGB(255, 176, 209, 177),
+      progressColor: Color.fromARGB(255, 61, 151, 154),
       backgroundColor: Colors.grey[300],
       leading: const Text("City 8",style: TextStyle(color: Colors.grey,fontSize: 20,),),
       trailing: Text("$percent/1234"),
