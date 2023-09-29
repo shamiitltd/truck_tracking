@@ -12,26 +12,22 @@ class LeftDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: AppDimensions.horizontalMediumPadding,
-      
-      decoration:  BoxDecoration(
+      decoration: BoxDecoration(
         color: AppColors.leftDrawerColor,
         borderRadius: BorderRadius.circular(AppBorderRadius.large),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
-
         children: [
           SizedBox(
-              height: AppDimensions.largeBoxSize,
-              ),
-
+            height: AppDimensions.largeBoxSize,
+          ),
           SizedBox(
             height: AppDimensions.defuaultPadding,
           ),
           Expanded(
             child: Column(
-        
               children: [
                 DashboardListTile(
                   title: "DashBoard",
@@ -43,11 +39,11 @@ class LeftDrawer extends StatelessWidget {
                 const SizedBox(
                   height: AppDimensions.defuaultPadding,
                 ),
-                 DashboardListTile(
+                DashboardListTile(
                   title: "Shipping",
                   icon: const Icon(Icons.local_shipping),
                   press: () {
-                     Navigator.pushNamed(context, MyRoutes.shipping);
+                    Navigator.pushNamed(context, MyRoutes.shipping);
                   },
                 ),
                 const SizedBox(
@@ -57,7 +53,7 @@ class LeftDrawer extends StatelessWidget {
                   title: "Add Shipment",
                   icon: const Icon(Icons.add_to_photos),
                   press: () {
-                     Navigator.pushNamed(context, MyRoutes.addshipmentscreen);
+                    Navigator.pushNamed(context, MyRoutes.addshipmentscreen);
                   },
                 ),
                 const SizedBox(
@@ -67,17 +63,16 @@ class LeftDrawer extends StatelessWidget {
                   title: "Report",
                   icon: const Icon(Icons.bar_chart),
                   press: () {
-                      Navigator.pushNamed(context, MyRoutes.reportscreen);
+                    Navigator.pushNamed(context, MyRoutes.reportscreen);
                   },
                 ),
                 const SizedBox(
-                  height:AppDimensions.defuaultPadding,
+                  height: AppDimensions.defuaultPadding,
                 ),
                 DashboardListTile(
                   title: "Prediction",
                   icon: const Icon(Icons.batch_prediction),
-                  press: () {
-                  },
+                  press: () {},
                 ),
                 const SizedBox(
                   height: AppDimensions.defuaultPadding,
@@ -87,20 +82,24 @@ class LeftDrawer extends StatelessWidget {
                   icon: const Icon(Icons.settings),
                   press: () {},
                 ),
+                const SizedBox(
+                  height: AppDimensions.defuaultPadding,
+                ),
+                DashboardListTile(
+                  title: "Trips Duration",
+                  icon: const Icon(Icons.fire_truck),
+                  press: () {
+                    Navigator.pushNamed(context, MyRoutes.tripsduration);
+                  },
+                ),
               ],
             ),
           ),
-
-
         ],
       ),
-
     );
   }
 }
-
-
-
 
 class DashboardListTile extends StatelessWidget {
   const DashboardListTile({
@@ -131,7 +130,8 @@ class DashboardListTile extends StatelessWidget {
       ),
       title: Text(
         title,
-        style: textStyle ?? AppFonts.medium.copyWith(color: AppColors.drawerTextColor),
+        style: textStyle ??
+            AppFonts.medium.copyWith(color: AppColors.drawerTextColor),
       ),
     );
   }

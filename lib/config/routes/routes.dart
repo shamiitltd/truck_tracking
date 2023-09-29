@@ -3,4 +3,5 @@ class MyRoutes{
   static String dashboard = "/dashboard";
   static String reportscreen = "/reports";
   static String addshipmentscreen = "/shipment";
+  static String  tripsduration= "/tripsduration";
 }
