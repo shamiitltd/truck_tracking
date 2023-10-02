@@ -9,44 +9,43 @@ import 'package:truck_tracking/screens/dashboard/dashboard.dart';
 
 import 'package:truck_tracking/screens/Shipping/shippingpage.dart';
 
-
 void main() async {
-  try{
-    final GoogleMapsFlutterPlatform mapsImplementation = GoogleMapsFlutterPlatform.instance;
+  try {
+    final GoogleMapsFlutterPlatform mapsImplementation =
+        GoogleMapsFlutterPlatform.instance;
     if (mapsImplementation is GoogleMapsFlutterAndroid) {
       mapsImplementation.useAndroidViewSurface = false;
       mapsImplementation.initializeWithRenderer(AndroidMapRenderer.latest);
     }
-  }catch(e){};
-  runApp( MyApp());
+  } catch (e) {}
+  ;
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-   MyApp({super.key});
-    final Future<FirebaseApp> initializeApp = Firebase.initializeApp(
+  MyApp({super.key});
+  final Future<FirebaseApp> initializeApp = Firebase.initializeApp(
       options: const FirebaseOptions(
-       apiKey: "AIzaSyB4feUvcioNMKRhgjFCMGPcDQuVIeq48T0",
-    authDomain: "newconnection-fe695.firebaseapp.com",
-    projectId: "newconnection-fe695",
-    storageBucket: "newconnection-fe695.appspot.com",
-    messagingSenderId: "123468366333",
-    appId: "1:123468366333:web:788f80b3bd43ba4ae2d994",
-    measurementId: "G-F13P9Q2S7X"
-      )
-  );
-  
+          apiKey: "AIzaSyB4feUvcioNMKRhgjFCMGPcDQuVIeq48T0",
+          authDomain: "newconnection-fe695.firebaseapp.com",
+          projectId: "newconnection-fe695",
+          storageBucket: "newconnection-fe695.appspot.com",
+          messagingSenderId: "123468366333",
+          appId: "1:123468366333:web:788f80b3bd43ba4ae2d994",
+          measurementId: "G-F13P9Q2S7X"));
+
   final navigatorKey = GlobalKey<NavigatorState>();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        MyRoutes.dashboard:(context) => Dashboard(),
-        MyRoutes.shipping: (context) =>  ShippingPage(),
-        MyRoutes.reportscreen: (context) =>  Reports(),
-        MyRoutes.addshipmentscreen: (context) =>  AddShipping(),
+        MyRoutes.dashboard: (context) => Dashboard(),
+        MyRoutes.shipping: (context) => ShippingPage(),
+        MyRoutes.reportscreen: (context) => Reports(),
+        MyRoutes.addshipmentscreen: (context) => AddShipping(),
       },
-      home:  Dashboard(),
+      home: Dashboard(),
     );
   }
 }
