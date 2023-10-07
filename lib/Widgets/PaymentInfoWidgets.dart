@@ -9,9 +9,8 @@ class PaymentInfoWidget extends StatelessWidget {
       width: MediaQuery.sizeOf(context as BuildContext).width * 0.37 / 0.94,
       height: 200,
       decoration: BoxDecoration(
-          color: Colors.white,
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: Colors.grey.withOpacity(0.9))),
+          border: Border.all(color: Colors.grey.withOpacity(0.5))),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

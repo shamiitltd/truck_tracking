@@ -25,3 +25,13 @@ TextStyle title4() {
 TextStyle heading() {
   return TextStyle(fontSize: 30, fontWeight: FontWeight.w700);
 }
+
+// Fleet Event title And Data Text Style ;
+TextStyle title5() {
+  return TextStyle(
+      fontSize: 20, fontWeight: FontWeight.bold, color: Colors.deepPurple);
+}
+
+TextStyle title6() {
+  return TextStyle(fontSize: 18, fontWeight: FontWeight.w800);
+}

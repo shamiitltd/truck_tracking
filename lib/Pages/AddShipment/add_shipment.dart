@@ -7,7 +7,6 @@ class AddShipping extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
@@ -24,6 +23,9 @@ class AddShipping extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  SizedBox(
+                    width: 10,
+                  ),
                   ContactShippingShipment(),
                   SizedBox(
                     width: 10,

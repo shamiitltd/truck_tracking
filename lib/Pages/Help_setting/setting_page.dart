@@ -24,6 +24,9 @@ class SettingPage extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  SizedBox(
+                    width: 10,
+                  ),
                   NeedHelp(),
                   SizedBox(
                     width: 20,

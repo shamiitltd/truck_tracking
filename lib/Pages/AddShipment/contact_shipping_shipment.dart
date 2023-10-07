@@ -3,10 +3,11 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 
 import '../../Widgets/TextFieldWidget.dart';
-import '../../Widgets/TextStyle.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+
+import '../../config/TextStyles/TextStyle.dart';
 
 class ContactShippingShipment extends StatefulWidget {
   @override
@@ -89,16 +90,15 @@ class _ContactShippingShipmentState extends State<ContactShippingShipment> {
       width: MediaQuery.sizeOf(context).width * 0.37 / 0.94,
       height: 600,
       decoration: BoxDecoration(
-          color: Colors.white,
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: Colors.grey.withOpacity(0.9))),
+          border: Border.all(color: Colors.grey.withOpacity(0.5))),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 10),
+              margin: EdgeInsets.symmetric(horizontal: 25),
               child: Text(
                 "Contact Details",
                 style: title1(),
@@ -111,9 +111,9 @@ class _ContactShippingShipmentState extends State<ContactShippingShipment> {
                   thecontroller: _FirstName,
                   thehintText: 'First Name',
                   theicon: Icon(Icons.person),
-                  theWidth: MediaQuery.sizeOf(context).width * 0.144 / 1.0,
+                  theWidth: MediaQuery.sizeOf(context).width * 1 / 7.2,
                   theHeight: 45.0,
-                  themarginHorizontal: 15.0,
+                  themarginHorizontal: 30.0,
                   themarginVertical: 20.0,
                   thesuffixIcon: null,
                   obsecureText: false,
@@ -125,9 +125,9 @@ class _ContactShippingShipmentState extends State<ContactShippingShipment> {
                   thecontroller: _LastName,
                   thehintText: 'Last Name',
                   theicon: Icon(Icons.person),
-                  theWidth: MediaQuery.sizeOf(context).width * 0.144 / 1.0,
+                  theWidth: MediaQuery.sizeOf(context).width * 1 / 7.2,
                   theHeight: 45.0,
-                  themarginHorizontal: 15.0,
+                  themarginHorizontal: 30.0,
                   themarginVertical: 20.0,
                   thesuffixIcon: null,
                   obsecureText: false,
@@ -143,9 +143,9 @@ class _ContactShippingShipmentState extends State<ContactShippingShipment> {
                   thecontroller: _Email,
                   thehintText: 'Email',
                   theicon: Icon(Icons.email),
-                  theWidth: MediaQuery.sizeOf(context).width * 0.144 / 1.0,
+                  theWidth: MediaQuery.sizeOf(context).width * 1 / 7.2,
                   theHeight: 45.0,
-                  themarginHorizontal: 15.0,
+                  themarginHorizontal: 30.0,
                   themarginVertical: 0.0,
                   thesuffixIcon: null,
                   obsecureText: false,
@@ -157,9 +157,9 @@ class _ContactShippingShipmentState extends State<ContactShippingShipment> {
                   thecontroller: _ContactNumber,
                   thehintText: 'Contact Number',
                   theicon: Icon(Icons.phone),
-                  theWidth: MediaQuery.sizeOf(context).width * 0.144 / 1.0,
+                  theWidth: MediaQuery.sizeOf(context).width * 1 / 7.2,
                   theHeight: 45.0,
-                  themarginHorizontal: 15.0,
+                  themarginHorizontal: 30.0,
                   themarginVertical: 0.0,
                   thesuffixIcon: null,
                   obsecureText: false,
@@ -171,7 +171,7 @@ class _ContactShippingShipmentState extends State<ContactShippingShipment> {
             ),
             SizedBox(height: 20),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 10),
+              margin: EdgeInsets.symmetric(horizontal: 25),
               child: Text(
                 "Shipment Details",
                 style: title1(),
@@ -184,9 +184,9 @@ class _ContactShippingShipmentState extends State<ContactShippingShipment> {
                   thecontroller: _ShipFrom,
                   thehintText: 'Ship From',
                   theicon: Icon(Icons.location_on),
-                  theWidth: MediaQuery.sizeOf(context).width * 0.144 / 1.0,
+                  theWidth: MediaQuery.sizeOf(context).width * 1 / 7.2,
                   theHeight: 45.0,
-                  themarginHorizontal: 15.0,
+                  themarginHorizontal: 30.0,
                   themarginVertical: 20.0,
                   thesuffixIcon: null,
                   obsecureText: false,
@@ -198,9 +198,9 @@ class _ContactShippingShipmentState extends State<ContactShippingShipment> {
                   thecontroller: _ShipTo,
                   thehintText: 'Ship To',
                   theicon: Icon(Icons.location_on),
-                  theWidth: MediaQuery.sizeOf(context).width * 0.144 / 1.0,
+                  theWidth: MediaQuery.sizeOf(context).width * 1 / 7.2,
                   theHeight: 45.0,
-                  themarginHorizontal: 15.0,
+                  themarginHorizontal: 30.0,
                   themarginVertical: 20.0,
                   thesuffixIcon: null,
                   obsecureText: false,
@@ -216,9 +216,9 @@ class _ContactShippingShipmentState extends State<ContactShippingShipment> {
                   thecontroller: _PickPoint,
                   thehintText: 'Pickup Point',
                   theicon: Icon(Icons.location_on),
-                  theWidth: MediaQuery.sizeOf(context).width * 0.144 / 1.0,
+                  theWidth: MediaQuery.sizeOf(context).width * 1 / 7.2,
                   theHeight: 45.0,
-                  themarginHorizontal: 15.0,
+                  themarginHorizontal: 30.0,
                   themarginVertical: 0.0,
                   thesuffixIcon: null,
                   obsecureText: false,
@@ -230,9 +230,9 @@ class _ContactShippingShipmentState extends State<ContactShippingShipment> {
                   thecontroller: _DeliveryPoint,
                   thehintText: 'Delivery Point',
                   theicon: Icon(Icons.location_on),
-                  theWidth: MediaQuery.sizeOf(context).width * 0.144 / 1.0,
+                  theWidth: MediaQuery.sizeOf(context).width * 1 / 7.2,
                   theHeight: 45.0,
-                  themarginHorizontal: 15.0,
+                  themarginHorizontal: 30.0,
                   themarginVertical: 0.0,
                   thesuffixIcon: null,
                   obsecureText: false,
@@ -244,7 +244,7 @@ class _ContactShippingShipmentState extends State<ContactShippingShipment> {
             ),
             SizedBox(height: 20),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 10),
+              margin: EdgeInsets.symmetric(horizontal: 25),
               child: Text(
                 "Shipment Type",
                 style: title1(),
@@ -257,9 +257,9 @@ class _ContactShippingShipmentState extends State<ContactShippingShipment> {
                   thecontroller: _Type,
                   thehintText: 'Type',
                   theicon: Icon(Icons.abc),
-                  theWidth: MediaQuery.sizeOf(context).width * 0.144 / 1.0,
+                  theWidth: MediaQuery.sizeOf(context).width * 1 / 7.2,
                   theHeight: 45.0,
-                  themarginHorizontal: 15.0,
+                  themarginHorizontal: 30.0,
                   themarginVertical: 20.0,
                   thesuffixIcon: IconButton(
                       onPressed: () {}, icon: Icon(Icons.arrow_drop_down)),
@@ -272,9 +272,9 @@ class _ContactShippingShipmentState extends State<ContactShippingShipment> {
                   thecontroller: _abc,
                   thehintText: null,
                   theicon: Icon(Icons.abc),
-                  theWidth: MediaQuery.sizeOf(context).width * 0.144 / 1.0,
+                  theWidth: MediaQuery.sizeOf(context).width * 1 / 7.2,
                   theHeight: 45.0,
-                  themarginHorizontal: 15.0,
+                  themarginHorizontal: 30.0,
                   themarginVertical: 20.0,
                   thesuffixIcon: IconButton(
                       onPressed: () {}, icon: Icon(Icons.arrow_drop_down)),
@@ -289,7 +289,7 @@ class _ContactShippingShipmentState extends State<ContactShippingShipment> {
               height: 20,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 5),
+              padding: const EdgeInsets.symmetric(horizontal: 35),
               child: InkWell(
                 onTap: () {
                   /*

@@ -74,7 +74,8 @@ flutter:
   assets:
     
     - assets/images/
-    
+    - assets/json/json.json
+    - assets/json/ADNOCEvent.json
     - assets/json/scoreboardinfo.json
     - assets/json/AlocateDrive.json
     - assets/json/VehicleMaintance.json

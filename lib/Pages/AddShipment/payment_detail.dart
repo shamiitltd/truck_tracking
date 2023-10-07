@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../Widgets/PaymentCards.dart';
 import '../../Widgets/PaymentInfoWidgets.dart';
 import '../../Widgets/TextFieldWidget.dart';
+
 import 'transparent_background.dart';
 
 class PaymentDetail extends StatelessWidget {
@@ -26,7 +27,7 @@ class PaymentDetail extends StatelessWidget {
             height: 700,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: Colors.grey.withOpacity(0.9)),
+                border: Border.all(color: Colors.grey.withOpacity(0.5)),
                 gradient: LinearGradient(colors: [
                   Color.fromARGB(255, 103, 183, 220).withOpacity(0.7),
                   Color.fromARGB(255, 209, 133, 159).withOpacity(0.5),

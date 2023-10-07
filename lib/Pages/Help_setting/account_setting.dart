@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../Widgets/TextFieldWidget.dart';
-import '../../Widgets/TextStyle.dart';
+import '../../config/TextStyles/TextStyle.dart';
 
 class AccountSetting extends StatefulWidget {
   @override
@@ -27,7 +27,7 @@ class _AccountSettingState extends State<AccountSetting> {
         width: MediaQuery.sizeOf(context).width * 0.37 / 0.94,
         decoration: BoxDecoration(
           color: Colors.white,
-          border: Border.all(color: Colors.grey.withOpacity(0.9)),
+          border: Border.all(color: Colors.grey.withOpacity(0.5)),
           borderRadius: BorderRadius.circular(10),
         ),
         child: Padding(

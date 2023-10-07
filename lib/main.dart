@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:truck_tracking/Pages/AddShipment/add_shipment.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'Widgets/FleetEvent/FleetEvent.dart';
+import 'Widgets/adnoc/adnocfleetevent.dart';
 import 'firebase_options.dart';
 import 'Pages/AlocateDrive/AlocateDrive.dart';
 import 'Pages/AlocateDrive/VehicleMaintance.dart';
@@ -17,9 +19,6 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: AddShipping(),
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: SettingPage());
   }
 }
