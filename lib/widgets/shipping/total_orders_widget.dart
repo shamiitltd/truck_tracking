@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:truck_tracking/config/Box%20decoration/boxDecoration.dart';
+import 'package:truck_tracking/config/fonts/fonts.dart';
+import 'package:truck_tracking/config/colors/colors.dart';
+import 'package:truck_tracking/config/json/order.dart';
 import 'package:truck_tracking/config/json/read_json_data.dart';
-import 'package:truck_tracking/widgets/shipping/order_popup.dart';
-import '../../config/json/order.dart';
-
+import 'order_popup.dart';
 
 // ignore: must_be_immutable
 class TotalOrdersWidget extends StatelessWidget {
   int _previousTotalOrders = 0;
   final Function(double, double) updateLocationCallback;
 
-  TotalOrdersWidget({
-    Key? key,
-    required this.updateLocationCallback,
-  }) : super(key: key);
+  TotalOrdersWidget({Key? key, required this.updateLocationCallback,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,38 +32,30 @@ class TotalOrdersWidget extends StatelessWidget {
             } else {
               final orders = snapshot.data;
               final totalOrders = orders?.length ?? 0;
-
               final totalOrdersPercentage = (totalOrders / totalOrders) * 100;
               final isIncreased = totalOrders > _previousTotalOrders;
               _previousTotalOrders = totalOrders;
 
-              return Container(
-                width: 260,
-                child: Expanded(
-                  child: GestureDetector(
-                    onTap: () async {
-                      if (orders != null) {
-                        showOrdersPopup(
-                            context, orders, updateLocationCallback, '');
-                      } else {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                                content: Text('Orders data is not available')));
-                      }
-                    },
+              return InkWell(
+                onTap: () async {
+                  if (orders != null) {
+                    showOrdersPopup(
+                        context, orders, updateLocationCallback, '');
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                            content: Text('Orders data is not available')));
+                  }
+                },
+                child: Container(
+                  width: 260,
+                  child: Expanded(
                     child: Container(
                       height: isMobile ? 100 : 90,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: AppColors.primaryWhite,
                         borderRadius: BorderRadius.circular(5),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.1),
-                            spreadRadius: 2,
-                            blurRadius: 5,
-                            offset: const Offset(0, 3),
-                          ),
-                        ],
+                        boxShadow: [boxDecor.shadow],
                       ),
                       child: Stack(
                         alignment: Alignment.centerLeft,
@@ -74,25 +65,12 @@ class TotalOrdersWidget extends StatelessWidget {
                             child: Container(
                               width: isMobile ? 30 : 50,
                               height: isMobile ? 30 : 50,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.blue[100],
-                                border: Border.all(
-                                  color: Colors.blue.shade100,
-                                  width: 2,
-                                ),
-                              ),
+                              decoration: boxDecor.blueCircle,
                               child: Center(
                                 child: FittedBox(
                                   child: Text(
-                                    '${isIncreased
-                                        ? '+'
-                                        : '-'}${totalOrdersPercentage
-                                        .toStringAsFixed(0)}%',
-                                    style: TextStyle(
-                                      fontSize: isMobile ? 10 : 12,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                    '${isIncreased ? '+' : '-'}${totalOrdersPercentage.toStringAsFixed(0)}%',
+                                    style: AppFonts.customFont(isMobile),
                                   ),
                                 ),
                               ),
@@ -100,33 +78,20 @@ class TotalOrdersWidget extends StatelessWidget {
                           ),
                           Expanded(
                             child: Padding(
-                              padding: EdgeInsets.only(
-                                left: isMobile ? 55 : 120,
-                              ),
+                              padding: EdgeInsets.only(left: isMobile ? 55 : 120,),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   FittedBox(
                                     fit: BoxFit.contain,
-                                    child: Text(
-                                      'Total Order',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
+                                    child: Text('Total Order', style: AppFonts.medium),
                                   ),
-                                  SizedBox(
-                                    height: 3,
-                                  ),
+                                  SizedBox(height: 3,),
                                   FittedBox(
                                     child: Text(
                                       '$totalOrders',
-                                      style: TextStyle(
-                                        fontSize: isMobile ? 18 : 23,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.indigo.shade900,
-                                      ),
+                                      style: AppFonts.customIndigo900(isMobile),
                                     ),
                                   ),
                                 ],

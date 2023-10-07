@@ -34,6 +34,29 @@ class AppFonts {
     fontSize: 14,
     color: Colors.black
   );
+
+  static const TextStyle mediumBoldGreen = TextStyle(
+    fontFamily: robotoFontFamily,
+    fontWeight: FontWeight.bold,
+    color: Colors.green,
+    fontSize: 16,
+  );
+
+  static TextStyle customFont(bool isMobile) {
+    return TextStyle(
+      fontFamily: robotoFontFamily,
+      fontWeight: FontWeight.bold,
+      fontSize: isMobile ? 10 : 12,
+    );
+  }
+
+  static TextStyle customIndigo900(bool isMobile) {
+    return TextStyle(
+      fontSize: isMobile ? 18 : 23, // Adjust font size for mobile view
+      fontWeight: FontWeight.bold,
+      color: Colors.indigo.shade900,
+    );
+  }
 }
 
 class AppBorderRadius {

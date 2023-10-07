@@ -1,78 +1,90 @@
 import 'package:flutter/material.dart';
+import 'package:truck_tracking/config/Box%20decoration/boxDecoration.dart';
+import 'package:truck_tracking/config/fonts/fonts.dart';
+import 'package:truck_tracking/config/colors/colors.dart';
 import 'package:truck_tracking/config/json/order.dart';
 import 'order_popup.dart';
 
-Widget buildShippingStatusWidget(List<Order> shippingOrdersList, List<Order> orders, {required void Function(double newLat, double newLng) updateLocationCallback}) {
-  return Container(
-    //margin: EdgeInsets.only(top: 460, left: 378, right: 0),
-    height: 240,
-    width: 550,
-    decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(5),
-      boxShadow: [
-        BoxShadow(
-          color: Colors.grey.withOpacity(0.1),
-          spreadRadius: 2,
-          blurRadius: 5,
-          offset: const Offset(0, 3),
-        )
-      ],
-    ),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 15, top: 15),
-          child: Text(
-            "Ongoing Shipping",
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
+class buildShippingStatusWidget extends StatefulWidget {
+  final List<Order> shippingOrdersList;
+  final void Function(double newLat, double newLng) updateLocationCallback;
+
+  buildShippingStatusWidget({
+    required this.shippingOrdersList,
+    required this.updateLocationCallback,
+  });
+
+  @override
+  State<buildShippingStatusWidget> createState() => _buildShippingStatusWidgetState();
+}
+
+class _buildShippingStatusWidgetState extends State<buildShippingStatusWidget> {
+  int selectOrderIndex = -1;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 240,
+      width: 550,
+      decoration: BoxDecoration(
+        color: AppColors.primaryWhite,
+        borderRadius: BorderRadius.circular(5),
+        boxShadow: [boxDecor.shadow],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 15, top: 15),
+            child: Text("Ongoing Shipping", style: AppFonts.mediumBold),
           ),
-        ),
-        SizedBox(height: 5,),
-        Expanded(
-          child: ListView.builder(
-            itemCount: shippingOrdersList.length,
-            itemBuilder: (context, index) {
-              final order = shippingOrdersList[index];
-              return GestureDetector(
-                onTap: (){
-                    showOrderDetailsPopup(context, order, updateLocationCallback);
-                },
-                child: ListTile(
-                  leading: Icon(Icons.check_box),
-                  title: Row(
-                    children: [
-                      Text(order.id),
-                      SizedBox(width: 35,),
-                      Text(order.address),
-                    ],
+          SizedBox(height: 5,),
+          Expanded(
+            child: ListView.builder(
+              itemCount: widget.shippingOrdersList.length,
+              itemBuilder: (context, index) {
+                final order = widget.shippingOrdersList[index];
+
+                return ListTile(
+                  leading: Icon(Icons.data_saver_off_rounded),
+                  title: InkWell(
+                    onTap: () {
+                      showOrderDetailsPopup(context, order, widget.updateLocationCallback);
+                    },
+                    child: Row(
+                      children: [
+                        Flexible(child: Text(order.id, overflow: TextOverflow.ellipsis, maxLines: 1,)),
+                        SizedBox(width: 25,),
+                        Flexible(child: Text(order.address, overflow: TextOverflow.ellipsis, maxLines: 1,)),
+                      ],
+                    ),
                   ),
-                  trailing: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Icon(Icons.person),
-                      SizedBox(width: 15,),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          order.status.toUpperCase(),
-                          style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
-                          textAlign: TextAlign.left,
+                  trailing: InkWell(
+                    onTap: () {
+                      showOrderDetailsPopup(context, order, widget.updateLocationCallback);
+                    },
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Icon(Icons.account_circle_rounded),
+                        SizedBox(width: 25,),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            order.status.toUpperCase(),
+                            style: AppFonts.mediumBoldGreen,
+                            textAlign: TextAlign.left,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              );
-            },
-          ),
-        )
-      ],
-    ),
-  );
+                );
+              },
+            ),
+          )
+        ],
+      ),
+    );
+  }
 }

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:truck_tracking/config/Box%20decoration/boxDecoration.dart';
+import 'package:truck_tracking/config/fonts/fonts.dart';
+import 'package:truck_tracking/config/colors/colors.dart';
+import 'package:truck_tracking/config/json/order.dart';
 import 'package:truck_tracking/config/json/read_json_data.dart';
-import '../../config/json/order.dart';
 import 'order_popup.dart';
 
 // ignore: must_be_immutable
@@ -27,43 +30,32 @@ class SuccessfulOrdersWidget extends StatelessWidget {
               return Text('No data available');
             } else {
               final orders = snapshot.data;
-              final successfulOrders =
-                  orders?.where((orders) => orders.status == 'successful').length ??
-                      0;
+              final successfulOrders = orders?.where((orders) => orders.status == 'successful').length ?? 0;
               final totalOrders = orders?.length ?? 1;
-              final successfulOrdersPercentage =
-                  (successfulOrders / totalOrders) * 100;
+              final successfulOrdersPercentage = (successfulOrders / totalOrders) * 100;
               final isIncreased = successfulOrders > _previousSuccessfulOrders;
 
               _previousSuccessfulOrders = successfulOrders;
 
-              return Container(
-                width: 260,
-                child: Expanded(
-                  child: GestureDetector(
-                    onTap: () async {
-                      if (orders != null) {
-                        showOrdersPopup(
-                            context, orders, updateLocationCallback, 'successful');
-                      } else {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text('Orders data is not available')));
-                      }
-                    },
+              return InkWell(
+                onTap: () async {
+                  if (orders != null) {
+                    showOrdersPopup(
+                        context, orders, updateLocationCallback, 'successful');
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Orders data is not available')));
+                  }
+                },
+                child: Container(
+                  width: 260,
+                  child: Expanded(
                     child: Container(
                       height: isMobile ? 100 : 90,
-                      // Adjust height for mobile view
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: AppColors.primaryWhite,
                         borderRadius: BorderRadius.circular(5),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.1),
-                            spreadRadius: 2,
-                            blurRadius: 5,
-                            offset: const Offset(0, 3),
-                          ),
-                        ],
+                        boxShadow: [boxDecor.shadow],
                       ),
                       child: Stack(
                         alignment: Alignment.centerLeft,
@@ -73,58 +65,31 @@ class SuccessfulOrdersWidget extends StatelessWidget {
                             child: Container(
                               width: isMobile ? 30 : 50,
                               height: isMobile ? 30 : 50,
-                              // Adjust size for mobile view
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.greenAccent[100],
-                                border: Border.all(
-                                  color: Colors.greenAccent.shade100,
-                                  width: 2,
-                                ),
-                              ),
+                              decoration: boxDecor.greenCircle,
                               child: Center(
                                 child: Text(
                                   '${isIncreased ? '+' : '-'}${successfulOrdersPercentage.toStringAsFixed(0)}%',
-                                  style: TextStyle(
-                                    fontSize: isMobile ? 10 : 12,
-                                    // Adjust font size for mobile view
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                  style: AppFonts.customFont(isMobile),
                                 ),
                               ),
                             ),
                           ),
                           Expanded(
                             child: Padding(
-                              padding: EdgeInsets.only(
-                                left: isMobile ? 55 : 115,
-                              ),
-                              // Adjust padding for mobile view
+                              padding: EdgeInsets.only(left: isMobile ? 55 : 115,),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   FittedBox(
                                     fit: BoxFit.contain,
-                                    child: Text(
-                                      'Successful Order',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
+                                    child: Text('Successful Order', style: AppFonts.medium,),
                                   ),
-                                  SizedBox(
-                                    height: 3,
-                                  ),
+                                  SizedBox(height: 3,),
                                   FittedBox(
                                     child: Text(
                                       '$successfulOrders',
-                                      style: TextStyle(
-                                        fontSize: isMobile ? 18 : 23,
-                                        // Adjust font size for mobile view
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.indigo.shade900,
-                                      ),
+                                      style: AppFonts.customIndigo900(isMobile),
                                     ),
                                   ),
                                 ],

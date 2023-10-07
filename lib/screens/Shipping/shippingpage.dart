@@ -153,7 +153,7 @@ class _ShippingPageState extends State<ShippingPage> {
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Expanded(flex: _size.width > 800 ? 2 : 4, child: buildShippingStatusWidget(shippingOrdersList, ordersList, updateLocationCallback: updateLocationCallback)),
+                          Expanded(flex: _size.width > 800 ? 2 : 4, child: buildShippingStatusWidget(shippingOrdersList: shippingOrdersList, updateLocationCallback: updateLocationCallback)),
                           SizedBox(width: 20,)
                         ],
                       )
