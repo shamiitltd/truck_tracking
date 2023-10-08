@@ -85,13 +85,6 @@ class LeftDrawer extends StatelessWidget {
                 const SizedBox(
                   height: AppDimensions.defuaultPadding,
                 ),
-                DashboardListTile(
-                  title: "Trips Duration",
-                  icon: const Icon(Icons.fire_truck),
-                  press: () {
-                    Navigator.pushNamed(context, MyRoutes.tripsduration);
-                  },
-                ),
               ],
             ),
           ),

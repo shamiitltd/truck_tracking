@@ -12,18 +12,6 @@
     "halt_duration": 5
   },
   {
-    "truckid": "AD 54653 GS3",
-    "driving": 4,
-    "standing": 9,
-    "halt_duration": 7
-  },
-  {
-    "truckid": "AD 54653 GS4",
-    "driving": 9,
-    "standing": 8,
-    "halt_duration": 3
-  },
-  {
     "truckid": "AD 54653 GS5",
     "driving": 4,
     "standing": 9,
