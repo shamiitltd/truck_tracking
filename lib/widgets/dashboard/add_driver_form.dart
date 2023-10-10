@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:truck_tracking/config/fonts/fonts.dart';
+import 'package:truck_tracking/widgets/dashboard/uploadcontainer.dart';
 
 // ignore: camel_case_types
 class Driver_Info_form extends StatelessWidget {
@@ -190,10 +191,11 @@ class _CustomStepperState extends State<CustomStepper> {
       title: Text('Document'),
       content: Column(
         children: [
-          TextFormField(
-            controller: emailController,
-            decoration: InputDecoration(labelText: 'Email'),
-          ),
+          Uploadcontainer(doc: "Aadhar card"),
+          SizedBox(height: 20,),
+          Uploadcontainer(doc: "Pan card"),
+          SizedBox(height: 20,),
+          Uploadcontainer(doc: "Licence card"),
           SizedBox(height: 20,)
         ],
       ),
