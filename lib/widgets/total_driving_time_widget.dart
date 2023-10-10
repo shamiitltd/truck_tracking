@@ -95,7 +95,7 @@ class _TotalDrivingTimeWidgetState extends State<TotalDrivingTimeWidget> {
                         Text(
                           formatDuration(totalDuration),
                           style: TextStyle(
-                            color: Colors.purple[400],
+                            color: AppColors.trips_graphPurple,
                             fontSize: screenHeight * 0.04,
                             fontWeight: FontWeight.bold,
                           ),
@@ -139,7 +139,7 @@ class _TotalDrivingTimeWidgetState extends State<TotalDrivingTimeWidget> {
                       height: screenHeight * 0.015,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: Colors.blue[500],
+                        color: AppColors.trips_graphBlue,
                       ),
                     ),
                     SizedBox(width: screenHeight * 0.01),
@@ -170,17 +170,17 @@ class _TotalDrivingTimeWidgetState extends State<TotalDrivingTimeWidget> {
                           dataSource: data,
                           xValueMapper: (_ChartData data, _) => data.date,
                           yValueMapper: (_ChartData data, _) => data.time,
-                          color: Colors.lightBlue[50]
+                          color: AppColors.drivingTime_graphLightBlue,
                       ),
                       SplineSeries<_ChartData, String>(
                         dataSource: data,
                         xValueMapper: (_ChartData data, _) => data.date,
                         yValueMapper: (_ChartData data, _) => data.time,
                         width: 4,
-                        color: Colors.blue[500],
+                        color: AppColors.trips_graphBlue,
                         markerSettings: MarkerSettings(
                             isVisible: true,
-                            color: Colors.blue[500],
+                            color: AppColors.trips_graphBlue,
                             width: 10,
                             height: 10
                         ),
@@ -203,6 +203,6 @@ class _ChartData {
   final double time;
 }
 
-void main() {
+/*void main() {
   runApp(MaterialApp(debugShowCheckedModeBanner: false, home: Scaffold(body: TotalDrivingTimeWidget())));
-}
+}*/

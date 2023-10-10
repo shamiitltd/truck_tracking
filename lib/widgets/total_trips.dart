@@ -32,6 +32,7 @@ class _TotalTripsWidgetState extends State<TotalTripsWidget> {
     ''';
 
     final List<dynamic> jsonList = json.decode(jsonData);
+    // Convert JSON data into _ChartData objects
     final List<_ChartData> dataList = jsonList.map((item) {
       return _ChartData(item['date'], item['trips'].toDouble());
     }).toList();
@@ -84,7 +85,7 @@ class _TotalTripsWidgetState extends State<TotalTripsWidget> {
                       height: screenHeight * 0.015,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: Colors.deepPurple[600],
+                        color: AppColors.trips_graphPurple,
                       ),
                     ),
                     SizedBox(width: screenHeight * 0.01),
@@ -111,23 +112,17 @@ class _TotalTripsWidgetState extends State<TotalTripsWidget> {
                       majorGridLines: MajorGridLines(width: 0),
                     ),
                     series: <ChartSeries<_ChartData, String>>[
-                      SplineAreaSeries<_ChartData, String>(
-                          dataSource: data,
-                          xValueMapper: (_ChartData data, _) => data.date,
-                          yValueMapper: (_ChartData data, _) => data.time,
-                          color: Colors.deepPurple[50]
-                      ),
-                      SplineSeries<_ChartData, String>(
+                      LineSeries<_ChartData, String>(
                         dataSource: data,
                         xValueMapper: (_ChartData data, _) => data.date,
                         yValueMapper: (_ChartData data, _) => data.time,
-                        width: 2,
-                        color: Colors.deepPurple[500],
+                        width: 4,
+                        color: Colors.blue[500],
                         markerSettings: MarkerSettings(
-                            isVisible: true,
-                            color: Colors.deepPurple[500],
-                            width: 8,
-                            height: 8
+                          isVisible: true,
+                          color: AppColors.trips_graphBlue,
+                          width: 10,
+                          height: 10,
                         ),
                       ),
                     ],
@@ -148,6 +143,7 @@ class _ChartData {
   final double time;
 }
 
+/*
 void main() {
   runApp(MaterialApp(debugShowCheckedModeBanner: false, home: Scaffold(body: TotalTripsWidget())));
-}
+}*/

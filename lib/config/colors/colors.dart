@@ -41,6 +41,9 @@ static const Color indigoShade900 = Color(0xFF1A237E);
 static const Color greenShade100 = Color(0xFFC8E6C9);
 static const Color reportIconColor = Colors.black45;
 static const Color reportTextColor = Colors.black87;
+static const Color trips_graphPurple = Color(0xFF673AB7);
+static Color trips_graphBlue = Colors.blue.shade500;
+static Color drivingTime_graphLightBlue = Colors.blue.shade50;
 
 
 int bnBarColor = 200;
