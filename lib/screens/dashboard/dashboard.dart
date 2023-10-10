@@ -22,13 +22,13 @@ class _DashboardState extends State<Dashboard> {
       backgroundColor: AppColors.backgroundColor,
       body: Row(
         children: [
-          Padding(padding: AppDimensions.smallPadding),
+          const Padding(padding: AppDimensions.smallPadding),
           Container(
             padding: AppDimensions.mediumPadding,
             width: 284,
-            child: LeftDrawer(),
+            child: const LeftDrawer(),
           ),
-          SizedBox(
+          const SizedBox(
             width: AppDimensions.defuaultPadding,
           ),
           Expanded(
@@ -44,27 +44,26 @@ class _DashboardState extends State<Dashboard> {
                     Container(
                       height: 45, 
                       width: double.infinity,
-                      margin: EdgeInsets.all(12),
+                      margin: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
                        color:AppColors.WelcomeContainerColor,
                        borderRadius: BorderRadius.circular(AppBorderRadius.small),
                       ),
                       child: Row(
                         children: [
-                          SizedBox(width: 15,),
+                          const SizedBox(width: 15,),
                           Text("Welcome Back!",style:AppFonts.medium.copyWith(color:Colors.black)),
-                          Spacer(),
+                          const Spacer(),
                           TextButton.icon(
                           onPressed: () {
                              showDialog(context: context, builder: (context)=>AlertDialog(
                               title: Text("Driver Information",style:AppFonts.bold.copyWith(color:Colors.black)),
-                              content: Driver_Info_form(),
+                              content: const Driver_Info_form(),
                               actions: [
-                                TextButton(onPressed: (){}, child:Text("Submit",style:AppFonts.medium))
+                                TextButton(onPressed: (){}, child:const Text("Submit",style:AppFonts.medium))
                               ],
                              )  
                              );                           
-                            ;
                           },
                           icon: const Icon(
                             Icons.add ,
@@ -77,9 +76,9 @@ class _DashboardState extends State<Dashboard> {
                           onPressed: () {
                               showDialog(context: context, builder: (context)=>AlertDialog(
                               title: Text("Vehicle Information",style:AppFonts.bold.copyWith(color:Colors.black)),
-                              content: Vehicle_Info_form(),
+                              content: const Vehicle_Info_form(),
                               actions: [
-                                TextButton(onPressed: (){}, child:Text("Submit",style:AppFonts.medium))
+                                TextButton(onPressed: (){}, child:const Text("Submit",style:AppFonts.medium))
                               ],
                              )  
                              ); 
@@ -96,19 +95,19 @@ class _DashboardState extends State<Dashboard> {
                           onPressed: () {
                              showDialog(context: context, builder: (context)=>AlertDialog(
                               title: Text("Stepper widget",style:AppFonts.bold.copyWith(color:Colors.black)),
-                              content: Stepper_widget(),
+                              content: const Stepper_widget(),
                               actions: [
                                 TextButton(onPressed: (){
-                                  FirebaseFirestore.instance.collection('drivers').doc(Stepper_widget().email).set({
-                                    "name":Stepper_widget().name,
-                                    "email":Stepper_widget().email,
-                                    "contact":Stepper_widget().contact,
-                                    "address":Stepper_widget().address,
-                                    "pincode":Stepper_widget().pincode,
-                                    "state":Stepper_widget().state,
+                                  FirebaseFirestore.instance.collection('drivers').doc(const Stepper_widget().email).set({
+                                    "name":const Stepper_widget().name,
+                                    "email":const Stepper_widget().email,
+                                    "contact":const Stepper_widget().contact,
+                                    "address":const Stepper_widget().address,
+                                    "pincode":const Stepper_widget().pincode,
+                                    "state":const Stepper_widget().state,
                                     
                                     });
-                                }, child:Text("Submit",style:AppFonts.medium))
+                                }, child:const Text("Submit",style:AppFonts.medium))
                               ],
                               )
                              );
@@ -120,7 +119,7 @@ class _DashboardState extends State<Dashboard> {
                           ),
                           label: Text('Add Stepper',style:AppFonts.medium.copyWith(color:Colors.black))
                           ),
-                          SizedBox(width:30),
+                          const SizedBox(width:30),
 
                           
                         ],

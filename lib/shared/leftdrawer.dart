@@ -22,11 +22,11 @@ class LeftDrawer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
 
         children: [
-          SizedBox(
+          const SizedBox(
               height: AppDimensions.largeBoxSize,
               ),
 
-          SizedBox(
+          const SizedBox(
             height: AppDimensions.defuaultPadding,
           ),
           Expanded(
@@ -53,6 +53,8 @@ class LeftDrawer extends StatelessWidget {
                 const SizedBox(
                   height: AppDimensions.defuaultPadding,
                 ),
+                //ek aisa bna 
+                //pop up -show dialogue
                 DashboardListTile(
                   title: "Add Shipment",
                   icon: const Icon(Icons.add_to_photos),
@@ -87,6 +89,16 @@ class LeftDrawer extends StatelessWidget {
                   icon: const Icon(Icons.settings),
                   press: () {},
                 ),
+                const SizedBox(
+                  height: AppDimensions.defuaultPadding,
+                ),
+                DashboardListTile(
+                  title: "Graph Widget",
+                  icon: const Icon(Icons.settings),
+                  press: () {
+                     Navigator.pushNamed(context, MyRoutes.graphwidgets);
+                  },
+                ),
               ],
             ),
           ),
@@ -103,7 +115,7 @@ class LeftDrawer extends StatelessWidget {
 
 
 class DashboardListTile extends StatelessWidget {
-  const DashboardListTile({
+  const DashboardListTile({super.key, 
     required this.title,
     required this.icon,
     required this.press,
@@ -122,7 +134,7 @@ class DashboardListTile extends StatelessWidget {
     return ListTile(
       iconColor: iconColor ?? AppColors.drawerTextColor,
       textColor: textStyle?.color ?? AppColors.drawerTextColor,
-      visualDensity: VisualDensity(vertical: -4),
+      visualDensity: const VisualDensity(vertical: -4),
       dense: true,
       onTap: press,
       leading: Icon(

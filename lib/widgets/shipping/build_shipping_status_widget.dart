@@ -22,8 +22,8 @@ Widget buildShippingStatusWidget(List<Order> shippingOrdersList, List<Order> ord
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 15, top: 15),
+        const Padding(
+          padding: EdgeInsets.only(left: 15, top: 15),
           child: Text(
             "Ongoing Shipping",
             style: TextStyle(
@@ -32,7 +32,7 @@ Widget buildShippingStatusWidget(List<Order> shippingOrdersList, List<Order> ord
             ),
           ),
         ),
-        SizedBox(height: 5,),
+        const SizedBox(height: 5,),
         Expanded(
           child: ListView.builder(
             itemCount: shippingOrdersList.length,
@@ -43,11 +43,11 @@ Widget buildShippingStatusWidget(List<Order> shippingOrdersList, List<Order> ord
                     showOrderDetailsPopup(context, order, updateLocationCallback);
                 },
                 child: ListTile(
-                  leading: Icon(Icons.check_box),
+                  leading: const Icon(Icons.check_box),
                   title: Row(
                     children: [
                       Text(order.id),
-                      SizedBox(width: 35,),
+                      const SizedBox(width: 35,),
                       Text(order.address),
                     ],
                   ),
@@ -55,13 +55,13 @@ Widget buildShippingStatusWidget(List<Order> shippingOrdersList, List<Order> ord
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Icon(Icons.person),
-                      SizedBox(width: 15,),
+                      const Icon(Icons.person),
+                      const SizedBox(width: 15,),
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
                           order.status.toUpperCase(),
-                          style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
+                          style: const TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
                           textAlign: TextAlign.left,
                         ),
                       ),

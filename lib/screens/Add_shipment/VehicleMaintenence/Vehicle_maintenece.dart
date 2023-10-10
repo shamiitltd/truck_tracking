@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:truck_tracking/screens/Add_shipment/VehicleMaintenence/User_model.dart';
 
 class VehicleMaintance extends StatefulWidget {
+  const VehicleMaintance({super.key});
+
   @override
   State<VehicleMaintance> createState() => _VehicleMaintanceState();
 }
@@ -28,7 +30,7 @@ class _VehicleMaintanceState extends State<VehicleMaintance> {
   @override
   Widget build(BuildContext context) {
     return isloading
-        ? Center(
+        ? const Center(
             child: CircularProgressIndicator(),
           )
         : Container(
@@ -73,7 +75,7 @@ class _VehicleMaintanceState extends State<VehicleMaintance> {
                               Icons.car_repair,
                               color: Colors.white.withOpacity(0.8),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 10,
                             ),
                             Text(
@@ -106,7 +108,7 @@ class _VehicleMaintanceState extends State<VehicleMaintance> {
                             Icons.car_repair_sharp,
                             color: Colors.white.withOpacity(0.8),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           Text(
@@ -140,7 +142,7 @@ class _VehicleMaintanceState extends State<VehicleMaintance> {
                               Icons.car_repair_sharp,
                               color: Colors.white.withOpacity(0.8),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 10,
                             ),
                             Text(
@@ -173,7 +175,7 @@ class _VehicleMaintanceState extends State<VehicleMaintance> {
                             Icons.car_repair_sharp,
                             color: Colors.white.withOpacity(0.8),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           Text(
@@ -207,7 +209,7 @@ class _VehicleMaintanceState extends State<VehicleMaintance> {
                               Icons.battery_std,
                               color: Colors.white.withOpacity(0.8),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 10,
                             ),
                             Text(

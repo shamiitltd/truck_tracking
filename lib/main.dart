@@ -7,6 +7,7 @@ import 'package:truck_tracking/screens/Add_shipment/add_shipment.dart';
 import 'package:truck_tracking/screens/Reports/UI/reports_screen.dart';
 import 'package:truck_tracking/screens/dashboard/dashboard.dart';
 
+import 'package:truck_tracking/widgets/dashboard/graph_widget.dart';
 import 'package:truck_tracking/screens/Shipping/shippingpage.dart';
 
 
@@ -17,7 +18,7 @@ void main() async {
       mapsImplementation.useAndroidViewSurface = false;
       mapsImplementation.initializeWithRenderer(AndroidMapRenderer.latest);
     }
-  }catch(e){};
+  }catch(e){}
   runApp( MyApp());
 }
 
@@ -41,12 +42,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        MyRoutes.dashboard:(context) => Dashboard(),
-        MyRoutes.shipping: (context) =>  ShippingPage(),
-        MyRoutes.reportscreen: (context) =>  Reports(),
-        MyRoutes.addshipmentscreen: (context) =>  AddShipping(),
+        MyRoutes.dashboard:(context) => const Dashboard(),
+        MyRoutes.shipping: (context) =>  const ShippingPage(),
+        MyRoutes.reportscreen: (context) =>  const Reports(),
+        MyRoutes.addshipmentscreen: (context) =>  const AddShipping(),
+        MyRoutes.graphwidgets:(context) =>  const LineChartPage(),
+        //ek mera route
       },
-      home:  Dashboard(),
+      home:  const Dashboard(),
     );
   }
 }

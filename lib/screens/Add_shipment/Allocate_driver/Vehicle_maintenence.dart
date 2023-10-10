@@ -29,6 +29,8 @@ class DrivingData {
 }
 
 class VehicleMaintance extends StatefulWidget {
+  const VehicleMaintance({super.key});
+
   @override
   State<VehicleMaintance> createState() => _VehicleMaintanceState();
 }
@@ -79,14 +81,14 @@ class _VehicleMaintanceState extends State<VehicleMaintance> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-              child: Text(
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+              child: const Text(
                 "Registered Vehicles",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
               ),
             ),
             Column(
-              children: [DataTable(columns: [], rows: [])],
+              children: [DataTable(columns: const [], rows: const [])],
             )
           ],
         ),

@@ -5,7 +5,7 @@ import 'package:truck_tracking/screens/Reports/report_widget.dart';
 
 
 Widget driverStat(BuildContext context){
- return Container(
+ return SizedBox(
           height: MediaQuery.of(context).size.height *.85,
           width: MediaQuery.of(context).size.width *.7,   
           child:  Card(
@@ -16,9 +16,9 @@ Widget driverStat(BuildContext context){
               children: [
                 HeadingRow(v1: 'Driver id', v2: 'Name', 
                 v3: 'Total Trips', v4: 'Completed Trips', v5: 'Total earnings'),
-                Divider(thickness: 2,color: AppColors.loginTextColor,),                    
+                const Divider(thickness: 2,color: AppColors.loginTextColor,),                    
                 SizedBox(height: MediaQuery.of(context).size.height *.6,
-                child: DriverStatApi()
+                child: const DriverStatApi()
                 ),
               ],
             ),          

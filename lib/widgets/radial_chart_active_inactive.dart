@@ -67,7 +67,7 @@ Future<void> loadDriverData() async {
       body: Container(
         width:MediaQuery.of(context).size.width *1,
         height: MediaQuery.of(context).size.height *.4,
-        margin: EdgeInsets.all(20),
+        margin: const EdgeInsets.all(20),
         decoration: BoxDecoration(
                   color: AppColors.whitePageColor,
                   borderRadius: BorderRadius.circular(AppBorderRadius.large),
@@ -75,9 +75,9 @@ Future<void> loadDriverData() async {
                 ),
         child: SfCircularChart(
           //  backgroundColor: Colors.black,
-            palette: [ AppColors.graphColor3,AppColors.graphColor2,],
+            palette: const [ AppColors.graphColor3,AppColors.graphColor2,],
             title: ChartTitle(text: 'Active Vehicles',),
-            legend: Legend(isVisible: true),
+            legend: const Legend(isVisible: true),
      // Radial graph implementation
           series: [
             RadialBarSeries<_RadialData, String>(

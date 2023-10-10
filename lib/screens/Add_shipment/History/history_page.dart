@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'order_detail.dart';
 
 class History extends StatelessWidget {
+  const History({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(255, 255, 255, 0.949),
+      backgroundColor: const Color.fromRGBO(255, 255, 255, 0.949),
       body: SafeArea(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -17,8 +19,8 @@ class History extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-                    child: Text(
+                    padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                    child: const Text(
                       "History",
                       style:
                           TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
@@ -32,7 +34,7 @@ class History extends StatelessWidget {
                         height: 600,
                         color: Colors.black45,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       Container(
@@ -42,15 +44,15 @@ class History extends StatelessWidget {
                       )
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Container(
-                    margin: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                    margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                     height: 400,
                     width: 800,
                     decoration: const BoxDecoration(color: Color(0xFFF5F5FA)),
-                    child: DrivingDataTableWidget(),
+                    child: const DrivingDataTableWidget(),
                   ),
                 ],
               ),

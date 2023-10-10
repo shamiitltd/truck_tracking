@@ -84,8 +84,8 @@ class _DrivingDataTableWidgetState extends State<DrivingDataTableWidget> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-              child: Text(
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+              child: const Text(
                 "History",
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
               ),

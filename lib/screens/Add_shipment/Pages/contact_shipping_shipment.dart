@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ContactShippingShipment extends StatelessWidget {
+  const ContactShippingShipment({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -14,23 +16,23 @@ class ContactShippingShipment extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 10),
-              child: Text(
+              margin: const EdgeInsets.symmetric(horizontal: 10),
+              child: const Text(
                 "Contact Details",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Row(
               children: [
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+                  margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
                   height: 45,
                   width: 220,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Color.fromARGB(179, 233, 233, 233)),
+                      color: const Color.fromARGB(179, 233, 233, 233)),
                   child: TextField(
                       decoration: InputDecoration(
                           border: InputBorder.none,
@@ -45,13 +47,13 @@ class ContactShippingShipment extends StatelessWidget {
                           ))),
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+                  margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
                   height: 45,
                   width: 220,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Color.fromARGB(179, 233, 233, 233)),
+                      color: const Color.fromARGB(179, 233, 233, 233)),
                   child: TextField(
                       decoration: InputDecoration(
                           border: InputBorder.none,
@@ -69,12 +71,12 @@ class ContactShippingShipment extends StatelessWidget {
             Row(
               children: [
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 15),
+                  margin: const EdgeInsets.symmetric(horizontal: 15),
                   height: 45,
                   width: 220,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Color.fromARGB(179, 233, 233, 233)),
+                      color: const Color.fromARGB(179, 233, 233, 233)),
                   child: TextField(
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
@@ -90,12 +92,12 @@ class ContactShippingShipment extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 15),
+                  margin: const EdgeInsets.symmetric(horizontal: 15),
                   height: 45,
                   width: 220,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Color.fromARGB(179, 233, 233, 233)),
+                      color: const Color.fromARGB(179, 233, 233, 233)),
                   child: TextField(
                       keyboardType: TextInputType.phone,
                       decoration: InputDecoration(
@@ -104,28 +106,28 @@ class ContactShippingShipment extends StatelessWidget {
                           hintStyle: TextStyle(
                             color: Colors.black.withOpacity(0.5),
                           ),
-                          prefixIcon: Icon(Icons.phone))),
+                          prefixIcon: const Icon(Icons.phone))),
                 )
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 10),
-              child: Text(
+              margin: const EdgeInsets.symmetric(horizontal: 10),
+              child: const Text(
                 "Shipment Details",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Row(
               children: [
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+                  margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
                   height: 45,
                   width: 220,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Color.fromARGB(179, 233, 233, 233)),
+                      color: const Color.fromARGB(179, 233, 233, 233)),
                   child: TextField(
                     decoration: InputDecoration(
                       border: InputBorder.none,
@@ -140,12 +142,12 @@ class ContactShippingShipment extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+                  margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
                   height: 45,
                   width: 220,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Color.fromARGB(179, 233, 233, 233)),
+                      color: const Color.fromARGB(179, 233, 233, 233)),
                   child: TextField(
                     decoration: InputDecoration(
                       border: InputBorder.none,
@@ -165,27 +167,27 @@ class ContactShippingShipment extends StatelessWidget {
             Row(
               children: [
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 15),
+                  margin: const EdgeInsets.symmetric(horizontal: 15),
                   height: 45,
                   width: 220,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Color.fromARGB(179, 233, 233, 233)),
+                      color: const Color.fromARGB(179, 233, 233, 233)),
                   child: TextField(
                       decoration: InputDecoration(
                           border: InputBorder.none,
                           hintText: "Pickup",
                           hintStyle:
                               TextStyle(color: Colors.black.withOpacity(0.5)),
-                          prefixIcon: Icon(Icons.location_on))),
+                          prefixIcon: const Icon(Icons.location_on))),
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 15),
+                  margin: const EdgeInsets.symmetric(horizontal: 15),
                   height: 45,
                   width: 220,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Color.fromARGB(179, 233, 233, 233)),
+                      color: const Color.fromARGB(179, 233, 233, 233)),
                   child: TextField(
                       decoration: InputDecoration(
                           border: InputBorder.none,
@@ -199,62 +201,62 @@ class ContactShippingShipment extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 10),
-              child: Text(
+              margin: const EdgeInsets.symmetric(horizontal: 10),
+              child: const Text(
                 "Shipment Type",
                 style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Row(
               children: [
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 15),
+                  margin: const EdgeInsets.symmetric(horizontal: 15),
                   height: 45,
                   width: 220,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Color.fromARGB(179, 233, 233, 233)),
+                      color: const Color.fromARGB(179, 233, 233, 233)),
                   child: TextField(
                       decoration: InputDecoration(
                           border: InputBorder.none,
                           hintText: "Type",
                           hintStyle:
                               TextStyle(color: Colors.black.withOpacity(0.5)),
-                          prefixIcon: Icon(Icons.abc),
+                          prefixIcon: const Icon(Icons.abc),
                           suffixIcon: IconButton(
                               onPressed: () {},
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.arrow_drop_down,
                                 size: 30,
                               )))),
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 15),
+                  margin: const EdgeInsets.symmetric(horizontal: 15),
                   height: 45,
                   width: 220,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Color.fromARGB(179, 233, 233, 233)),
+                      color: const Color.fromARGB(179, 233, 233, 233)),
                   child: TextField(
                       decoration: InputDecoration(
                           border: InputBorder.none,
                           hintText: "Type",
                           hintStyle:
                               TextStyle(color: Colors.black.withOpacity(0.5)),
-                          prefixIcon: Icon(Icons.mail_sharp),
+                          prefixIcon: const Icon(Icons.mail_sharp),
                           suffixIcon: IconButton(
                               onPressed: () {},
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.arrow_drop_down_sharp,
                                 size: 30,
                               )))),
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Padding(
@@ -266,7 +268,7 @@ class ContactShippingShipment extends StatelessWidget {
                   width: 490,
                   height: 45,
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(0, 39, 106, 1),
+                      color: const Color.fromRGBO(0, 39, 106, 1),
                       borderRadius: BorderRadius.circular(10)),
                   child: Text(
                     "Add",

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:truck_tracking/screens/Add_shipment/Pages/transparent_background.dart';
 
 class PaymentDetail extends StatelessWidget {
+  const PaymentDetail({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -27,7 +29,7 @@ class PaymentDetail extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                              margin: EdgeInsets.symmetric(vertical: 10),
+                              margin: const EdgeInsets.symmetric(vertical: 10),
                               child: Text(
                                 "Free Shipping",
                                 style: TextStyle(
@@ -63,7 +65,7 @@ class PaymentDetail extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                              margin: EdgeInsets.symmetric(vertical: 10),
+                              margin: const EdgeInsets.symmetric(vertical: 10),
                               child: Text(
                                 "Free Shipping",
                                 style: TextStyle(
@@ -93,7 +95,7 @@ class PaymentDetail extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Container(
@@ -102,15 +104,15 @@ class PaymentDetail extends StatelessWidget {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 gradient: LinearGradient(colors: [
-                  Color.fromARGB(255, 103, 183, 220).withOpacity(0.7),
-                  Color.fromARGB(255, 209, 133, 159).withOpacity(0.5),
+                  const Color.fromARGB(255, 103, 183, 220).withOpacity(0.7),
+                  const Color.fromARGB(255, 209, 133, 159).withOpacity(0.5),
                 ])),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-                  child: Text(
+                  margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                  child: const Text(
                     "Payment Details",
                     style: TextStyle(
                         fontSize: 25,
@@ -121,7 +123,7 @@ class PaymentDetail extends StatelessWidget {
                 Row(
                   children: [
                     Container(
-                      margin: EdgeInsets.only(left: 40),
+                      margin: const EdgeInsets.only(left: 40),
                       child: TransparentBackground(
                           theWidth: 110.0,
                           theHeight: 80.0,
@@ -134,7 +136,7 @@ class PaymentDetail extends StatelessWidget {
                     ),
                     Container(
                       margin:
-                          EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                          const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                       child: TransparentBackground(
                           theWidth: 110.0,
                           theHeight: 80.0,
@@ -146,7 +148,7 @@ class PaymentDetail extends StatelessWidget {
                     ),
                     Container(
                       margin:
-                          EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                          const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                       child: TransparentBackground(
                           theWidth: 110.0,
                           theHeight: 80.0,
@@ -159,7 +161,7 @@ class PaymentDetail extends StatelessWidget {
                     ),
                     Container(
                       margin:
-                          EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                          const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                       child: TransparentBackground(
                           theWidth: 110.0,
                           theHeight: 70.0,
@@ -175,7 +177,7 @@ class PaymentDetail extends StatelessWidget {
                   ],
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 35, vertical: 10),
+                  margin: const EdgeInsets.symmetric(horizontal: 35, vertical: 10),
                   height: 45,
                   width: 500,
                   decoration: BoxDecoration(
@@ -183,7 +185,7 @@ class PaymentDetail extends StatelessWidget {
                       color: Colors.white70),
                   child: TextField(
                       decoration: InputDecoration(
-                    contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                    contentPadding: const EdgeInsets.symmetric(horizontal: 10),
                     border: InputBorder.none,
                     hintText: "Name on Card",
                     hintStyle: TextStyle(
@@ -192,7 +194,7 @@ class PaymentDetail extends StatelessWidget {
                   )),
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 35, vertical: 10),
+                  margin: const EdgeInsets.symmetric(horizontal: 35, vertical: 10),
                   height: 45,
                   width: 500,
                   decoration: BoxDecoration(
@@ -200,7 +202,7 @@ class PaymentDetail extends StatelessWidget {
                       color: Colors.white70),
                   child: TextField(
                       decoration: InputDecoration(
-                    contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                    contentPadding: const EdgeInsets.symmetric(horizontal: 10),
                     border: InputBorder.none,
                     hintText: "Card Number",
                     hintStyle: TextStyle(
@@ -212,7 +214,7 @@ class PaymentDetail extends StatelessWidget {
                   children: [
                     Container(
                       margin:
-                          EdgeInsets.symmetric(horizontal: 35, vertical: 10),
+                          const EdgeInsets.symmetric(horizontal: 35, vertical: 10),
                       height: 45,
                       width: 230,
                       decoration: BoxDecoration(
@@ -220,7 +222,7 @@ class PaymentDetail extends StatelessWidget {
                           color: Colors.white70),
                       child: TextField(
                           decoration: InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                        contentPadding: const EdgeInsets.symmetric(horizontal: 10),
                         border: InputBorder.none,
                         hintText: "Expiry Date",
                         hintStyle: TextStyle(
@@ -230,7 +232,7 @@ class PaymentDetail extends StatelessWidget {
                     ),
                     Container(
                       margin:
-                          EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                          const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                       height: 45,
                       width: 230,
                       decoration: BoxDecoration(
@@ -238,7 +240,7 @@ class PaymentDetail extends StatelessWidget {
                           color: Colors.white70),
                       child: TextField(
                           decoration: InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                        contentPadding: const EdgeInsets.symmetric(horizontal: 10),
                         border: InputBorder.none,
                         hintText: "Cvv",
                         hintStyle: TextStyle(
@@ -249,7 +251,7 @@ class PaymentDetail extends StatelessWidget {
                   ],
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 30, vertical: 25),
+                  margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 25),
                   width: 500,
                   height: 180,
                   decoration: BoxDecoration(
@@ -271,7 +273,7 @@ class PaymentDetail extends StatelessWidget {
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black.withOpacity(0.6)),
                             ),
-                            Text(
+                            const Text(
                               "Rs.1499/-",
                               style: TextStyle(
                                   fontSize: 25,
@@ -291,7 +293,7 @@ class PaymentDetail extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Container(
-                                    margin: EdgeInsets.symmetric(vertical: 10),
+                                    margin: const EdgeInsets.symmetric(vertical: 10),
                                     child: Text(
                                       "Shipping",
                                       style: TextStyle(
@@ -299,7 +301,7 @@ class PaymentDetail extends StatelessWidget {
                                           fontWeight: FontWeight.bold,
                                           color: Colors.black.withOpacity(0.6)),
                                     )),
-                                Text(
+                                const Text(
                                   "Free Shipping (3-5 Working Days)",
                                   style: TextStyle(
                                       fontSize: 15,
@@ -308,7 +310,7 @@ class PaymentDetail extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            Text(
+                            const Text(
                               "Free",
                               style: TextStyle(
                                   fontSize: 25,
@@ -331,7 +333,7 @@ class PaymentDetail extends StatelessWidget {
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black.withOpacity(0.6)),
                             ),
-                            Text(
+                            const Text(
                               "Rs.1499/-",
                               style: TextStyle(
                                   fontSize: 25,
@@ -347,7 +349,7 @@ class PaymentDetail extends StatelessWidget {
                 InkWell(
                   onTap: () {},
                   child: Container(
-                    margin: EdgeInsets.symmetric(
+                    margin: const EdgeInsets.symmetric(
                       horizontal: 30,
                     ),
                     alignment: Alignment.center,
@@ -355,7 +357,7 @@ class PaymentDetail extends StatelessWidget {
                     width: 500,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Color.fromRGBO(0, 39, 106, 1)),
+                        color: const Color.fromRGBO(0, 39, 106, 1)),
                     child: Text(
                       "Pay ₹1499",
                       style: TextStyle(

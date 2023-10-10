@@ -1,6 +1,4 @@
 import 'dart:async';
-import 'dart:ui';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_polyline_points_plus/flutter_polyline_points_plus.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -25,7 +23,7 @@ class _LocationTrackingState extends State<LocationTracking> with TickerProvider
   LatLng _secondMarkerPosition = const LatLng(0.0, 0.0);
 
   List<LatLng> polylineCoordinates = [];
-  Set<Polyline> _polylines = {};
+  final Set<Polyline> _polylines = {};
 
   void updateMarkerPosition(double lat, double lng) {
     setState(() {
@@ -51,12 +49,12 @@ class _LocationTrackingState extends State<LocationTracking> with TickerProvider
         PointLatLng(_secondMarkerPosition.latitude, _secondMarkerPosition.longitude)
     );
     if (result.points.isNotEmpty) {
-      result.points.forEach((PointLatLng point) {
+      for (var point in result.points) {
         polylineCoordinates.add(LatLng(point.latitude, point.longitude));
-      });
+      }
       setState(() {
         _polylines.add(Polyline(
-          polylineId: PolylineId("route"),
+          polylineId: const PolylineId("route"),
           points: polylineCoordinates,
         ));
       });
@@ -91,12 +89,12 @@ class _LocationTrackingState extends State<LocationTracking> with TickerProvider
             ),
             markers:{
               Marker(
-                markerId: MarkerId("currentLocation"),
+                markerId: const MarkerId("currentLocation"),
                 position: _markerPosition,
                 
               ),
               Marker(
-                markerId: MarkerId("secondLocation"),
+                markerId: const MarkerId("secondLocation"),
                 position: _secondMarkerPosition,
               ),
             },

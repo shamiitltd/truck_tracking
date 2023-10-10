@@ -5,7 +5,7 @@ import 'package:truck_tracking/screens/Reports/report_widget.dart';
 
 
 Widget bestDrivers(BuildContext context){
- return Container(
+ return SizedBox(
           height: MediaQuery.of(context).size.height *.85,
           width: MediaQuery.of(context).size.width *.7,   
           child:  Card(
@@ -16,9 +16,9 @@ Widget bestDrivers(BuildContext context){
               children: [
                 HeadingRow(v1: 'Driver id', v2: 'Name',
                  v3: 'Total trips', v4: 'Completed trips', v5: 'Cancellation rate'),
-                Divider(thickness: 2,color: AppColors.loginTextColor,),                    
+                const Divider(thickness: 2,color: AppColors.loginTextColor,),                    
                 SizedBox(height: MediaQuery.of(context).size.height *.6,
-                child: BestDriverApi()
+                child: const BestDriverApi()
                 ),
               ],
             ),          

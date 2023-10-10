@@ -167,13 +167,13 @@ class _TrackingContainerState extends State<TrackingContainer> {
               return DataRow(cells: [
                 DataCell(Text(
                   data.vehicle,
-                  style: TextStyle(color: Colors.blue),
+                  style: const TextStyle(color: Colors.blue),
                 )),
-                DataCell(Text(data.device, style: TextStyle(fontSize: 12))),
-                DataCell(Text(data.driver, style: TextStyle(fontSize: 12))),
-                DataCell(Text(data.fleet, style: TextStyle(fontSize: 12))),
-                DataCell(Text(data.location, style: TextStyle(fontSize: 12))),
-                DataCell(Text(data.start, style: TextStyle(fontSize: 12))),
+                DataCell(Text(data.device, style: const TextStyle(fontSize: 12))),
+                DataCell(Text(data.driver, style: const TextStyle(fontSize: 12))),
+                DataCell(Text(data.fleet, style: const TextStyle(fontSize: 12))),
+                DataCell(Text(data.location, style: const TextStyle(fontSize: 12))),
+                DataCell(Text(data.start, style: const TextStyle(fontSize: 12))),
                 //  DataCell(LinearPercentIndicator( width: 100,lineHeight: 8.0,percent: 0.5,progressColor: Colors.green, linearStrokeCap: LinearStrokeCap.roundAll, barRadius: Radius.circular(10),)),
 
                 // ignore: deprecated_member_use

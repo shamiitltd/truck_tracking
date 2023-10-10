@@ -469,7 +469,7 @@ class MapRecordPageOSMState extends State<MapRecordPageOSM> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor:  Color(0x4A4336FF),
+        backgroundColor:  const Color(0x4A4336FF),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -603,7 +603,7 @@ class MapRecordPageOSMState extends State<MapRecordPageOSM> {
                           'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                       // urlTemplate:'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
                       userAgentPackageName: packageName,
-                      subdomains: ['a', 'b', 'c'],
+                      subdomains: const ['a', 'b', 'c'],
                     ),
                     PolylineLayer(
                       polylines: [

@@ -20,7 +20,7 @@ void showOrdersPopup(BuildContext context, List<Order> orders, Function(double, 
                 status.isEmpty ? 'Total Orders' : '$status Orders',
                 style: AppFonts.bold,
               ),
-              content: Container(
+              content: SizedBox(
                 width: 300,
                 height: 300,
                 child: ListView.builder(
@@ -42,7 +42,7 @@ void showOrdersPopup(BuildContext context, List<Order> orders, Function(double, 
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
-                  child: Text('Close'),
+                  child: const Text('Close'),
                 ),
               ],
             ),
@@ -58,22 +58,22 @@ void showOrderDetailsPopup(BuildContext context, Order order, Function(double, d
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        title: Text('Order Details'),
-        content: Container(
+        title: const Text('Order Details'),
+        content: SizedBox(
           width: 400,
           height: 400,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _buildDetailRow('Order ID:', '${order.id}'),
-              _buildDetailRow('Address:', '${order.address}'),
-              _buildDetailRow('Status:', '${order.status}'),
-              _buildDetailRow('Aadhar:', '${order.aadhar}'),
-              _buildDetailRow('PAN:', '${order.pan}'),
-              _buildDetailRow('Driver\'s License:', '${order.driversLicense}'),
-              _buildDetailRow('Driver\'s Name:', '${order.name}'),
-              _buildDetailRow('Vehicle Type:', '${order.vehicleType}'),
-              _buildDetailRow('Package Type:', '${order.packageType}'),
+              _buildDetailRow('Order ID:', order.id),
+              _buildDetailRow('Address:', order.address),
+              _buildDetailRow('Status:', order.status),
+              _buildDetailRow('Aadhar:', order.aadhar),
+              _buildDetailRow('PAN:', order.pan),
+              _buildDetailRow('Driver\'s License:', order.driversLicense),
+              _buildDetailRow('Driver\'s Name:', order.name),
+              _buildDetailRow('Vehicle Type:', order.vehicleType),
+              _buildDetailRow('Package Type:', order.packageType),
             ],
           ),
         ),
@@ -82,13 +82,13 @@ void showOrderDetailsPopup(BuildContext context, Order order, Function(double, d
             onPressed: () {
               Navigator.of(context).pop();
             },
-            child: Text('Close'),
+            child: const Text('Close'),
           ),
           ElevatedButton(
             onPressed: () {
               _trackOrder(context, order, updateLocationCallback);
             },
-            child: Text('Track'),
+            child: const Text('Track'),
           ),
         ],
       );

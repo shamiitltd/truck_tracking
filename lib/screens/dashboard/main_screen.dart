@@ -18,13 +18,13 @@ class _MainScreenState extends State<MainScreen> {
       backgroundColor: AppColors.backgroundColor,
       body: Row(
         children: [
-          Padding(padding: AppDimensions.smallPadding),
+          const Padding(padding: AppDimensions.smallPadding),
           Container(
             padding: AppDimensions.mediumPadding,
             width: 284,
-            child: LeftDrawer(),
+            child: const LeftDrawer(),
           ),
-          SizedBox(
+          const SizedBox(
             width: AppDimensions.defuaultPadding,
           ),
           Expanded(

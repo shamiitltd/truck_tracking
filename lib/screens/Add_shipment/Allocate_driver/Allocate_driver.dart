@@ -86,8 +86,8 @@ class _AlocateDriverWithVehicleState extends State<AlocateDriverWithVehicle> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-                child: Text(
+                padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                child: const Text(
                   "Registered Vehicles",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                 ),

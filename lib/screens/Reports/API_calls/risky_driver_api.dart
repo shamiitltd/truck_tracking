@@ -35,9 +35,9 @@ class _RiskyDriversApiState extends State<RiskyDriversApi> {
               future: getUserApi (),
               builder: (context , snapshot){
                 if(snapshot.connectionState == ConnectionState.waiting){
-                  return Center(child: CircularProgressIndicator());
+                  return const Center(child: CircularProgressIndicator());
                 }else {
-                  return data.length==null?Center(child: CircularProgressIndicator())
+                  return data.length==null?const Center(child: CircularProgressIndicator())
                   :ListView.builder(
                     itemCount: data.length,
                       itemBuilder: (context, index){

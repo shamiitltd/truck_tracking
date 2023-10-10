@@ -69,7 +69,7 @@ class _DriverListState extends State<DriverList> {
   }
   @override
   Widget build(BuildContext context) {
-      return Container(
+      return SizedBox(
       width: 100,
       height: 100,
         child: FutureBuilder(
@@ -96,7 +96,7 @@ class _DriverListState extends State<DriverList> {
 class DriverRow extends StatelessWidget {
   final Driver driver;
 
-  DriverRow({required this.driver});
+  const DriverRow({super.key, required this.driver});
 
   @override
   Widget build(BuildContext context) {

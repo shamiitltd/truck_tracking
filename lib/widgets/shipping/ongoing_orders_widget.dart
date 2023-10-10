@@ -9,7 +9,7 @@ class OngoingOrdersWidget extends StatelessWidget {
   int _previousOngoingOrders = 0;
   final Function(double, double) updateLocationCallback;
 
-  OngoingOrdersWidget({Key? key, required this.updateLocationCallback});
+  OngoingOrdersWidget({super.key, required this.updateLocationCallback});
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +21,11 @@ class OngoingOrdersWidget extends StatelessWidget {
           future: readJsonData(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return CircularProgressIndicator();
+              return const CircularProgressIndicator();
             } else if (snapshot.hasError) {
               return Text('Error: ${snapshot.error}');
             } else if (!snapshot.hasData) {
-              return Text('No data available');
+              return const Text('No data available');
             } else {
               final orders = snapshot.data;
               final ongoingOrders =
@@ -39,7 +39,7 @@ class OngoingOrdersWidget extends StatelessWidget {
 
               _previousOngoingOrders = ongoingOrders;
 
-              return Container(
+              return SizedBox(
                 width: 260,
                 child: Expanded(
                   child: GestureDetector(
@@ -107,7 +107,7 @@ class OngoingOrdersWidget extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  FittedBox(
+                                  const FittedBox(
                                     fit: BoxFit.contain,
                                     child: Text(
                                       'Ongoing Order',
@@ -116,7 +116,7 @@ class OngoingOrdersWidget extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 3,
                                   ),
                                   FittedBox(

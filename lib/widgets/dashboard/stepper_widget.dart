@@ -4,7 +4,7 @@ import 'package:truck_tracking/config/fonts/fonts.dart';
 
 // ignore: must_be_immutable
 class Stepper_widget extends StatefulWidget {
-   Stepper_widget({super.key});
+   const Stepper_widget({super.key});
 
   String? get email => null;
   get name => null;
@@ -139,7 +139,7 @@ class _Stepper_widgetState extends State<Stepper_widget> {
       state: activestepindex<=1 ? StepState.editing:StepState.complete,
       isActive: activestepindex>=1,
       title: const Text("Document Information"),
-      content: Center(
+      content: const Center(
         child: Text("Documents"),
     ))
   ];
@@ -149,7 +149,7 @@ class _Stepper_widgetState extends State<Stepper_widget> {
   Widget build(BuildContext context) {
     
 
-    return Container(
+    return SizedBox(
       width: 800,
       child: Stepper(
         steps: step_list(),

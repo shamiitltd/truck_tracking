@@ -25,11 +25,11 @@ class TotalOrdersWidget extends StatelessWidget {
           future: readJsonData(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return CircularProgressIndicator();
+              return const CircularProgressIndicator();
             } else if (snapshot.hasError) {
               return Text('Error: ${snapshot.error}');
             } else if (!snapshot.hasData) {
-              return Text('No data available');
+              return const Text('No data available');
             } else {
               final orders = snapshot.data;
               final totalOrders = orders?.length ?? 0;
@@ -38,7 +38,7 @@ class TotalOrdersWidget extends StatelessWidget {
               final isIncreased = totalOrders > _previousTotalOrders;
               _previousTotalOrders = totalOrders;
 
-              return Container(
+              return SizedBox(
                 width: 260,
                 child: Expanded(
                   child: GestureDetector(
@@ -107,7 +107,7 @@ class TotalOrdersWidget extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  FittedBox(
+                                  const FittedBox(
                                     fit: BoxFit.contain,
                                     child: Text(
                                       'Total Order',
@@ -116,7 +116,7 @@ class TotalOrdersWidget extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 3,
                                   ),
                                   FittedBox(

@@ -12,7 +12,7 @@ class LineTitles {
           showTitles: true,
           reservedSize: 35,
           getTitlesWidget:(value, meta){
-            return Text(
+            return const Text(
               "wdsf",
               style:TextStyle(
             color: Color(0xff68737d),
@@ -45,7 +45,7 @@ class LineTitles {
           showTitles: true,
           getTitlesWidget:(value, meta) { 
             
-           return Text( "sds", style: TextStyle(
+           return const Text( "sds", style: TextStyle(
             color: Color(0xff67727d),
             fontWeight: FontWeight.bold,
             fontSize: 15,

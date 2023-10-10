@@ -25,23 +25,23 @@ class _ReportsState extends State<Reports> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Padding(padding: AppDimensions.smallPadding),
+          const Padding(padding: AppDimensions.smallPadding),
           Container(
             padding: AppDimensions.mediumPadding,
             width: 284,
-            child: LeftDrawer(),
+            child: const LeftDrawer(),
           ),
-          SizedBox(
+          const SizedBox(
             width: AppDimensions.defuaultPadding,
           ),          
           Expanded(
             child: Container(
-              margin: EdgeInsets.fromLTRB(0, 5, 15, 0),
+              margin: const EdgeInsets.fromLTRB(0, 5, 15, 0),
               child: Column(
                 children: [
                 Container(            
-                  padding: EdgeInsets.all(10),
-                  margin: EdgeInsets.only(left: 20,top: 20),  
+                  padding: const EdgeInsets.all(10),
+                  margin: const EdgeInsets.only(left: 20,top: 20),  
                   width: MediaQuery.of(context).size.width *.28,
                   height: MediaQuery.of(context).size.height *.6,   
                   decoration:  BoxDecoration(
@@ -54,22 +54,22 @@ class _ReportsState extends State<Reports> {
                     children: [         
                         Column(        
                           children: [     
-                            listHeading(heading: 'Drivers'), 
-                             SizedBox(
+                            const listHeading(heading: 'Drivers'), 
+                             const SizedBox(
                               height: 10,
                             ),
-                            Divider(thickness: 2),                         
-                            listTiles(title: "Drivers list",icon: Icon(Icons.list_alt),content: driverList(context),),
-                             Divider(thickness: 1),
-                             listTiles(title: "Performance",icon: Icon(Icons.tv),content: performance(context)),
-                             Divider(thickness: 1),
-                            listTiles(title: "Scoring",icon: Icon(Icons.scoreboard),content: dummyList(context)),                          
-                             Divider(thickness: 1),                          
-                            listTiles(title: "Best drivers",icon: Icon(Icons.person),content: bestDrivers(context)),                          
-                              Divider(thickness: 1),
-                            listTiles(title: "Driver Statistics",icon: Icon(Icons.bar_chart),content: driverStat(context)),                          
-                             Divider(thickness: 1),
-                            listTiles(title: "Risky Drivers",icon: Icon(Icons.group),content: riskyDriver(context)),                          
+                            const Divider(thickness: 2),                         
+                            listTiles(title: "Drivers list",icon: const Icon(Icons.list_alt),content: driverList(context),),
+                             const Divider(thickness: 1),
+                             listTiles(title: "Performance",icon: const Icon(Icons.tv),content: performance(context)),
+                             const Divider(thickness: 1),
+                            listTiles(title: "Scoring",icon: const Icon(Icons.scoreboard),content: dummyList(context)),                          
+                             const Divider(thickness: 1),                          
+                            listTiles(title: "Best drivers",icon: const Icon(Icons.person),content: bestDrivers(context)),                          
+                              const Divider(thickness: 1),
+                            listTiles(title: "Driver Statistics",icon: const Icon(Icons.bar_chart),content: driverStat(context)),                          
+                             const Divider(thickness: 1),
+                            listTiles(title: "Risky Drivers",icon: const Icon(Icons.group),content: riskyDriver(context)),                          
                           ],
                         ),
                     ],
@@ -77,8 +77,8 @@ class _ReportsState extends State<Reports> {
                 ), 
                     
                 Container(
-                  padding: EdgeInsets.all(10),
-                  margin: EdgeInsets.only(left: 20,top: 20),
+                  padding: const EdgeInsets.all(10),
+                  margin: const EdgeInsets.only(left: 20,top: 20),
                         // padding: AppDimensions.largePadding,
                    width: MediaQuery.of(context).size.width *.28,
                   height: MediaQuery.of(context).size.height *.3,   
@@ -92,14 +92,14 @@ class _ReportsState extends State<Reports> {
                     children: [
                       Column(
                         children: [
-                          listHeading(heading: 'Trips'),                        
-                             SizedBox(
+                          const listHeading(heading: 'Trips'),                        
+                             const SizedBox(
                               height: 10,
                             ),
-                            Divider(thickness: 2),                          
-                            listTiles(title: "Trips details",icon: Icon(Icons.person),content: tripsDetails(context)),                           
-                              Divider(thickness: 1),
-                              listTiles(title: "Trips location",icon: Icon(Icons.location_history),content: tripsDetails(context)),                       
+                            const Divider(thickness: 2),                          
+                            listTiles(title: "Trips details",icon: const Icon(Icons.person),content: tripsDetails(context)),                           
+                              const Divider(thickness: 1),
+                              listTiles(title: "Trips location",icon: const Icon(Icons.location_history),content: tripsDetails(context)),                       
                         ],
                       )
                   ]),
@@ -112,8 +112,8 @@ class _ReportsState extends State<Reports> {
             child: Column(
               children: [
                  Container(            
-                padding: EdgeInsets.all(10),
-                margin: EdgeInsets.only(left: 20,top: 25),  
+                padding: const EdgeInsets.all(10),
+                margin: const EdgeInsets.only(left: 20,top: 25),  
                  width: MediaQuery.of(context).size.width *.25,
                 height: MediaQuery.of(context).size.height *.2,   
                 decoration:  BoxDecoration(
@@ -126,12 +126,12 @@ class _ReportsState extends State<Reports> {
                   children: [         
                       Column(        
                         children: [
-                          listHeading(heading: 'Vehicles'),
-                           SizedBox(
+                          const listHeading(heading: 'Vehicles'),
+                           const SizedBox(
                             height: 10,
                           ),
-                          Divider(thickness: 2),
-                         listTiles(title: "Vehicles",icon: Icon(Icons.car_crash_rounded),content: vehicleDetails(context)),
+                          const Divider(thickness: 2),
+                         listTiles(title: "Vehicles",icon: const Icon(Icons.car_crash_rounded),content: vehicleDetails(context)),
                         ],
                       ),
                   ],
@@ -139,8 +139,8 @@ class _ReportsState extends State<Reports> {
           
               ),
               Container(
-                padding: EdgeInsets.all(10),
-                margin: EdgeInsets.only(left: 20,top: 20),
+                padding: const EdgeInsets.all(10),
+                margin: const EdgeInsets.only(left: 20,top: 20),
                       // padding: AppDimensions.largePadding,
                  width: MediaQuery.of(context).size.width *.25,
                 height: MediaQuery.of(context).size.height *.6,   
@@ -154,21 +154,21 @@ class _ReportsState extends State<Reports> {
                   children: [
                     Column(
                       children: [
-                        listHeading(heading: 'Violations'),
-                           SizedBox(
+                        const listHeading(heading: 'Violations'),
+                           const SizedBox(
                             height: 10,
                           ),
-                          Divider(thickness: 2),
-                          listTiles(title: "Violation details",icon: Icon(Icons.person),content: dummyList(context)), 
-                            Divider(thickness: 1),
-                            listTiles(title: "Duration",icon: Icon(Icons.timelapse),content: dummyList(context)),
-                          Divider(thickness: 1),
-                          listTiles(title: "Locations",icon: Icon(Icons.location_history),content: dummyList(context)),                             Divider(thickness: 1),
-                             listTiles(title: "Overview",icon: Icon(Icons.info),content: dummyList(context)),                             
-                            Divider(thickness: 1),
-                            listTiles(title: "Violation summary",icon: Icon(Icons.summarize_outlined),content: dummyList(context)),                             
-                          Divider(thickness: 1),
-                          listTiles(title: "Statistics",icon: Icon(Icons.bar_chart),content: dummyList(context)),                             
+                          const Divider(thickness: 2),
+                          listTiles(title: "Violation details",icon: const Icon(Icons.person),content: dummyList(context)), 
+                            const Divider(thickness: 1),
+                            listTiles(title: "Duration",icon: const Icon(Icons.timelapse),content: dummyList(context)),
+                          const Divider(thickness: 1),
+                          listTiles(title: "Locations",icon: const Icon(Icons.location_history),content: dummyList(context)),                             const Divider(thickness: 1),
+                             listTiles(title: "Overview",icon: const Icon(Icons.info),content: dummyList(context)),                             
+                            const Divider(thickness: 1),
+                            listTiles(title: "Violation summary",icon: const Icon(Icons.summarize_outlined),content: dummyList(context)),                             
+                          const Divider(thickness: 1),
+                          listTiles(title: "Statistics",icon: const Icon(Icons.bar_chart),content: dummyList(context)),                             
                       ],
                     )
                 ]),
@@ -178,8 +178,8 @@ class _ReportsState extends State<Reports> {
           Container(
             child: Column(children: [
                Container(            
-                padding: EdgeInsets.all(10),
-                margin: EdgeInsets.only(left: 20,top: 25,right: 15),   
+                padding: const EdgeInsets.all(10),
+                margin: const EdgeInsets.only(left: 20,top: 25,right: 15),   
                  width: MediaQuery.of(context).size.width *.25,
                 height: MediaQuery.of(context).size.height *.3,   
                 decoration:  BoxDecoration(
@@ -192,22 +192,22 @@ class _ReportsState extends State<Reports> {
                   children: [         
                       Column(        
                         children: [
-                          listHeading(heading: "Activity",),
-                           SizedBox(
+                          const listHeading(heading: "Activity",),
+                           const SizedBox(
                             height: 10,
                           ),
-                          Divider(thickness: 2),
-                         listTiles(title: "Activity timeline",icon: Icon(Icons.timeline),content: dummyList(context)),                          
-                           Divider(thickness: 1),
-                          listTiles(title: "Summary",icon: Icon(Icons.summarize_outlined),content: dummyList(context)),                          
+                          const Divider(thickness: 2),
+                         listTiles(title: "Activity timeline",icon: const Icon(Icons.timeline),content: dummyList(context)),                          
+                           const Divider(thickness: 1),
+                          listTiles(title: "Summary",icon: const Icon(Icons.summarize_outlined),content: dummyList(context)),                          
                         ],
                       ),
                   ],
                 ),          
               ),
               Container(
-                padding: EdgeInsets.all(10),
-                margin: EdgeInsets.only(left: 20,top: 20,right: 15),
+                padding: const EdgeInsets.all(10),
+                margin: const EdgeInsets.only(left: 20,top: 20,right: 15),
                       // padding: AppDimensions.largePadding,                   
                  width: MediaQuery.of(context).size.width *.25,
                 height: MediaQuery.of(context).size.height *.52,   
@@ -221,20 +221,20 @@ class _ReportsState extends State<Reports> {
                   children: [
                     Column(
                       children: [
-                        listHeading(heading: 'Others'),                        
-                           SizedBox(
+                        const listHeading(heading: 'Others'),                        
+                           const SizedBox(
                             height: 10,
                           ),
-                          Divider(thickness: 2),
-                            listTiles(title: "Distance driven",icon: Icon(Icons.social_distance),content: dummyList(context)),                           
-                            Divider(thickness: 1),
-                            listTiles(title: "Long trip rest violation",icon: Icon(Icons.trip_origin_outlined),content: dummyList(context)),                             
-                          Divider(thickness: 1),
-                          listTiles(title: "Power Violation",icon: Icon(Icons.power),content: dummyList(context)),                             
-                          Divider(thickness: 1),
-                          listTiles(title: "RAG",icon: Icon(Icons.list_alt),content: dummyList(context)),                             
-                          Divider(thickness: 1),
-                          listTiles(title: "Tacho Graph",icon: Icon(Icons.bar_chart_rounded),content: dummyList(context)),  
+                          const Divider(thickness: 2),
+                            listTiles(title: "Distance driven",icon: const Icon(Icons.social_distance),content: dummyList(context)),                           
+                            const Divider(thickness: 1),
+                            listTiles(title: "Long trip rest violation",icon: const Icon(Icons.trip_origin_outlined),content: dummyList(context)),                             
+                          const Divider(thickness: 1),
+                          listTiles(title: "Power Violation",icon: const Icon(Icons.power),content: dummyList(context)),                             
+                          const Divider(thickness: 1),
+                          listTiles(title: "RAG",icon: const Icon(Icons.list_alt),content: dummyList(context)),                             
+                          const Divider(thickness: 1),
+                          listTiles(title: "Tacho Graph",icon: const Icon(Icons.bar_chart_rounded),content: dummyList(context)),  
                       ],
                     )
                 ]),
