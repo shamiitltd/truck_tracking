@@ -6,7 +6,7 @@ import 'package:truck_tracking/config/colors/colors.dart';
 import 'package:truck_tracking/config/fonts/fonts.dart';
 import 'package:truck_tracking/config/padding/padding.dart';
 import 'package:truck_tracking/shared/leftdrawer.dart';
-import 'package:truck_tracking/widgets/dashboard/stepper_widget.dart';
+
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -58,10 +58,11 @@ class _DashboardState extends State<Dashboard> {
                           onPressed: () {
                              showDialog(context: context, builder: (context)=>AlertDialog(
                               title: Text("Driver Information",style:AppFonts.bold.copyWith(color:Colors.black)),
-                              content: Driver_Info_form(),
-                              actions: [
-                                TextButton(onPressed: (){}, child:Text("Submit",style:AppFonts.medium))
-                              ],
+                              content: Container(
+                                width: 800,
+                                height: 700,
+                                child: Driver_Info_form(),
+                              ),
                              )  
                              );                           
                             ;
@@ -77,10 +78,11 @@ class _DashboardState extends State<Dashboard> {
                           onPressed: () {
                               showDialog(context: context, builder: (context)=>AlertDialog(
                               title: Text("Vehicle Information",style:AppFonts.bold.copyWith(color:Colors.black)),
-                              content: Vehicle_Info_form(),
-                              actions: [
-                                TextButton(onPressed: (){}, child:Text("Submit",style:AppFonts.medium))
-                              ],
+                              content: Container(
+                                width: 800,
+                                height: 700,
+                                child: Vehicle_Info_form(),
+                              ),
                              )  
                              ); 
                           },
@@ -92,34 +94,6 @@ class _DashboardState extends State<Dashboard> {
                           label: Text('Add Vehicle',style:AppFonts.medium.copyWith(color:Colors.black))
                           ),
                           ///////////////////////////////////////////////////////////////////////////////
-                          TextButton.icon(
-                          onPressed: () {
-                             showDialog(context: context, builder: (context)=>AlertDialog(
-                              title: Text("Stepper widget",style:AppFonts.bold.copyWith(color:Colors.black)),
-                              content: Stepper_widget(),
-                              actions: [
-                                TextButton(onPressed: (){
-                                  FirebaseFirestore.instance.collection('drivers').doc(Stepper_widget().email).set({
-                                    "name":Stepper_widget().name,
-                                    "email":Stepper_widget().email,
-                                    "contact":Stepper_widget().contact,
-                                    "address":Stepper_widget().address,
-                                    "pincode":Stepper_widget().pincode,
-                                    "state":Stepper_widget().state,
-                                    
-                                    });
-                                }, child:Text("Submit",style:AppFonts.medium))
-                              ],
-                              )
-                             );
-                            },
-                            icon: const Icon(
-                            Icons.add ,
-                            color: Colors.black,
-                            size: 24.0,
-                          ),
-                          label: Text('Add Stepper',style:AppFonts.medium.copyWith(color:Colors.black))
-                          ),
                           SizedBox(width:30),
 
                           

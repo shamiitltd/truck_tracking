@@ -9,101 +9,195 @@ class Driver_Info_form extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Container(  
-          width:800,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(AppBorderRadius.large)
-          ), 
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text("Name",style:AppFonts.vehicleformtext),
-              const SizedBox(height: 5,),
-              TextField(
-                decoration: InputDecoration(
-                  hintText: "Enter Your Name",
-                  border: FormTextBoxRadius.normal
-                ),                                        
-              ),
-              ///////////////////////////////
-              const SizedBox(height: 15,),
-              const Text("E-mail Adress",style:AppFonts.vehicleformtext),
-              const SizedBox(height: 5,),
-              TextField(
-                decoration: InputDecoration(
-                  hintText: "Enter Your email id",
-                  border: FormTextBoxRadius.normal
-                ),                                        
-              ),
-              /////////////////////////////
-              const SizedBox(height: 15,),
-              const Text("Contact",style:AppFonts.vehicleformtext),
-              const SizedBox(height: 5,),
-              TextField(
-                decoration: InputDecoration(
-                  hintText: "Enter Your Phone number",
-                  border:FormTextBoxRadius.normal
-                ),                                        
-              ),    
-              /////////////////////////////
-              const SizedBox(height: 15,),
-              const Text("Employee ID",style:AppFonts.vehicleformtext),
-              const SizedBox(height: 5,),
-              TextField(
-                maxLength: 6,
-                decoration: InputDecoration(
-                  hintText: "Enter Your Employee ID",
-                  border: FormTextBoxRadius.normal
-                ),                                        
-              ), 
-              /////////////////////////////
-              const SizedBox(height: 15,),
-              const Text("Address",style:AppFonts.vehicleformtext),
-              const SizedBox(height: 5,),
-              TextField(
-                maxLines: 3,
-                decoration: InputDecoration(
-                  hintText: "Enter Your residential address",
-                  border: FormTextBoxRadius.normal
-                ),                                        
-              ),
-            //////////////////////////////////
-            const SizedBox(height: 15,),
-            const Padding(padding:EdgeInsets.all(0),child: Row(
-              children: [
-                Text("Pin Code",style:AppFonts.vehicleformtext),
-                SizedBox(width:350 ,),
-                Text("State",style:AppFonts.vehicleformtext),
-                
-              ],
-            ), ),
-            Padding(padding: const EdgeInsets.all(0),
-            child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Flexible(
-                child: TextField(
-                  decoration: InputDecoration(
-                  hintText: "Enter Your Pin code",
-                  border: FormTextBoxRadius.normal
-                ), 
-                  ),
-              ),
-              const SizedBox(width: 16), // Add some space between the text fields
-              Flexible(
-                child: TextField(
-                  decoration: InputDecoration(
-                  hintText: "Enter Your State",
-                  border: FormTextBoxRadius.normal
-                ), 
-                ),
-              ),
-            ],
-            ),)
-            ],
-          ),
-                                 ),
+    return Scaffold(
+      body: CustomStepper(),
     );
   }
+}
+
+
+class CustomStepper extends StatefulWidget {
+  @override
+  _CustomStepperState createState() => _CustomStepperState();
+}
+
+class _CustomStepperState extends State<CustomStepper> {
+  int _currentStep = 0;
+  bool isComplete = false;
+  TextEditingController nameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController contactController = TextEditingController();
+  TextEditingController pinCodeController = TextEditingController();
+  TextEditingController stateController = TextEditingController();
+  TextEditingController addressController = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        children: [
+          Expanded(
+            child: Stepper(
+              type: StepperType.horizontal,
+              elevation: 0,
+              currentStep: _currentStep,
+              onStepTapped: (step) {
+                setState(() {
+                  _currentStep = step;
+                });
+              },
+              onStepContinue: () {
+                if (_currentStep < getSteps().length - 1) {
+                  setState(() {
+                    _currentStep++;
+                  });
+                } else {
+                  // Submit button pressed
+                  isComplete = true;
+                }
+              },
+              onStepCancel: () {
+                if (_currentStep > 0) {
+                  setState(() {
+                    _currentStep--;
+                  });
+                }
+              },
+              steps: getSteps(),
+
+              controlsBuilder: (context, details) {
+                return Row(
+                  children: [
+                    SizedBox(height: 16),
+                    ElevatedButton(
+                      onPressed: _currentStep == 1 ? null : details.onStepContinue, // Disable if it's the last step or if all steps are completed
+                      child: Text(_currentStep == 1 ? 'Completed' : 'Continue'),
+                    ),
+                    SizedBox(width: 16.0 , height: 16,),
+                    TextButton(
+                      onPressed: details.onStepCancel,
+                      child: Text('Cancel'),
+                    ),
+                  ],
+                );
+              },
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              // Submit button pressed
+              print(nameController.text);
+              print(emailController.text);
+              print(stateController.text);
+              print(addressController.text);
+              print(contactController.text);
+              print(pinCodeController.text);
+              Navigator.pop(context);
+            },
+            child: Text('Submit'),
+          ),
+
+          SizedBox(height: 30,)
+        ],
+      ),
+    );
+  }
+
+  List<Step> getSteps() => [
+    Step(
+      state: _currentStep > 0 ? StepState.complete : StepState.indexed,
+      isActive: _currentStep >=0,
+      title: Text('Driver Details'),
+      content: Column(
+        children: [
+          SizedBox(height: 10,),
+          TextFormField(
+
+            decoration: InputDecoration(
+              labelText: 'Full Name',
+              hintText: "Enter Your Name",
+              border: FormTextBoxRadius.normal,
+            ),
+            controller: nameController,
+
+          ),
+          SizedBox(height: 20,),
+
+          TextFormField(
+
+            decoration: InputDecoration(
+              labelText: 'Email',
+              hintText: "Enter Your Email",
+              border: FormTextBoxRadius.normal,
+            ),
+            controller: emailController,
+
+          ),
+          SizedBox(height: 20,),
+
+          TextFormField(
+
+            decoration: InputDecoration(
+              labelText: 'Mobile Number',
+              hintText: "Enter Your Mobile Number",
+              border: FormTextBoxRadius.normal,
+            ),
+            controller: contactController,
+
+          ),
+          SizedBox(height: 20,),
+
+          TextFormField(
+
+            decoration: InputDecoration(
+              labelText: 'Address',
+              hintText: "Enter Your Address",
+              border: FormTextBoxRadius.normal,
+            ),
+            controller: addressController,
+
+          ),
+          SizedBox(height: 20,),
+
+          TextFormField(
+
+            decoration: InputDecoration(
+              labelText: 'State',
+              hintText: "Enter Your State",
+              border: FormTextBoxRadius.normal,
+            ),
+            controller: stateController,
+          ),
+          SizedBox(height: 20,),
+
+          TextFormField(
+
+            decoration: InputDecoration(
+              labelText: 'Pincode',
+              hintText: "Enter Your Pincode",
+              border: FormTextBoxRadius.normal,
+            ),
+            controller: pinCodeController,
+
+          ),
+          SizedBox(height: 20,)
+        ],
+      ),
+    ),
+    Step(
+      state: _currentStep > 1 ? StepState.complete : StepState.indexed,
+      isActive: _currentStep > 0,
+      title: Text('Document'),
+      content: Column(
+        children: [
+          TextFormField(
+            controller: emailController,
+            decoration: InputDecoration(labelText: 'Email'),
+          ),
+          SizedBox(height: 20,)
+        ],
+      ),
+
+    ),
+  ];
 }
