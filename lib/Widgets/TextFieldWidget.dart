@@ -8,12 +8,10 @@ class myTextField extends StatelessWidget {
       required this.theicon,
       required this.theWidth,
       required this.theHeight,
-      required this.themarginHorizontal,
-      required this.themarginVertical,
+      required this.themargin,
       required this.thesuffixIcon,
       required this.obsecureText,
-      required this.thecontentPaddingHorizontal,
-      required this.thecontentPaddingVertical,
+      required this.thecontentPadding,
       required this.themaxLength})
       : super(key: key);
   final thecontroller;
@@ -21,19 +19,17 @@ class myTextField extends StatelessWidget {
   final theicon;
   final theWidth;
   final theHeight;
-  final themarginHorizontal;
-  final themarginVertical;
+  final themargin;
+
   final thesuffixIcon;
   final obsecureText;
-  final thecontentPaddingHorizontal;
-  final thecontentPaddingVertical;
+  final thecontentPadding;
   final themaxLength;
   //keyboardType: TextInputType.number,
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(
-          horizontal: themarginHorizontal, vertical: themarginVertical),
+      margin: themargin,
       height: theHeight,
       width: theWidth,
       child: TextField(
@@ -41,9 +37,7 @@ class myTextField extends StatelessWidget {
           controller: thecontroller,
           obscureText: obsecureText!,
           decoration: InputDecoration(
-              contentPadding: EdgeInsets.symmetric(
-                  horizontal: thecontentPaddingHorizontal,
-                  vertical: thecontentPaddingVertical),
+              contentPadding: thecontentPadding,
               border:
                   OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
               hintText: thehintText,
@@ -62,12 +56,10 @@ class myTextField2 extends StatelessWidget {
       required this.theicon,
       required this.theWidth,
       required this.theHeight,
-      required this.themarginHorizontal,
-      required this.themarginVertical,
+      required this.themargin,
       required this.thesuffixIcon,
       required this.obsecureText,
-      required this.thecontentPaddingHorizontal,
-      required this.thecontentPaddingVertical,
+      required this.thecontentPadding,
       required this.themaxLength})
       : super(key: key);
   final thecontroller;
@@ -75,19 +67,17 @@ class myTextField2 extends StatelessWidget {
   final theicon;
   final theWidth;
   final theHeight;
-  final themarginHorizontal;
-  final themarginVertical;
+  final themargin;
   final thesuffixIcon;
   final obsecureText;
-  final thecontentPaddingHorizontal;
-  final thecontentPaddingVertical;
+  final thecontentPadding;
+
   final themaxLength;
   //keyboardType: TextInputType.number,
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(
-          horizontal: themarginHorizontal, vertical: themarginVertical),
+      margin: themargin,
       height: theHeight,
       width: theWidth,
       decoration: BoxDecoration(
@@ -98,9 +88,7 @@ class myTextField2 extends StatelessWidget {
           controller: thecontroller,
           obscureText: obsecureText!,
           decoration: InputDecoration(
-              contentPadding: EdgeInsets.symmetric(
-                  horizontal: thecontentPaddingHorizontal,
-                  vertical: thecontentPaddingVertical),
+              contentPadding: thecontentPadding,
               border: InputBorder.none,
               hintText: thehintText,
               hintStyle: TextStyle(color: Colors.black.withOpacity(0.4)),

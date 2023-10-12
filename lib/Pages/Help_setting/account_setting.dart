@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:truck_tracking/config/Padding/padding.dart';
 
 import '../../Widgets/TextFieldWidget.dart';
 import '../../config/TextStyles/TextStyle.dart';
@@ -36,7 +37,7 @@ class _AccountSettingState extends State<AccountSetting> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                padding: AppDimensions.account_setting,
                 child: Text(
                   "Account",
                   style: heading(),
@@ -46,7 +47,7 @@ class _AccountSettingState extends State<AccountSetting> {
                 height: 30,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                padding: AppDimensions.account_setting,
                 child: Text(
                   "Review and update your account details",
                   style: TextStyle(
@@ -57,13 +58,13 @@ class _AccountSettingState extends State<AccountSetting> {
                 height: 10,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                padding: AppDimensions.account_setting,
                 child: Text(
                     "Please make sure that this detail are up to date as they will be used for bookings, and communincation with hotels"),
               ),
               SizedBox(height: 10),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
+                padding: AppDimensions.account_setting,
                 child: Text("> Learn More about that",
                     style: TextStyle(
                         color: Colors.green, fontWeight: FontWeight.bold)),
@@ -73,7 +74,7 @@ class _AccountSettingState extends State<AccountSetting> {
                 width: 20,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                padding: AppDimensions.account_setting,
                 child: Text(
                   "1.Edit Profile",
                   style: title4(),
@@ -87,12 +88,11 @@ class _AccountSettingState extends State<AccountSetting> {
                     theicon: Icon(Icons.person),
                     theWidth: MediaQuery.sizeOf(context).width * 0.144 / 1.0,
                     theHeight: 45.0,
-                    themarginHorizontal: 15.0,
-                    themarginVertical: 20.0,
+                    themargin: AppDimensions.AccountSettingTextField,
                     thesuffixIcon: null,
                     obsecureText: false,
-                    thecontentPaddingHorizontal: 0.0,
-                    thecontentPaddingVertical: 13.0,
+                    thecontentPadding:
+                        AppDimensions.AccountSettingTextFieldContent,
                     themaxLength: null,
                   ),
                   myTextField(
@@ -101,12 +101,11 @@ class _AccountSettingState extends State<AccountSetting> {
                     theicon: Icon(Icons.person),
                     theWidth: MediaQuery.sizeOf(context).width * 0.144 / 1.0,
                     theHeight: 45.0,
-                    themarginHorizontal: 15.0,
-                    themarginVertical: 20.0,
+                    themargin: AppDimensions.AccountSettingTextField,
                     thesuffixIcon: null,
                     obsecureText: false,
-                    thecontentPaddingHorizontal: 0.0,
-                    thecontentPaddingVertical: 13.0,
+                    thecontentPadding:
+                        AppDimensions.AccountSettingTextFieldContent,
                     themaxLength: null,
                   ),
                 ],
@@ -119,12 +118,11 @@ class _AccountSettingState extends State<AccountSetting> {
                     theicon: Icon(Icons.location_city),
                     theWidth: MediaQuery.sizeOf(context).width * 0.144 / 1.0,
                     theHeight: 45.0,
-                    themarginHorizontal: 15.0,
-                    themarginVertical: 20.0,
+                    themargin: AppDimensions.AccountSettingTextField,
                     thesuffixIcon: null,
                     obsecureText: false,
-                    thecontentPaddingHorizontal: 0.0,
-                    thecontentPaddingVertical: 13.0,
+                    thecontentPadding:
+                        AppDimensions.AccountSettingTextFieldContent,
                     themaxLength: null,
                   ),
                   myTextField(
@@ -133,12 +131,10 @@ class _AccountSettingState extends State<AccountSetting> {
                     theicon: Icon(Icons.person),
                     theWidth: MediaQuery.sizeOf(context).width * 0.144 / 1.0,
                     theHeight: 45.0,
-                    themarginHorizontal: 15.0,
-                    themarginVertical: 20.0,
+                    themargin: AppDimensions.AccountSettingTextField,
                     thesuffixIcon: null,
                     obsecureText: false,
-                    thecontentPaddingHorizontal: 0.0,
-                    thecontentPaddingVertical: 13.0,
+                    thecontentPadding: AppDimensions.AccountSettingTextField,
                     themaxLength: null,
                   ),
                 ],
@@ -151,12 +147,11 @@ class _AccountSettingState extends State<AccountSetting> {
                     theicon: Icon(Icons.phone),
                     theWidth: MediaQuery.sizeOf(context).width * 0.144 / 1.0,
                     theHeight: 45.0,
-                    themarginHorizontal: 15.0,
-                    themarginVertical: 20.0,
+                    themargin: AppDimensions.AccountSettingTextField,
                     thesuffixIcon: null,
                     obsecureText: false,
-                    thecontentPaddingHorizontal: 0.0,
-                    thecontentPaddingVertical: 13.0,
+                    thecontentPadding:
+                        AppDimensions.AccountSettingTextFieldContent,
                     themaxLength: null,
                   ),
                   myTextField(
@@ -165,12 +160,11 @@ class _AccountSettingState extends State<AccountSetting> {
                     theicon: Icon(Icons.phone),
                     theWidth: MediaQuery.sizeOf(context).width * 0.144 / 1.0,
                     theHeight: 45.0,
-                    themarginHorizontal: 15.0,
-                    themarginVertical: 20.0,
+                    themargin: AppDimensions.AccountSettingTextField,
                     thesuffixIcon: null,
                     obsecureText: false,
-                    thecontentPaddingHorizontal: 0.0,
-                    thecontentPaddingVertical: 13.0,
+                    thecontentPadding:
+                        AppDimensions.AccountSettingTextFieldContent,
                     themaxLength: null,
                   ),
                 ],
@@ -183,12 +177,11 @@ class _AccountSettingState extends State<AccountSetting> {
                     theicon: Icon(Icons.email),
                     theWidth: MediaQuery.sizeOf(context).width * 0.144,
                     theHeight: 45.0,
-                    themarginHorizontal: 15.0,
-                    themarginVertical: 20.0,
+                    themargin: AppDimensions.AccountSettingTextField,
                     thesuffixIcon: null,
                     obsecureText: false,
-                    thecontentPaddingHorizontal: 0.0,
-                    thecontentPaddingVertical: 13.0,
+                    thecontentPadding:
+                        AppDimensions.AccountSettingTextFieldContent,
                     themaxLength: null,
                   ),
                 ],
@@ -232,12 +225,11 @@ class _AccountSettingState extends State<AccountSetting> {
                     theicon: Icon(Icons.key_sharp),
                     theWidth: MediaQuery.sizeOf(context).width * 0.144 / 1.0,
                     theHeight: 45.0,
-                    themarginHorizontal: 15.0,
-                    themarginVertical: 20.0,
+                    themargin: AppDimensions.AccountSettingTextField,
                     thesuffixIcon: null,
                     obsecureText: true,
-                    thecontentPaddingHorizontal: 0.0,
-                    thecontentPaddingVertical: 13.0,
+                    thecontentPadding:
+                        AppDimensions.AccountSettingTextFieldContent,
                     themaxLength: null,
                   ),
                   myTextField(
@@ -246,12 +238,11 @@ class _AccountSettingState extends State<AccountSetting> {
                     theicon: Icon(Icons.key_sharp),
                     theWidth: MediaQuery.sizeOf(context).width * 0.144 / 1.0,
                     theHeight: 45.0,
-                    themarginHorizontal: 15.0,
-                    themarginVertical: 20.0,
+                    themargin: AppDimensions.AccountSettingTextField,
                     thesuffixIcon: null,
                     obsecureText: true,
-                    thecontentPaddingHorizontal: 0.0,
-                    thecontentPaddingVertical: 13.0,
+                    thecontentPadding:
+                        AppDimensions.AccountSettingTextFieldContent,
                     themaxLength: null,
                   ),
                 ],
@@ -262,12 +253,10 @@ class _AccountSettingState extends State<AccountSetting> {
                 theicon: Icon(Icons.key_sharp),
                 theWidth: MediaQuery.sizeOf(context).width * 0.144 / 1.0,
                 theHeight: 45.0,
-                themarginHorizontal: 15.0,
-                themarginVertical: 15.0,
+                themargin: AppDimensions.AccountSettingTextField,
                 thesuffixIcon: null,
                 obsecureText: true,
-                thecontentPaddingHorizontal: 0.0,
-                thecontentPaddingVertical: 13.0,
+                thecontentPadding: AppDimensions.AccountSettingTextFieldContent,
                 themaxLength: null,
               ),
               SizedBox(

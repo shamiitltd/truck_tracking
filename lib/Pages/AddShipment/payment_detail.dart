@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:truck_tracking/config/Padding/padding.dart';
 
 import '../../Widgets/PaymentCards.dart';
 import '../../Widgets/PaymentInfoWidgets.dart';
@@ -52,12 +53,10 @@ class PaymentDetail extends StatelessWidget {
                   theicon: null,
                   theWidth: 500.0,
                   theHeight: 45.0,
-                  themarginHorizontal: 40.0,
-                  themarginVertical: 10.0,
+                  themargin: AppDimensions.PaymentTextFieldMargin1,
                   thesuffixIcon: null,
                   obsecureText: false,
-                  thecontentPaddingHorizontal: 10.0,
-                  thecontentPaddingVertical: 13.0,
+                  thecontentPadding: AppDimensions.PaymentTextFieldPadding1,
                   themaxLength: null,
                 ),
                 myTextField2(
@@ -66,12 +65,10 @@ class PaymentDetail extends StatelessWidget {
                   theicon: null,
                   theWidth: 500.0,
                   theHeight: 45.0,
-                  themarginHorizontal: 40.0,
-                  themarginVertical: 10.0,
+                  themargin: AppDimensions.PaymentTextFieldMargin1,
                   thesuffixIcon: null,
                   obsecureText: false,
-                  thecontentPaddingHorizontal: 10.0,
-                  thecontentPaddingVertical: 13.0,
+                  thecontentPadding: AppDimensions.PaymentTextFieldPadding1,
                   themaxLength: null,
                 ),
                 Row(
@@ -82,12 +79,10 @@ class PaymentDetail extends StatelessWidget {
                       theicon: null,
                       theWidth: MediaQuery.sizeOf(context).width * 0.149 / 1.0,
                       theHeight: 45.0,
-                      themarginHorizontal: 40.0,
-                      themarginVertical: 10.0,
+                      themargin: AppDimensions.PaymentTextFieldMargin1,
                       thesuffixIcon: null,
                       obsecureText: false,
-                      thecontentPaddingHorizontal: 10.0,
-                      thecontentPaddingVertical: 13.0,
+                      thecontentPadding: AppDimensions.PaymentTextFieldPadding1,
                       themaxLength: null,
                     ),
                     myTextField2(
@@ -96,12 +91,10 @@ class PaymentDetail extends StatelessWidget {
                       theicon: null,
                       theWidth: MediaQuery.sizeOf(context).width * 0.149 / 1.0,
                       theHeight: 45.0,
-                      themarginHorizontal: 0.0,
-                      themarginVertical: 10.0,
+                      themargin: AppDimensions.PaymentTextFieldMargin2,
                       thesuffixIcon: null,
                       obsecureText: false,
-                      thecontentPaddingHorizontal: 10.0,
-                      thecontentPaddingVertical: 13.0,
+                      thecontentPadding: AppDimensions.PaymentTextFieldPadding1,
                       themaxLength: null,
                     ),
                   ],
