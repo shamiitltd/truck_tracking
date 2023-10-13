@@ -58,16 +58,18 @@ jobs:
       - name: Build web
         run: flutter build web --release
 
-      - name: Zip Repository
+      - name: Create ZIP Archive
         run: |
-          zip -r release.zip ./build/web/
+          cd build/web
+          zip -r web-release.zip .
+          mv web-release.zip ../
         working-directory: ${{ github.workspace }}
 
       - name: Upload ZIP Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: release
-          path: release.zip
+          name: web-artifact
+          path: web-release.zip
 
 
   BUILD-ANDROID:
@@ -96,16 +98,18 @@ jobs:
           artifacts: "build/app/outputs/apk/release/*"
           tag: v1.0.${{ github.run_number }}
           token: ${{ secrets.CODE_ACCESS_TOKEN_TT }}
-
-      - name: Zip Repository
+          
+      - name: Create ZIP Archive
         run: |
-          zip -r apk-release.zip ./build/app/outputs/apk/release/
+          cd build/app/outputs/apk/release
+          zip -r apk-release.zip .
+          mv apk-release.zip ../../../../
         working-directory: ${{ github.workspace }}
 
       - name: Upload ZIP Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: apk-release
+          name: apk-artifact
           path: apk-release.zip
           retention-days: 10
 
@@ -118,8 +122,8 @@ jobs:
       - name: Download ZIP Artifact
         uses: actions/download-artifact@v3
         with:
-          name: release
-          path: release
+          name: web-artifact
+          path: web-release
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -127,45 +131,91 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./release/
+          local-dir: ./web-release/
           exclude: |
             **/.git*
             **/.git*/**
 
-      - name: SSH into the server and unzip release.zip
+      - name: SSH into the server and unzip web-release.zip
         run: |
           sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no "${{ secrets.SSH_USER }}" << 'EOF'
             cd "${{ secrets.FTP_SERVER }}"
-            yes | unzip release.zip -d release
+            yes | unzip web-release.zip -d web-release
           EOF
 
-      - name: Copy all files from release directory
+      - name: Copy all files from web-release directory
         run: |
           sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no "${{ secrets.SSH_USER }}" << 'EOF'
             cd "${{ secrets.FTP_SERVER }}"
-            rsync -av release/ . #recursively copy files
+            rsync -av web-release/ . #recursively copy files
           EOF
           
-      - name: Remove the 'release' directory and .zip
+      - name: Remove the 'web-release' directory and .zip
         run: |
           sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no "${{ secrets.SSH_USER }}" << 'EOF'
             cd "${{ secrets.FTP_SERVER }}"
-            rm -rf release
+            rm -rf web-release
             rm -rf .git
-            rm release.zip
+            rm web-release.zip
+          EOF
+
+  QUALITYANALYSIS:
+    name: Deploy in QA
+    runs-on: ubuntu-latest
+    environment: QA
+    needs: DEVELOPMENT
+    steps:
+      - name: Download ZIP Artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: web-artifact
+          path: web-release
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./web-release/
+          exclude: |
+            **/.git*
+            **/.git*/**
+
+      - name: SSH into the server and unzip web-release.zip
+        run: |
+          sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no "${{ secrets.SSH_USER }}" << 'EOF'
+            cd "${{ secrets.FTP_SERVER }}"
+            yes | unzip web-release.zip -d web-release
+          EOF
+
+      - name: Copy all files from web-release directory
+        run: |
+          sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no "${{ secrets.SSH_USER }}" << 'EOF'
+            cd "${{ secrets.FTP_SERVER }}"
+            rsync -av web-release/ . #recursively copy files
+          EOF
+          
+      - name: Remove the 'web-release' directory and .zip
+        run: |
+          sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no "${{ secrets.SSH_USER }}" << 'EOF'
+            cd "${{ secrets.FTP_SERVER }}"
+            rm -rf web-release
+            rm -rf .git
+            rm web-release.zip
           EOF
 
   PRODUCTION:
     name: Deploy in PROD
     runs-on: ubuntu-latest
     environment: PROD    
-    needs: DEVELOPMENT
+    needs: QUALITYANALYSIS
     steps:
       - name: Download ZIP Artifact
         uses: actions/download-artifact@v3
         with:
-          name: release
-          path: release
+          name: web-artifact
+          path: web-release
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -173,31 +223,31 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./release/
+          local-dir: ./web-release/
           exclude: |
             **/.git*
             **/.git*/**
 
-      - name: SSH into the server and unzip release.zip
+      - name: SSH into the server and unzip web-release.zip
         run: |
           sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no "${{ secrets.SSH_USER }}" << 'EOF'
             cd "${{ secrets.FTP_SERVER }}"
-            yes | unzip release.zip -d release
+            yes | unzip web-release.zip -d web-release
           EOF
 
-      - name: Copy all files from release directory
+      - name: Copy all files from web-release directory
         run: |
           sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no "${{ secrets.SSH_USER }}" << 'EOF'
             cd "${{ secrets.FTP_SERVER }}"
-            rsync -av release/ . #recursively copy files
+            rsync -av web-release/ . #recursively copy files
           EOF
 
-      - name: Remove the 'release' directory and .zip
+      - name: Remove the 'web-release' directory and .zip
         run: |
           sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no "${{ secrets.SSH_USER }}" << 'EOF'
             cd "${{ secrets.FTP_SERVER }}"
-            rm -rf release
+            rm -rf web-release
             rm -rf .git
-            rm release.zip
+            rm web-release.zip
           EOF
             
