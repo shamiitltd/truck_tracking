@@ -62,7 +62,7 @@ jobs:
         run: |
           cd build/web
           zip -r web-release.zip .
-          mv web-release.zip ../
+          mv web-release.zip ../../
         working-directory: ${{ github.workspace }}
 
       - name: Upload ZIP Artifact
@@ -103,7 +103,7 @@ jobs:
         run: |
           cd build/app/outputs/apk/release
           zip -r apk-release.zip .
-          mv apk-release.zip ../../../../
+          mv apk-release.zip ../../../../../
         working-directory: ${{ github.workspace }}
 
       - name: Upload ZIP Artifact
