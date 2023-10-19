@@ -44,6 +44,7 @@ class AppColors {
   // Fleet Event and ADNOC Colors
   static const Color LinkWate = Color.fromARGB(224, 206, 225, 246);
   static Color blueGrey = Colors.blueGrey.shade100;
+  static Color lightblue = Color.fromRGBO(227, 232, 243, 10);
 
   int bnBarColor = 200;
   int deepColor = 800;

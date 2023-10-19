@@ -31,7 +31,6 @@ class _FleetEvent extends State<FleetEvent> {
     });
   }
 
-  
   @override
   Widget build(BuildContext context) {
     return isloading
@@ -51,7 +50,7 @@ class _FleetEvent extends State<FleetEvent> {
                 TitleDataWidget(
                   Title: 'Harsh breaking',
                   Data: data.harshbreaking.toString(),
-                  Boxcolor: AppColors.blueGrey,
+                  Boxcolor: AppColors.lightblue,
                   BorderRadius: null,
                   TheIcon: Icons.car_repair_sharp,
                 ),
@@ -65,7 +64,7 @@ class _FleetEvent extends State<FleetEvent> {
                 TitleDataWidget(
                   Title: 'Harsh acceleration',
                   Data: data.harshacceleration.toString(),
-                  Boxcolor: AppColors.blueGrey,
+                  Boxcolor: AppColors.lightblue,
                   BorderRadius: null,
                   TheIcon: Icons.car_repair_sharp,
                 ),
@@ -79,7 +78,7 @@ class _FleetEvent extends State<FleetEvent> {
                 TitleDataWidget(
                   Title: 'Battery tamper',
                   Data: data.batterytamper.toString(),
-                  Boxcolor: AppColors.blueGrey,
+                  Boxcolor: AppColors.lightblue,
                   BorderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(20),
                       bottomRight: Radius.circular(20)),

@@ -51,7 +51,7 @@ class _AdnocEventFleet extends State<AdnocEventFleet> {
                 TitleDataWidget(
                   Title: 'Over speed above 140km',
                   Data: data.overspeedabove140km.toString(),
-                  Boxcolor: AppColors.blueGrey,
+                  Boxcolor: AppColors.lightblue,
                   BorderRadius: null,
                   TheIcon: Icons.speed_outlined,
                 ),
@@ -65,7 +65,7 @@ class _AdnocEventFleet extends State<AdnocEventFleet> {
                 TitleDataWidget(
                   Title: 'Night driving',
                   Data: data.nightdriving.toString(),
-                  Boxcolor: AppColors.blueGrey,
+                  Boxcolor: AppColors.lightblue,
                   BorderRadius: null,
                   TheIcon: Icons.nightlight,
                 ),
@@ -79,7 +79,7 @@ class _AdnocEventFleet extends State<AdnocEventFleet> {
                 TitleDataWidget(
                   Title: 'Seat belt violation',
                   Data: data.seatbeltviolation.toString(),
-                  Boxcolor: AppColors.blueGrey,
+                  Boxcolor: AppColors.lightblue,
                   BorderRadius: null,
                   TheIcon: Icons.car_repair_sharp,
                 ),
@@ -93,7 +93,7 @@ class _AdnocEventFleet extends State<AdnocEventFleet> {
                 TitleDataWidget(
                   Title: 'Black top over speed',
                   Data: data.blacktopoverspeed.toString(),
-                  Boxcolor: AppColors.blueGrey,
+                  Boxcolor: AppColors.lightblue,
                   BorderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(20),
                       bottomRight: Radius.circular(20)),
