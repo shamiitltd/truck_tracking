@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "658580459832",
+    "project_id": "shamiit-project",
+    "storage_bucket": "shamiit-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:658580459832:android:083cebf4d2e093a60371cd",
+        "android_client_info": {
+          "package_name": "com.shamiit.truck_tracking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "658580459832-etb00dqdrpvbi0sdt5ga0ormmp7sj1tk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shamiit.truck_tracking",
+            "certificate_hash": "ffb22ff077d733908b209c1124454a96d64b735f"
+          }
+        },
+        {
+          "client_id": "658580459832-io1r708rom3be79ri4oc2pujug8q4on1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBi268ioo7sf_rXznsp1dsUQ_W_CQhFHic"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "658580459832-io1r708rom3be79ri4oc2pujug8q4on1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
