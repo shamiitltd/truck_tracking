@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:truck_tracking/config/colors/colors.dart';
-import 'package:truck_tracking/screens/Reports/report_widget.dart';
+import 'package:truck_tracking/screens/Reports/report_screen.dart';
 Widget dummyList(BuildContext context){
  return Container(
           height: MediaQuery.of(context).size.height *.85,

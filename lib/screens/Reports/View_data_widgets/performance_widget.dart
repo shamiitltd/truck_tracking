@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:truck_tracking/config/colors/colors.dart';
 import 'package:truck_tracking/screens/Reports/API_calls/performance_api_call.dart';
-import 'package:truck_tracking/screens/Reports/report_widget.dart';
+import 'package:truck_tracking/screens/Reports/report_screen.dart';
 
 
 Widget performance(BuildContext context){

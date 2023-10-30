@@ -76,7 +76,8 @@ class LeftDrawer extends StatelessWidget {
                 DashboardListTile(
                   title: "Prediction",
                   icon: const Icon(Icons.batch_prediction),
-                  press: () {
+                  press: () {   
+                    Navigator.pushNamed(context, MyRoutes.predictionscreen);
                   },
                 ),
                 const SizedBox(
@@ -85,7 +86,9 @@ class LeftDrawer extends StatelessWidget {
                 DashboardListTile(
                   title: "Settings",
                   icon: const Icon(Icons.settings),
-                  press: () {},
+                  press: () {
+                    Navigator.pushNamed(context, MyRoutes.settingsscreen);
+                  },
                 ),
               ],
             ),

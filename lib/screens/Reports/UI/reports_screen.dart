@@ -9,7 +9,7 @@ import 'package:truck_tracking/screens/Reports/View_data_widgets/performance_wid
 import 'package:truck_tracking/screens/Reports/View_data_widgets/risky_driver_widget.dart';
 import 'package:truck_tracking/screens/Reports/View_data_widgets/trips_details_widget.dart';
 import 'package:truck_tracking/screens/Reports/View_data_widgets/vehicle_widget.dart';
-import 'package:truck_tracking/screens/Reports/report_widget.dart';
+import 'package:truck_tracking/screens/Reports/report_screen.dart';
 import 'package:truck_tracking/shared/leftdrawer.dart';
 
 class Reports extends StatefulWidget {
