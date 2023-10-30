@@ -11,7 +11,6 @@ import 'package:truck_tracking/screens/Login_Page/registration_page.dart';
 import 'package:truck_tracking/screens/Reports/UI/reports_screen.dart';
 import 'package:truck_tracking/screens/Settings/setting_page.dart';
 import 'package:truck_tracking/screens/dashboard/dashboard.dart';
-
 import 'package:truck_tracking/screens/Shipping/shippingpage.dart';
 
 void main() async {
@@ -28,7 +27,6 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
     return ChangeNotifierProvider(
       create: (_) => ThemeProvider()..loadTheme(),
       child: Consumer<ThemeProvider>(
@@ -49,17 +47,6 @@ class MyApp extends StatelessWidget {
           );
         },
       ),
-=======
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      routes: {
-        MyRoutes.dashboard:(context) => Dashboard(),
-        MyRoutes.shipping: (context) =>  ShippingPage(),
-        MyRoutes.reportscreen: (context) =>  Reports(),
-        MyRoutes.addshipmentscreen: (context) =>  AddShipping(),
-      },
-      home:  Dashboard(),
->>>>>>> c437949e5eddb9e22432a3c4d23f09e040b7ab7f
     );
   }
 }

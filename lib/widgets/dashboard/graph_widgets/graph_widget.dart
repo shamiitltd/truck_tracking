@@ -4,12 +4,6 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'package:fl_chart/fl_chart.dart';
 import 'package:truck_tracking/config/colors/colors.dart';
 
-
-
-
-
-
-
 class LineChartPage extends StatefulWidget {
   const LineChartPage({super.key});
 
