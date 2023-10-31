@@ -1,7 +1,7 @@
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 
 import 'package:flutter/material.dart';
-import 'package:truck_tracking/config/Padding/padding.dart';
+import 'package:truck_tracking/config/padding/padding.dart';
 import 'package:truck_tracking/widgets/add_shipment/payment_card_widget.dart';
 import 'package:truck_tracking/widgets/add_shipment/payment_widget.dart';
 import 'package:truck_tracking/widgets/add_shipment/textfield_widget.dart';
