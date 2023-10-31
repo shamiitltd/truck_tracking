@@ -2,7 +2,7 @@
 
 import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:truck_tracking/config/Padding/padding.dart';
+import 'package:truck_tracking/config/padding/padding.dart';
 import 'package:truck_tracking/config/fonts/textstyle_subhagya.dart';
 import 'package:truck_tracking/widgets/add_shipment/textfield_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';

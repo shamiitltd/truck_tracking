@@ -1,7 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
-import 'package:truck_tracking/config/Padding/padding.dart';
+import 'package:truck_tracking/config/padding/padding.dart';
 import 'package:truck_tracking/shared/leftdrawer.dart';
 
 import 'contact_shipping_shipment.dart';
