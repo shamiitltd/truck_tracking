@@ -1,7 +1,9 @@
+// ignore_for_file: non_constant_identifier_names, prefer_typing_uninitialized_variables
+
 import 'package:flutter/material.dart';
 
 class VehicleMaintanceTitleDataWidget extends StatelessWidget {
-  VehicleMaintanceTitleDataWidget({
+  const VehicleMaintanceTitleDataWidget({
     required this.Title,
     required this.Data,
     required this.Size,
@@ -32,7 +34,7 @@ class VehicleMaintanceTitleDataWidget extends StatelessWidget {
 }
 
 class TitleDataWidget extends StatelessWidget {
-  TitleDataWidget({
+  const TitleDataWidget({
     required this.Title,
     required this.Data,
     required this.Boxcolor,
@@ -54,8 +56,8 @@ class TitleDataWidget extends StatelessWidget {
           borderRadius: BorderRadius,
           color: Boxcolor,
         ),
-        padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 15.0),
-        child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 15.0),
+        child: SizedBox(
           height: MediaQuery.sizeOf(context).height * 0.1 / 3.4,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -63,22 +65,22 @@ class TitleDataWidget extends StatelessWidget {
               Row(
                 children: [
                   Icon(TheIcon, color: Colors.blueGrey),
-                  SizedBox(
+                  const SizedBox(
                     width: 5,
                   ),
-                  Container(
+                  SizedBox(
                     width: MediaQuery.sizeOf(context).width * 0.1 / 0.88,
                     child: Text(
                       Title,
                       style:
-                          TextStyle(fontSize: 13, fontWeight: FontWeight.w500),
+                          const TextStyle(fontSize: 13, fontWeight: FontWeight.w500),
                     ),
                   ),
                 ],
               ),
               Text(
                 Data.toString(),
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
                 ),

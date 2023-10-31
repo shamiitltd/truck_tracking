@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_web_libraries_in_flutter, library_prefixes, library_private_types_in_public_api
+
 import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -73,10 +75,10 @@ class _NotificationIconState extends State<NotificationIcon> {
         showDialog(
           context: context,
           builder: (context) => Container(
-            margin: EdgeInsets.only(left: 800, bottom: 500),
+            margin: const EdgeInsets.only(left: 800, bottom: 500),
             child: AlertDialog(
-              title: Text("Notifications"),
-              contentPadding: EdgeInsets.all(300),
+              title: const Text("Notifications"),
+              contentPadding: const EdgeInsets.all(300),
               content: SizedBox(
                 width: 800,
                 child: ListView.builder(
@@ -106,14 +108,14 @@ class _NotificationIconState extends State<NotificationIcon> {
                     });
                     Navigator.pop(context);
                   },
-                  child: Text('Clear'),
+                  child: const Text('Clear'),
                 ),
               ],
             ),
           ),
         );
       },
-      icon: Icon(Icons.notifications_none_outlined),
+      icon: const Icon(Icons.notifications_none_outlined),
       color: AppColors.black,
       iconSize: 30,
     );
@@ -129,10 +131,10 @@ class _NotificationIconState extends State<NotificationIcon> {
                 onTap: (){
                   Navigator.pop(context);
                 },
-                child: Icon(Icons.arrow_back),
+                child: const Icon(Icons.arrow_back),
               ),
-              SizedBox(width: 16,),
-              Text("Detailed Message")
+              const SizedBox(width: 16,),
+              const Text("Detailed Message")
             ],
           ),
           content: SizedBox(
@@ -150,7 +152,7 @@ class _NotificationIconState extends State<NotificationIcon> {
     showDialog(
         context: context,
         builder: (context) => AlertDialog(
-          title: Text(
+          title: const Text(
               'Alert',
               style: TextStyle(color: AppColors.red),
           ),
@@ -160,7 +162,7 @@ class _NotificationIconState extends State<NotificationIcon> {
               onPressed: (){
                 Navigator.pop(context);
               },
-              child: Text('OK'),
+              child: const Text('OK'),
             )
           ],
         )

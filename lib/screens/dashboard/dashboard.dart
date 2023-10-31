@@ -1,5 +1,6 @@
-import 'dart:ui';
 // import 'package:cloud_firestore/cloud_firestore.dart';
+// ignore_for_file: sized_box_for_whitespace
+
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:truck_tracking/config/colors/colors.dart';
@@ -14,8 +15,7 @@ import 'package:truck_tracking/widgets/dashboard/appBar/notification_icon.dart';
 import 'package:truck_tracking/widgets/dashboard/total_driving_time_widget/total_driving_time.dart';
 import 'package:truck_tracking/widgets/dashboard/total_trips_widget/total_trips.dart';
 import 'package:truck_tracking/widgets/dashboard/vehicle_category_widget/vehicle_category.dart';
-
-import '../../widgets/dashboard/trips_duration_widget/trips_duration.dart';
+import 'package:truck_tracking/widgets/dashboard/trips_duration_widget/trips_duration.dart';
 
 
 class Dashboard extends StatefulWidget {
@@ -82,11 +82,10 @@ class _DashboardState extends State<Dashboard> {
                                             content: Container(
                                               height: 600,
                                               width: 650,
-                                              child: Driver_Info_form(),
+                                              child: const Driver_Info_form(),
                                             ),   
                 
                                           ));
-                                  ;
                                 },
                                 icon: const Icon(
                                   Icons.add,
@@ -107,7 +106,7 @@ class _DashboardState extends State<Dashboard> {
                                             content: Container(
                                               height: 600,
                                               width: 650,
-                                              child: Vehicle_Info_form(),
+                                              child: const Vehicle_Info_form(),
                                             ),                                       
                                           ));
                                 },
@@ -121,7 +120,7 @@ class _DashboardState extends State<Dashboard> {
                                         .copyWith(color: Colors.black))),
                             
                             const SizedBox(width: 30),
-                            NotificationIcon()
+                            const NotificationIcon()
                           ],
                         ),
                       ),
@@ -162,7 +161,7 @@ class _DashboardState extends State<Dashboard> {
                                     color: Colors.white,
                                     borderRadius: BorderRadius.circular(10),
                                   ),
-                                  child: TotalDrivingTimeWidget(),
+                                  child: const TotalDrivingTimeWidget(),
                                 ),
                               ),
                               StaggeredGridTile.count(
@@ -173,7 +172,7 @@ class _DashboardState extends State<Dashboard> {
                                     color: Colors.white,
                                     borderRadius: BorderRadius.circular(10),
                                   ),
-                                  child: TotalTripsWidget(),
+                                  child: const TotalTripsWidget(),
                                 ),
                               ),
                               StaggeredGridTile.count(
@@ -184,7 +183,7 @@ class _DashboardState extends State<Dashboard> {
                                         color: Colors.white,
                                         borderRadius: BorderRadius.circular(10),
                                       ),
-                                      child: TotalDrivingTimeWidget(),
+                                      child: const TotalDrivingTimeWidget(),
                                     ),
                                   ),
                               
@@ -196,7 +195,7 @@ class _DashboardState extends State<Dashboard> {
                                         color: Colors.white,
                                         borderRadius: BorderRadius.circular(10),
                                       ),
-                                      child: AdnocEventFleet(),
+                                      child: const AdnocEventFleet(),
                                     ),
                                   ),
                                   StaggeredGridTile.count(
@@ -207,7 +206,7 @@ class _DashboardState extends State<Dashboard> {
                                         color: Colors.white,
                                         borderRadius: BorderRadius.circular(10),
                                       ),
-                                      child: FleetEvent(),
+                                      child: const FleetEvent(),
                                     ),
                                   ),
                             ],

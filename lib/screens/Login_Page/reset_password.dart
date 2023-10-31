@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_unnecessary_containers, no_leading_underscores_for_local_identifiers
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'firebase_exceptions.dart';

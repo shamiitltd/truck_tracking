@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'package:truck_tracking/config/Padding/padding.dart';
 import 'package:truck_tracking/shared/leftdrawer.dart';
@@ -9,7 +11,7 @@ class SettingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(255, 255, 255, 0.949),
+      backgroundColor: const Color.fromRGBO(255, 255, 255, 0.949),
       body: SafeArea(
         child: Row(
           children: [
@@ -30,7 +32,7 @@ class SettingPage extends StatelessWidget {
                   children: [
                     Container(
                       padding: AppDimensions.SettingPage,
-                      child: Text(
+                      child: const Text(
                         "Help ?",
                         style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
                       ),
@@ -38,11 +40,11 @@ class SettingPage extends StatelessWidget {
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         NeedHelp(),
-                        SizedBox(
+                        const SizedBox(
                           width: 20,
                         ),
                         AccountSetting()

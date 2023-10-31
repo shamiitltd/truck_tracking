@@ -1,3 +1,5 @@
+// ignore_for_file: no_leading_underscores_for_local_identifiers, avoid_print, avoid_unnecessary_containers
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -79,7 +81,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
-    Firebase.initializeApp(options: FirebaseOptions(
+    Firebase.initializeApp(options: const FirebaseOptions(
        apiKey: "AIzaSyBcrfTEhQAo9luCRmo_HK4Vp3jHMJNgcEQ",
     authDomain: "fleet-vision-360.firebaseapp.com",
     projectId: "fleet-vision-360",
@@ -105,19 +107,19 @@ class _RegistrationPageState extends State<RegistrationPage> {
           child:  Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 60,),
+              const SizedBox(height: 60,),
               BlurryContainer(
                 width: 550,
                 height: 595,
                 blur: 5,
                 elevation: 10,
                 color: themeProvider.themeData.scaffoldBackgroundColor,
-                borderRadius: BorderRadius.all(Radius.circular(20)),
+                borderRadius: const BorderRadius.all(Radius.circular(20)),
                 child: Column(
                   children: [
-                    SizedBox(height: 20,),
-                    Text("Regsiter",style: TextStyle(fontSize: 25,fontWeight: FontWeight.w800,),),
-                    SizedBox(height: 20,),
+                    const SizedBox(height: 20,),
+                    const Text("Regsiter",style: TextStyle(fontSize: 25,fontWeight: FontWeight.w800,),),
+                    const SizedBox(height: 20,),
                     Container(
                       alignment: Alignment.topLeft,
                       width: 430,
@@ -127,22 +129,22 @@ class _RegistrationPageState extends State<RegistrationPage> {
                           //Full Name
                           Container(
                             padding: const EdgeInsets.only(top: 0),
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               borderRadius: BorderRadius.all(Radius.circular(10)),
                             ),
                             child: TextField(
                               controller: _fullNameController,
                               decoration: InputDecoration(
-                                enabledBorder: OutlineInputBorder(
+                                enabledBorder: const OutlineInputBorder(
                                   borderSide: BorderSide(color: Color(0x80E3E3E3)),
                                   borderRadius: BorderRadius.all(Radius.circular(10)),
                                 ),
-                                focusedBorder: OutlineInputBorder(
+                                focusedBorder: const OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.blue),
                                   borderRadius: BorderRadius.all(Radius.circular(10)),
                                 ),
 
-                                prefixIcon: Icon(Icons.account_box_rounded),
+                                prefixIcon: const Icon(Icons.account_box_rounded),
                                 hintText: "Enter Your Name",
                                 filled: true,
                                 fillColor: themeProvider.themeData.scaffoldBackgroundColor,
@@ -151,26 +153,26 @@ class _RegistrationPageState extends State<RegistrationPage> {
                             ),
                           ),
 
-                          SizedBox(height: 20,),
+                          const SizedBox(height: 20,),
                           //Email
                           Container(
                             padding: const EdgeInsets.only(top: 10),
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               borderRadius: BorderRadius.all(Radius.circular(10)),
                             ),
                             child: TextField(
                               controller: _emailController,
                               decoration: InputDecoration(
-                                enabledBorder: OutlineInputBorder(
+                                enabledBorder: const OutlineInputBorder(
                                   borderSide: BorderSide(color: Color(0x80E3E3E3)),
                                   borderRadius: BorderRadius.all(Radius.circular(10)),
                                 ),
-                                focusedBorder: OutlineInputBorder(
+                                focusedBorder: const OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.blue),
                                   borderRadius: BorderRadius.all(Radius.circular(10)),
                                 ),
 
-                                prefixIcon: Icon(Icons.email_rounded),
+                                prefixIcon: const Icon(Icons.email_rounded),
                                 hintText: "Enter your email",
                                 filled: true,
                                 fillColor: themeProvider.themeData.scaffoldBackgroundColor,
@@ -180,28 +182,28 @@ class _RegistrationPageState extends State<RegistrationPage> {
                           ),
 
 
-                          SizedBox(height: 20,),
+                          const SizedBox(height: 20,),
 
                           //Password Text Field
                           
                           Container(
                             padding: const EdgeInsets.only(top: 10),
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               borderRadius: BorderRadius.all(Radius.circular(10)),
                             ),
                             child: TextField(
                               controller: _passwordController,
                               decoration: InputDecoration(
-                                enabledBorder: OutlineInputBorder(
+                                enabledBorder: const OutlineInputBorder(
                                   borderSide: BorderSide(color: Color(0x80E3E3E3)),
                                   borderRadius: BorderRadius.all(Radius.circular(10)),
                                 ),
-                                focusedBorder: OutlineInputBorder(
+                                focusedBorder: const OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.blue),
                                   borderRadius: BorderRadius.all(Radius.circular(10)),
                                 ),
 
-                                prefixIcon: Icon(Icons.lock),
+                                prefixIcon: const Icon(Icons.lock),
                                 hintText: "Enter your password",
                                 filled: true,
                                 fillColor: themeProvider.themeData.scaffoldBackgroundColor,
@@ -211,28 +213,28 @@ class _RegistrationPageState extends State<RegistrationPage> {
                           ),
 
 
-                          SizedBox(height: 20,),
+                          const SizedBox(height: 20,),
 
                           //Confirm Password
                           
                           Container(
                             padding: const EdgeInsets.only(top: 10),
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               borderRadius: BorderRadius.all(Radius.circular(10)),
                             ),
                             child: TextField(
                               controller: _confirmPasswordController,
                               decoration: InputDecoration(
-                                enabledBorder: OutlineInputBorder(
+                                enabledBorder: const OutlineInputBorder(
                                   borderSide: BorderSide(color: Color(0x80E3E3E3)),
                                   borderRadius: BorderRadius.all(Radius.circular(10)),
                                 ),
-                                focusedBorder: OutlineInputBorder(
+                                focusedBorder: const OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.blue),
                                   borderRadius: BorderRadius.all(Radius.circular(10)),
                                 ),
 
-                                prefixIcon: Icon(Icons.lock),
+                                prefixIcon: const Icon(Icons.lock),
                                 hintText: "Re-enter your password",
                                 filled: true,
                                 fillColor: themeProvider.themeData.scaffoldBackgroundColor,
@@ -241,16 +243,16 @@ class _RegistrationPageState extends State<RegistrationPage> {
                             ),
                           ),
 
-                          SizedBox(height: 20,),
+                          const SizedBox(height: 20,),
 
 
                           //Login Page route
                           GestureDetector(
                             onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginPage()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=> const LoginPage()));
                             },
                             child: Container(
-                              child: Text("Already have an account? Click Here",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w200,decoration: TextDecoration.underline),textAlign: TextAlign.right),
+                              child: const Text("Already have an account? Click Here",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w200,decoration: TextDecoration.underline),textAlign: TextAlign.right),
 
                             ),
                           ),
@@ -290,7 +292,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                     FirebaseFirestore.instance.collection('users').doc(_emailController.text).set({"name":_fullNameController.text,"email":_emailController.text});
 
                                     print("User Registered");
-                                    Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginPage()));
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=> const LoginPage()));
                                   } on FirebaseAuthException catch (e) {
                                     if (e.code == 'weak-password') {
                                       print('The password provided is too weak.');
@@ -310,7 +312,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
 
 
 
-                          SizedBox(height: 10,),
+                          const SizedBox(height: 10,),
 
 
                           Container(
@@ -326,10 +328,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                   backgroundColor: Colors.white,
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(15))),
-                              child: Row(
+                              child: const Row(
                                 mainAxisSize: MainAxisSize.min,
                                 mainAxisAlignment: MainAxisAlignment.center,
-                                children: const [
+                                children: [
                                   Image(
                                     image: AssetImage("assets/login_page/images/google_logo.png"),
                                     width: 24,
@@ -406,11 +408,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 ),
               ),
 
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
 
               Container(
-                padding: EdgeInsets.all(10),
-                margin: EdgeInsets.only(left: 10),
+                padding: const EdgeInsets.all(10),
+                margin: const EdgeInsets.only(left: 10),
                 child: Row(
                   children: [
 
@@ -420,7 +422,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                         themeProvider.toggleTheme();
                       },
                     ),
-                    Text('Dark Mode'),
+                    const Text('Dark Mode'),
                   ],
                 ),
               ),

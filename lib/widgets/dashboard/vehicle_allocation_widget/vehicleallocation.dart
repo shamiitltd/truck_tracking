@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_unnecessary_containers
+
 import 'package:flutter/material.dart';
 import 'package:truck_tracking/widgets/dashboard/vehicle_allocation_widget/linearProgressBar.dart';
  
@@ -14,8 +16,8 @@ class _VehicalAllocationState extends State<VehicalAllocation> {
   @override
   Widget build(BuildContext context) {
     return Container(
-    child: Padding(
-      padding: const EdgeInsets.all(2.0),
+    child: const Padding(
+      padding: EdgeInsets.all(2.0),
       child: Center(
         child: LinearProgressBar(),
       ),

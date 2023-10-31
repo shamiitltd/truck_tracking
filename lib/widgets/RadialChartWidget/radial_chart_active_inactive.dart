@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -74,9 +76,9 @@ Future<void> loadDriverData() async {
                   ),
           child: SfCircularChart(
             //  backgroundColor: Colors.black,
-              palette: [ AppColors.graphColor3,AppColors.graphColor2,],
+              palette: const [ AppColors.graphColor3,AppColors.graphColor2,],
               title: ChartTitle(text: 'Active Vehicles',),
-              legend: Legend(isVisible: true),
+              legend: const Legend(isVisible: true),
        // Radial graph implementation
             series: [
               RadialBarSeries<_RadialData, String>(

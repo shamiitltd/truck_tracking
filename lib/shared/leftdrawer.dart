@@ -1,9 +1,11 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'package:truck_tracking/config/routes/routes.dart';
 
-import '../config/colors/colors.dart';
-import '../config/fonts/fonts.dart';
-import '../config/padding/padding.dart';
+import 'package:truck_tracking/config/colors/colors.dart';
+import 'package:truck_tracking/config/fonts/fonts.dart';
+import 'package:truck_tracking/config/padding/padding.dart';
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -22,11 +24,11 @@ class LeftDrawer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
 
         children: [
-          SizedBox(
+          const SizedBox(
               height: AppDimensions.largeBoxSize,
               ),
 
-          SizedBox(
+          const SizedBox(
             height: AppDimensions.defuaultPadding,
           ),
           Expanded(
@@ -125,7 +127,7 @@ class DashboardListTile extends StatelessWidget {
     return ListTile(
       iconColor: iconColor ?? AppColors.drawerTextColor,
       textColor: textStyle?.color ?? AppColors.drawerTextColor,
-      visualDensity: VisualDensity(vertical: -4),
+      visualDensity: const VisualDensity(vertical: -4),
       dense: true,
       onTap: press,
       leading: Icon(

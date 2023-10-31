@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables, sized_box_for_whitespace
+
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 import 'package:fl_chart/fl_chart.dart';
@@ -35,7 +37,7 @@ class Speedometer extends StatelessWidget {
 
                   ],
                   pointers: <GaugePointer>[
-                    NeedlePointer(
+                    const NeedlePointer(
                       value: 50,
                     ),
                   ],
@@ -66,15 +68,15 @@ class Speedometer extends StatelessWidget {
                 lineBarsData: [
                   LineChartBarData(
                     spots: [
-                      FlSpot(0, 20),
-                      FlSpot(1, 35),
-                      FlSpot(2, 68),
-                      FlSpot(3, 72),
-                      FlSpot(4, 50),
-                      FlSpot(5, 29),
+                      const FlSpot(0, 20),
+                      const FlSpot(1, 35),
+                      const FlSpot(2, 68),
+                      const FlSpot(3, 72),
+                      const FlSpot(4, 50),
+                      const FlSpot(5, 29),
                     ],
                     isCurved: true,
-                    color: Colors.blue,
+                    colors: [Colors.blue],
                     dotData: FlDotData(show: true),
                     belowBarData: BarAreaData(show: false)
                   ),

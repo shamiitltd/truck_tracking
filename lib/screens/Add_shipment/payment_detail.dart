@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+
 import 'package:flutter/material.dart';
 import 'package:truck_tracking/config/Padding/padding.dart';
 import 'package:truck_tracking/widgets/add_shipment/payment_card_widget.dart';
@@ -21,8 +23,8 @@ class PaymentDetail extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          PaymentInfoWidget(),
-          SizedBox(
+          const PaymentInfoWidget(),
+          const SizedBox(
             height: 10,
           ),
           Container(
@@ -32,15 +34,15 @@ class PaymentDetail extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(color: Colors.grey.withOpacity(0.5)),
                 gradient: LinearGradient(colors: [
-                  Color.fromARGB(255, 103, 183, 220).withOpacity(0.7),
-                  Color.fromARGB(255, 209, 133, 159).withOpacity(0.5),
+                  const Color.fromARGB(255, 103, 183, 220).withOpacity(0.7),
+                  const Color.fromARGB(255, 209, 133, 159).withOpacity(0.5),
                 ])),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 40, vertical: 25),
-                  child: Text(
+                  margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 25),
+                  child: const Text(
                     "Payment Details",
                     style: TextStyle(
                         fontSize: 25,
@@ -48,7 +50,7 @@ class PaymentDetail extends StatelessWidget {
                         color: Color.fromARGB(255, 8, 80, 139)),
                   ),
                 ),
-                PaymentCardWidget(),
+                const PaymentCardWidget(),
                 myTextField2(
                   thecontroller: _NameonCard,
                   thehintText: 'Name on Card',
@@ -101,11 +103,11 @@ class PaymentDetail extends StatelessWidget {
                     ),
                   ],
                 ),
-                PaymentInfoWidget2(),
+                const PaymentInfoWidget2(),
                 InkWell(
                   onTap: () {},
                   child: Container(
-                    margin: EdgeInsets.symmetric(
+                    margin: const EdgeInsets.symmetric(
                       horizontal: 40,
                     ),
                     alignment: Alignment.center,
@@ -113,7 +115,7 @@ class PaymentDetail extends StatelessWidget {
                     width: 500,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Color.fromRGBO(0, 39, 106, 1)),
+                        color: const Color.fromRGBO(0, 39, 106, 1)),
                     child: Text(
                       "Pay ₹1499",
                       style: TextStyle(

@@ -1,3 +1,5 @@
+// ignore_for_file: sized_box_for_whitespace
+
 import 'package:flutter/material.dart';
 import 'package:truck_tracking/config/colors/colors.dart';
 import 'package:truck_tracking/screens/Reports/API_calls/bestdriver_api_call.dart';
@@ -16,9 +18,9 @@ Widget bestDrivers(BuildContext context){
               children: [
                 HeadingRow(v1: 'Driver id', v2: 'Name',
                  v3: 'Total trips', v4: 'Completed trips', v5: 'Cancellation rate'),
-                Divider(thickness: 2,color: AppColors.loginTextColor,),                    
+                const Divider(thickness: 2,color: AppColors.loginTextColor,),                    
                 SizedBox(height: MediaQuery.of(context).size.height *.6,
-                child: BestDriverApi()
+                child: const BestDriverApi()
                 ),
               ],
             ),          

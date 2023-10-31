@@ -1,3 +1,5 @@
+// ignore_for_file: no_leading_underscores_for_local_identifiers, avoid_print, avoid_unnecessary_containers
+
 import 'package:blurrycontainer/blurrycontainer.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -83,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
 
-    Firebase.initializeApp(options: FirebaseOptions(
+    Firebase.initializeApp(options: const FirebaseOptions(
         apiKey: "AIzaSyBcrfTEhQAo9luCRmo_HK4Vp3jHMJNgcEQ",
     authDomain: "fleet-vision-360.firebaseapp.com",
     projectId: "fleet-vision-360",
@@ -108,17 +110,19 @@ class _LoginPageState extends State<LoginPage> {
           child:  Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               BlurryContainer(
                 width: 550,
                 height: 570,
                 elevation: 10,
                 color: themeProvider.themeData.scaffoldBackgroundColor,
+
+                borderRadius: const BorderRadius.all(Radius.circular(20)),
                 child: Column(
                   children: [
-                    SizedBox(height: 40,),
-                    Text("Log In",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w800,),),
-                    SizedBox(height: 30,),
+                    const SizedBox(height: 40,),
+                    const Text("Log In",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w800,),),
+                    const SizedBox(height: 30,),
                     Container(
                       alignment: Alignment.topLeft,
                       width: 430,
@@ -127,27 +131,27 @@ class _LoginPageState extends State<LoginPage> {
                           //Email
                           Container(
                             alignment: Alignment.topLeft,
-                            child: Text("Email",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w700),textAlign: TextAlign.left),
+                            child: const Text("Email",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w700),textAlign: TextAlign.left),
                           ),
                           Container(
                             padding: const EdgeInsets.only(top: 10),
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               borderRadius: BorderRadius.all(Radius.circular(10)),
                             ),
                             child: TextField(
                               controller: _emailController,
                               decoration: InputDecoration(
 
-                                enabledBorder: OutlineInputBorder(
+                                enabledBorder: const OutlineInputBorder(
                                   borderSide: BorderSide(color: Color(0x80E3E3E3)),
                                   borderRadius: BorderRadius.all(Radius.circular(10)),
                                 ),
-                                focusedBorder: OutlineInputBorder(
+                                focusedBorder: const OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.blue),
                                   borderRadius: BorderRadius.all(Radius.circular(10)),
                                 ),
 
-                                prefixIcon: Icon(Icons.email_rounded),
+                                prefixIcon: const Icon(Icons.email_rounded),
                                 hintText: "Enter your email",
                                 filled: true,
                                 fillColor: themeProvider.themeData.scaffoldBackgroundColor,
@@ -157,31 +161,31 @@ class _LoginPageState extends State<LoginPage> {
                           ),
 
 
-                          SizedBox(height: 40,),
+                          const SizedBox(height: 40,),
 
                           //Password Text Field
                           Container(
                             alignment: Alignment.topLeft,
-                            child: Text("Password",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w700),textAlign: TextAlign.left),
+                            child: const Text("Password",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w700),textAlign: TextAlign.left),
                           ),
                           Container(
                             padding: const EdgeInsets.only(top: 10),
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               borderRadius: BorderRadius.all(Radius.circular(10)),
                             ),
                             child: TextField(
                               controller: _passwordController,
                               decoration: InputDecoration(
-                                enabledBorder: OutlineInputBorder(
+                                enabledBorder: const OutlineInputBorder(
                                   borderSide: BorderSide(color: Color(0x80E3E3E3)),
                                   borderRadius: BorderRadius.all(Radius.circular(10)),
                                 ),
-                                focusedBorder: OutlineInputBorder(
+                                focusedBorder: const OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.blue),
                                   borderRadius: BorderRadius.all(Radius.circular(10)),
                                 ),
 
-                                prefixIcon: Icon(Icons.lock),
+                                prefixIcon: const Icon(Icons.lock),
                                 hintText: "Enter your password",
                                 filled: true,
                                 fillColor: themeProvider.themeData.scaffoldBackgroundColor,
@@ -191,34 +195,34 @@ class _LoginPageState extends State<LoginPage> {
                           ),
 
 
-                          SizedBox(height: 20,),
+                          const SizedBox(height: 20,),
 
                           Row(
                             children: [
                               GestureDetector(
                                 onTap: () {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context)=> RegistrationPage()));
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=> const RegistrationPage()));
                                 },
                                 child: Container(
-                                  child: Text("Don't have an account? Click Here",style: TextStyle(fontSize: 12,fontWeight: FontWeight.w200,decoration: TextDecoration.underline),textAlign: TextAlign.right),
+                                  child: const Text("Don't have an account? Click Here",style: TextStyle(fontSize: 12,fontWeight: FontWeight.w200,decoration: TextDecoration.underline),textAlign: TextAlign.right),
 
                                 ),
                               ),
 
-                              Spacer(),
+                              const Spacer(),
                               GestureDetector(
                                 onTap: () {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context)=> ResetPasswordScreen()));
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=> const ResetPasswordScreen()));
                                 },
                                 child: Container(
-                                  child: Text("Forgot Password?",style: TextStyle(fontSize: 12,fontWeight: FontWeight.w200,decoration: TextDecoration.underline),textAlign: TextAlign.right),
+                                  child: const Text("Forgot Password?",style: TextStyle(fontSize: 12,fontWeight: FontWeight.w200,decoration: TextDecoration.underline),textAlign: TextAlign.right),
 
                                 ),
                               ),
                             ],
                           ),
                           //Forgot Password
-                          SizedBox(height: 40,),
+                          const SizedBox(height: 40,),
 
 
 
@@ -249,7 +253,7 @@ class _LoginPageState extends State<LoginPage> {
                                       password: _passwordController.text
                                   );
                                   print("User Logged in");
-                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Dashboard()));
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>const Dashboard()));
                                 } on FirebaseAuthException catch (e) {
                                   if (e.code == 'user-not-found') {
                                     print('No user found for that email.');
@@ -264,7 +268,7 @@ class _LoginPageState extends State<LoginPage> {
 
 
 
-                          SizedBox(height: 10,),
+                          const SizedBox(height: 10,),
 
 
                           Container(
@@ -280,10 +284,10 @@ class _LoginPageState extends State<LoginPage> {
                                   backgroundColor: Colors.white,
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(15))),
-                              child: Row(
+                              child: const Row(
                                 mainAxisSize: MainAxisSize.min,
                                 mainAxisAlignment: MainAxisAlignment.center,
-                                children: const [
+                                children: [
                                   Image(
                                     image: AssetImage("assets/login_page/images/google_logo.png"),
                                     width: 24,
@@ -361,15 +365,13 @@ class _LoginPageState extends State<LoginPage> {
 
                   ],
                 ),
-
-                borderRadius: BorderRadius.all(Radius.circular(20)),
               ),
 
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
 
               Container(
-                padding: EdgeInsets.all(10),
-                margin: EdgeInsets.only(left: 10),
+                padding: const EdgeInsets.all(10),
+                margin: const EdgeInsets.only(left: 10),
                 child: Row(
                   children: [
 
@@ -381,7 +383,7 @@ class _LoginPageState extends State<LoginPage> {
                       },
 
                     ),
-                    Text('Dark Mode',style: TextStyle(fontWeight: FontWeight.w700, color: Colors.white),),
+                    const Text('Dark Mode',style: TextStyle(fontWeight: FontWeight.w700, color: Colors.white),),
                   ],
                 ),
               ),

@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
@@ -66,23 +68,23 @@ class _LinearProgressBarState extends State<LinearProgressBar> {
       ),
       // ignore: deprecated_member_use
       linearStrokeCap: LinearStrokeCap.roundAll,
-      progressColor: Color.fromARGB(255, 176, 209, 177),
+      progressColor: const Color.fromARGB(255, 176, 209, 177),
       backgroundColor: Colors.grey[300],
       leading: const Text("City 1",style: TextStyle(color: Colors.grey,fontSize: 20,),),
       trailing: Text("$percent%/1234"),
       ),
         
     
-       SizedBox(height: 30,),
+       const SizedBox(height: 30,),
 
           LinearPercentIndicator( //leaner progress bar
       animation: true,
       animationDuration: 1000,
       lineHeight: 15.0,
       percent:percent2/100,
-      barRadius: Radius.circular(10),
+      barRadius: const Radius.circular(10),
       center: Text(
-      percent2.toString() + "%",
+      "$percent2%",
       style: const TextStyle(
         fontSize: 12.0,
         fontWeight: FontWeight.w600,
@@ -143,7 +145,7 @@ class _LinearProgressBarState extends State<LinearProgressBar> {
       animationDuration: 1000,
       lineHeight: 15.0,
       percent:percent/100,
-      barRadius: Radius.circular(10),
+      barRadius: const Radius.circular(10),
       center: Text(
       "$percent%",
       style: const TextStyle(

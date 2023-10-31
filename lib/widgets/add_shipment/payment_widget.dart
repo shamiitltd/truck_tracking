@@ -1,7 +1,11 @@
 
+// ignore_for_file: unnecessary_cast
+
 import 'package:flutter/material.dart';
 
 class PaymentInfoWidget extends StatelessWidget {
+  const PaymentInfoWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,7 +26,7 @@ class PaymentInfoWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                        margin: EdgeInsets.symmetric(vertical: 10),
+                        margin: const EdgeInsets.symmetric(vertical: 10),
                         child: Text(
                           "Free Shipping",
                           style: TextStyle(
@@ -58,7 +62,7 @@ class PaymentInfoWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                        margin: EdgeInsets.symmetric(vertical: 10),
+                        margin: const EdgeInsets.symmetric(vertical: 10),
                         child: Text(
                           "Free Shipping",
                           style: TextStyle(
@@ -92,10 +96,12 @@ class PaymentInfoWidget extends StatelessWidget {
 }
 
 class PaymentInfoWidget2 extends StatelessWidget {
+  const PaymentInfoWidget2({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 40, vertical: 25),
+      margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 25),
       width: 500,
       height: 180,
       decoration: BoxDecoration(
@@ -115,7 +121,7 @@ class PaymentInfoWidget2 extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       color: Colors.black.withOpacity(0.6)),
                 ),
-                Text(
+                const Text(
                   "Rs.1499/-",
                   style: TextStyle(
                       fontSize: 25,
@@ -134,7 +140,7 @@ class PaymentInfoWidget2 extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                        margin: EdgeInsets.symmetric(vertical: 10),
+                        margin: const EdgeInsets.symmetric(vertical: 10),
                         child: Text(
                           "Shipping",
                           style: TextStyle(
@@ -142,7 +148,7 @@ class PaymentInfoWidget2 extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                               color: Colors.black.withOpacity(0.6)),
                         )),
-                    Text(
+                    const Text(
                       "Free Shipping (3-5 Working Days)",
                       style: TextStyle(
                           fontSize: 15,
@@ -151,7 +157,7 @@ class PaymentInfoWidget2 extends StatelessWidget {
                     ),
                   ],
                 ),
-                Text(
+                const Text(
                   "Free",
                   style: TextStyle(
                       fontSize: 25,
@@ -173,7 +179,7 @@ class PaymentInfoWidget2 extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       color: Colors.black.withOpacity(0.6)),
                 ),
-                Text(
+                const Text(
                   "Rs.1499/-",
                   style: TextStyle(
                       fontSize: 25,

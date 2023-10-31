@@ -1,4 +1,6 @@
 // import 'package:firebase_core/firebase_core.dart';
+// ignore_for_file: empty_catches
+
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter_android/google_maps_flutter_android.dart';
 import 'package:google_maps_flutter_platform_interface/google_maps_flutter_platform_interface.dart';
@@ -20,11 +22,13 @@ void main() async {
       mapsImplementation.useAndroidViewSurface = false;
       mapsImplementation.initializeWithRenderer(AndroidMapRenderer.latest);
     }
-  }catch(e){};
-  runApp( MyApp());
+  }catch(e){}
+  runApp( const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -35,15 +39,15 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             theme: themeProvider.themeData,
             routes: {
-              MyRoutes.dashboard:(context) => Dashboard(),
+              MyRoutes.dashboard:(context) => const Dashboard(),
               MyRoutes.shipping: (context) =>  ShippingPage(),
-              MyRoutes.reportscreen: (context) =>  Reports(),
+              MyRoutes.reportscreen: (context) =>  const Reports(),
               MyRoutes.addshipmentscreen: (context) =>  AddShipping(),
               MyRoutes.settingsscreen: (context) =>  SettingPage(),
-              MyRoutes.loginscreen:(context)=>LoginPage(),
-              MyRoutes.registrationscreen:(context)=>RegistrationPage()
+              MyRoutes.loginscreen:(context)=>const LoginPage(),
+              MyRoutes.registrationscreen:(context)=>const RegistrationPage()
             },
-            home:  Dashboard(),
+            home:  const Dashboard(),
           );
         },
       ),

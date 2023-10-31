@@ -1,3 +1,5 @@
+// ignore_for_file: sized_box_for_whitespace
+
 import 'package:flutter/material.dart';
 import 'package:truck_tracking/config/colors/colors.dart';
 import 'package:truck_tracking/screens/Reports/API_calls/risky_driver_api.dart';
@@ -16,9 +18,9 @@ Widget riskyDriver(BuildContext context){
               children: [
                 HeadingRow(v1: 'Driver id', v2: 'Name', 
                 v3: 'Accidents', v4: 'Traffic Violations', v5: 'Safety Score'),
-                Divider(thickness: 2,color: AppColors.loginTextColor,),                   
+                const Divider(thickness: 2,color: AppColors.loginTextColor,),                   
                 SizedBox(height: MediaQuery.of(context).size.height *.6,
-                child: RiskyDriversApi()
+                child: const RiskyDriversApi()
                 ),
               ],
             ),          

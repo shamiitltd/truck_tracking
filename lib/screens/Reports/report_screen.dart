@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors, camel_case_types
+
 import 'package:flutter/material.dart';
 import 'package:truck_tracking/config/colors/colors.dart';
 import 'package:truck_tracking/config/fonts/fonts.dart';
@@ -19,7 +21,7 @@ class ReportListTile extends StatelessWidget {
     return ListTile(
       iconColor: iconColor ?? AppColors.drawerTextColor,
       textColor: textStyle?.color ?? AppColors.drawerTextColor,
-      visualDensity: VisualDensity(vertical: -4),
+      visualDensity: const VisualDensity(vertical: -4),
       dense: true,
       onTap: press,
       trailing: Icon(
@@ -41,7 +43,7 @@ final String heading;
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left:14,top:10),
+      padding: const EdgeInsets.only(left:14,top:10),
       width: MediaQuery.of(context).size.width *.3,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),

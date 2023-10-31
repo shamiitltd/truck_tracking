@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api, avoid_print, avoid_unnecessary_containers
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +14,7 @@ class Driver_Info_form extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: CustomStepper(),
     );
   }
@@ -20,6 +22,8 @@ class Driver_Info_form extends StatelessWidget {
 
 
 class CustomStepper extends StatefulWidget {
+  const CustomStepper({super.key});
+
   @override
   _CustomStepperState createState() => _CustomStepperState();
 }
@@ -36,7 +40,7 @@ class _CustomStepperState extends State<CustomStepper> {
 
   @override
   Widget build(BuildContext context) {
-    Firebase.initializeApp(options: FirebaseOptions(
+    Firebase.initializeApp(options: const FirebaseOptions(
         apiKey: "AIzaSyBcrfTEhQAo9luCRmo_HK4Vp3jHMJNgcEQ",
     authDomain: "fleet-vision-360.firebaseapp.com",
     projectId: "fleet-vision-360",
@@ -80,15 +84,15 @@ class _CustomStepperState extends State<CustomStepper> {
               controlsBuilder: (context, details) {
                 return Row(
                   children: [
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     ElevatedButton(
                       onPressed: _currentStep == 1 ? null : details.onStepContinue, // Disable if it's the last step or if all steps are completed
                       child: Text(_currentStep == 1 ? 'Completed' : 'Continue'),
                     ),
-                    SizedBox(width: 16.0 , height: 16,),
+                    const SizedBox(width: 16.0 , height: 16,),
                     TextButton(
                       onPressed: details.onStepCancel,
-                      child: Text('Cancel'),
+                      child: const Text('Cancel'),
                     ),
                   ],
                 );
@@ -117,10 +121,10 @@ class _CustomStepperState extends State<CustomStepper> {
               print(pinCodeController.text);
               Navigator.pop(context);
             },
-            child: Text('Submit'),
+            child: const Text('Submit'),
           ),
 
-          SizedBox(height: 30,)
+          const SizedBox(height: 30,)
         ],
       ),
     );
@@ -130,10 +134,10 @@ class _CustomStepperState extends State<CustomStepper> {
     Step(
       state: _currentStep > 0 ? StepState.complete : StepState.indexed,
       isActive: _currentStep >=0,
-      title: Text('Driver Details'),
+      title: const Text('Driver Details'),
       content: Column(
         children: [
-          SizedBox(height: 10,),
+          const SizedBox(height: 10,),
           TextFormField(
 
             decoration: InputDecoration(
@@ -144,7 +148,7 @@ class _CustomStepperState extends State<CustomStepper> {
             controller: nameController,
 
           ),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
 
           TextFormField(
 
@@ -156,7 +160,7 @@ class _CustomStepperState extends State<CustomStepper> {
             controller: emailController,
 
           ),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
 
           TextFormField(
 
@@ -168,7 +172,7 @@ class _CustomStepperState extends State<CustomStepper> {
             controller: contactController,
 
           ),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
 
           TextFormField(
 
@@ -180,7 +184,7 @@ class _CustomStepperState extends State<CustomStepper> {
             controller: addressController,
 
           ),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
 
           TextFormField(
 
@@ -191,7 +195,7 @@ class _CustomStepperState extends State<CustomStepper> {
             ),
             controller: stateController,
           ),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
 
           TextFormField(
 
@@ -203,15 +207,15 @@ class _CustomStepperState extends State<CustomStepper> {
             controller: pinCodeController,
 
           ),
-          SizedBox(height: 20,)
+          const SizedBox(height: 20,)
         ],
       ),
     ),
     Step(
       state: _currentStep > 1 ? StepState.complete : StepState.indexed,
       isActive: _currentStep > 0,
-      title: Text('Document'),
-      content: Column(
+      title: const Text('Document'),
+      content: const Column(
         children: [
           Uploadcontainer(doc: "Aadhar card"),
           SizedBox(height: 20,),

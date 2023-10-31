@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api, sized_box_for_whitespace
+
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -12,7 +14,7 @@ class TotalDrivingTimeWidget extends StatefulWidget {
 
 class _TotalDrivingTimeWidgetState extends State<TotalDrivingTimeWidget> {
   late Future<List<_ChartData>> chartData;
-  Duration totalDuration = Duration();
+  Duration totalDuration = const Duration();
 
   @override
   void initState() {
@@ -57,11 +59,11 @@ class _TotalDrivingTimeWidgetState extends State<TotalDrivingTimeWidget> {
       future: chartData,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return CircularProgressIndicator();
+          return const CircularProgressIndicator();
         } else if (snapshot.hasError) {
           return Text('Error: ${snapshot.error}');
         } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-          return Text('No data available');
+          return const Text('No data available');
         } else {
           final List<_ChartData> data = snapshot.data!;
 
@@ -69,7 +71,7 @@ class _TotalDrivingTimeWidgetState extends State<TotalDrivingTimeWidget> {
             // margin: EdgeInsets.only(left: 100, top: 200),
             height: screenHeight * 0.5,
             width: screenWidth * 0.35,
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             decoration: BoxDecoration(
               color: AppColors.primaryWhite,
               borderRadius: BorderRadius.circular(15),
@@ -114,7 +116,7 @@ class _TotalDrivingTimeWidgetState extends State<TotalDrivingTimeWidget> {
                     //     fontWeight: FontWeight.bold,
                     //   ),
                     // ),
-                    Spacer(),
+                    const Spacer(),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
@@ -135,21 +137,21 @@ class _TotalDrivingTimeWidgetState extends State<TotalDrivingTimeWidget> {
                                 fontSize: screenHeight * 0.015,
                               ),
                             ),
-                            SizedBox(width: 38),
+                            const SizedBox(width: 38),
                             Text(
                               "min",
                               style: TextStyle(
                                 fontSize: screenHeight * 0.015,
                               ),
                             ),
-                            SizedBox(width: 25),
+                            const SizedBox(width: 25),
                             Text(
                               "sec",
                               style: TextStyle(
                                 fontSize: screenHeight * 0.015,
                               ),
                             ),
-                            SizedBox(width: 5),
+                            const SizedBox(width: 5),
                           ],
                         ),
                       ],
@@ -185,13 +187,13 @@ class _TotalDrivingTimeWidgetState extends State<TotalDrivingTimeWidget> {
                     width: screenWidth * 0.32,
                     child: SfCartesianChart(
                       primaryXAxis: CategoryAxis(
-                        majorGridLines: MajorGridLines(width: 0),
+                        majorGridLines: const MajorGridLines(width: 0),
                         labelPlacement: LabelPlacement.onTicks,
                         edgeLabelPlacement: EdgeLabelPlacement.shift,
                       ),
                       primaryYAxis: NumericAxis(
                         interval: 100,
-                        majorGridLines: MajorGridLines(width: 0),
+                        majorGridLines: const MajorGridLines(width: 0),
                       ),
                       series: <ChartSeries<_ChartData, String>>[
                         SplineAreaSeries<_ChartData, String>(

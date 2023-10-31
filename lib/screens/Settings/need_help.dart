@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'package:truck_tracking/widgets/Settings/help_info_widget.dart';
 
@@ -13,12 +15,12 @@ class _NeedHelpState extends State<NeedHelp> {
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         width: MediaQuery.sizeOf(context).width * 0.23,
         decoration: BoxDecoration(
             border: Border.all(color: Colors.grey.withOpacity(0.5)),
             borderRadius: BorderRadius.circular(10)),
-        child: Column(
+        child: const Column(
           children: [
             HelpInfoWidget(
                 theheading: 'Account',

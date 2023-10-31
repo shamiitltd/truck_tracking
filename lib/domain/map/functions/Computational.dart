@@ -107,9 +107,9 @@ String formatDistance(double meters) {
 
 List<latlonglib.LatLng> convertPointLatLngToLatLng(List<PointLatLng> pointLatLng){
   List<latlonglib.LatLng> result = [];
-  pointLatLng.forEach((element) {
+  for (var element in pointLatLng) {
     result.add(latlonglib.LatLng(element.latitude, element.longitude));
-  });
+  }
   return result;
 }
 

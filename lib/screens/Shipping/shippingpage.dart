@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors_in_immutables, no_leading_underscores_for_local_identifiers
+
 import 'package:flutter/material.dart';
 import 'package:truck_tracking/config/json/order.dart';
 import 'package:truck_tracking/config/json/read_json_data.dart';
@@ -65,7 +67,7 @@ class _ShippingPageState extends State<ShippingPage> {
               if (isDashboardVisible) const MainScreen(),
               Container(
                 margin: EdgeInsets.only(left: isDashboardVisible ? 380 : 20, top: 40),
-                child: Text(
+                child: const Text(
                   "Shipping",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                 ),
@@ -80,13 +82,13 @@ class _ShippingPageState extends State<ShippingPage> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Expanded(flex: _size.width > 800 ? 2 : 4, child: TotalOrdersWidget(updateLocationCallback: updateLocationCallback)),
-                          SizedBox(width: 20,),
+                          const SizedBox(width: 20,),
                           Expanded(flex: _size.width > 800 ? 2 : 4, child: SuccessfulOrdersWidget(updateLocationCallback: updateLocationCallback)),
-                          SizedBox(width: 20,),
+                          const SizedBox(width: 20,),
                           Expanded(flex: _size.width > 800 ? 2 : 4, child: OngoingOrdersWidget(updateLocationCallback: updateLocationCallback)),
-                          SizedBox(width: 20,),
+                          const SizedBox(width: 20,),
                           Expanded(flex: _size.width > 800 ? 2 : 4, child: CancelledOrdersWidget(updateLocationCallback: updateLocationCallback)),
-                          SizedBox(width: 20,),
+                          const SizedBox(width: 20,),
                         ],
                       )
                     else
@@ -94,20 +96,20 @@ class _ShippingPageState extends State<ShippingPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Expanded(flex: _size.width > 800 ? 2 : 4, child: TotalOrdersWidget(updateLocationCallback: updateLocationCallback)),
-                          SizedBox(width: 20,),
+                          const SizedBox(width: 20,),
                           Expanded(flex: _size.width > 800 ? 2 : 4, child: SuccessfulOrdersWidget(updateLocationCallback: updateLocationCallback)),
-                          SizedBox(width: 20,)
+                          const SizedBox(width: 20,)
                         ],
                       ),
-                    if (!isLargeScreen) SizedBox(height: 20),
+                    if (!isLargeScreen) const SizedBox(height: 20),
                     if (!isLargeScreen)
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Expanded(flex: _size.width > 800 ? 2 : 4, child: OngoingOrdersWidget(updateLocationCallback: updateLocationCallback)),
-                          SizedBox(width: 20,),
+                          const SizedBox(width: 20,),
                           Expanded(flex: _size.width > 800 ? 2 : 4, child: CancelledOrdersWidget(updateLocationCallback: updateLocationCallback)),
-                          SizedBox(width: 20,)
+                          const SizedBox(width: 20,)
                         ],
                       ),
                   ],
@@ -123,21 +125,21 @@ class _ShippingPageState extends State<ShippingPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Expanded(flex: _size.width > 800 ? 2 : 4, child: LocationTracking(latitude: latitude ?? 0.0, longitude: longitude ?? 0.0,)),
-                          SizedBox(width: 20),
+                          const SizedBox(width: 20),
                           Expanded(flex: _size.width > 800 ? 2 : 4, child: buildQuickAccessWidget()),
-                          SizedBox(width: 20,)
+                          const SizedBox(width: 20,)
                         ],
                       )
                     else
-                      if (!isLargeScreen) SizedBox(height: 130, width: 130,),
+                      if (!isLargeScreen) const SizedBox(height: 130, width: 130,),
                     if (!isLargeScreen)
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Expanded(flex: _size.width > 800 ? 2 : 4, child: latitude != null && longitude != null ? LocationTracking(latitude: latitude ?? 0.0, longitude: longitude ?? 0.0,) : CircularProgressIndicator()),
-                          SizedBox(width: 20,),
+                          Expanded(flex: _size.width > 800 ? 2 : 4, child: latitude != null && longitude != null ? LocationTracking(latitude: latitude ?? 0.0, longitude: longitude ?? 0.0,) : const CircularProgressIndicator()),
+                          const SizedBox(width: 20,),
                           //Expanded(flex: _size.width > 800 ? 2 : 4, child: buildQuickAccessWidget()),
-                          SizedBox(width: 20,)
+                          const SizedBox(width: 20,)
 
                         ],
                       ),
@@ -154,13 +156,13 @@ class _ShippingPageState extends State<ShippingPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Expanded(flex: _size.width > 800 ? 2 : 4, child: buildShippingStatusWidget(shippingOrdersList, ordersList, updateLocationCallback: updateLocationCallback)),
-                          SizedBox(width: 20,)
+                          const SizedBox(width: 20,)
                         ],
                       )
                     else
-                      if (!isLargeScreen) SizedBox(height: 130, width: 130,),
+                      if (!isLargeScreen) const SizedBox(height: 130, width: 130,),
                     if (!isLargeScreen)
-                      Row(
+                      const Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           /*Expanded(flex: _size.width > 800 ? 2 : 4, child: buildShippingStatusWidget(shippingOrdersList, ordersList, updateLocationCallback: updateLocationCallback)),

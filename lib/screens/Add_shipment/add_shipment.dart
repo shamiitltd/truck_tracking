@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'package:truck_tracking/config/Padding/padding.dart';
 import 'package:truck_tracking/shared/leftdrawer.dart';
@@ -28,8 +30,8 @@ class AddShipping extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-                      child: Text(
+                      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                      child: const Text(
                         "Add Shipment",
                         style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
                       ),
@@ -37,11 +39,11 @@ class AddShipping extends StatelessWidget {
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         ContactShippingShipment(),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         PaymentDetail()

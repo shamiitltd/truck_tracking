@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:truck_tracking/config/colors/colors.dart';
@@ -80,7 +82,7 @@ class _FleetEvent extends State<FleetEvent> {
                   Title: 'Battery tamper',
                   Data: data.batterytamper.toString(),
                   Boxcolor: AppColors.lightblue,
-                  BorderRadius: BorderRadius.only(
+                  BorderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(20),
                       bottomRight: Radius.circular(20)),
                   TheIcon: Icons.battery_std,
@@ -93,14 +95,14 @@ class _FleetEvent extends State<FleetEvent> {
 
 Widget _building(Data) {
   return Container(
-      decoration: BoxDecoration(),
-      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+      decoration: const BoxDecoration(),
+      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(
             children: [
-              SizedBox(
+              const SizedBox(
                 width: 5,
               ),
               Text(

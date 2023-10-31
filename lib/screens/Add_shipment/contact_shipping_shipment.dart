@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors, non_constant_identifier_names, prefer_final_fields
+
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:truck_tracking/config/Padding/padding.dart';
@@ -95,19 +97,19 @@ class _ContactShippingShipmentState extends State<ContactShippingShipment> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 25),
+              margin: const EdgeInsets.symmetric(horizontal: 25),
               child: Text(
                 "Contact Details",
                 style: title1(),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Row(
               children: [
                 myTextField(
                   thecontroller: _FirstName,
                   thehintText: 'First Name',
-                  theicon: Icon(Icons.person),
+                  theicon: const Icon(Icons.person),
                   theWidth: MediaQuery.sizeOf(context).width * 0.144 / 1.0,
                   theHeight: 45.0,
                   themargin: AppDimensions.ContactTextFieldMargin,
@@ -119,7 +121,7 @@ class _ContactShippingShipmentState extends State<ContactShippingShipment> {
                 myTextField(
                   thecontroller: _LastName,
                   thehintText: 'Last Name',
-                  theicon: Icon(Icons.person),
+                  theicon: const Icon(Icons.person),
                   theWidth: MediaQuery.sizeOf(context).width * 0.144 / 1.0,
                   theHeight: 45.0,
                   themargin: AppDimensions.ContactTextFieldMargin,
@@ -135,7 +137,7 @@ class _ContactShippingShipmentState extends State<ContactShippingShipment> {
                 myTextField(
                   thecontroller: _Email,
                   thehintText: 'Email',
-                  theicon: Icon(Icons.email),
+                  theicon: const Icon(Icons.email),
                   theWidth: MediaQuery.sizeOf(context).width * 0.144 / 1.0,
                   theHeight: 45.0,
                   themargin: AppDimensions.ContactTextFieldMargin2,
@@ -147,7 +149,7 @@ class _ContactShippingShipmentState extends State<ContactShippingShipment> {
                 myTextField(
                   thecontroller: _ContactNumber,
                   thehintText: 'Contact Number',
-                  theicon: Icon(Icons.phone),
+                  theicon: const Icon(Icons.phone),
                   theWidth: MediaQuery.sizeOf(context).width * 0.144 / 1.0,
                   theHeight: 45.0,
                   themargin: AppDimensions.ContactTextFieldMargin2,
@@ -158,21 +160,21 @@ class _ContactShippingShipmentState extends State<ContactShippingShipment> {
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 25),
+              margin: const EdgeInsets.symmetric(horizontal: 25),
               child: Text(
                 "Shipment Details",
                 style: title1(),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Row(
               children: [
                 myTextField(
                   thecontroller: _ShipFrom,
                   thehintText: 'Ship From',
-                  theicon: Icon(Icons.location_on),
+                  theicon: const Icon(Icons.location_on),
                   theWidth: MediaQuery.sizeOf(context).width * 0.144 / 1.0,
                   theHeight: 45.0,
                   themargin: AppDimensions.ContactTextFieldMargin,
@@ -184,7 +186,7 @@ class _ContactShippingShipmentState extends State<ContactShippingShipment> {
                 myTextField(
                   thecontroller: _ShipTo,
                   thehintText: 'Ship To',
-                  theicon: Icon(Icons.location_on),
+                  theicon: const Icon(Icons.location_on),
                   theWidth: MediaQuery.sizeOf(context).width * 0.144 / 1.0,
                   theHeight: 45.0,
                   themargin: AppDimensions.ContactTextFieldMargin,
@@ -200,7 +202,7 @@ class _ContactShippingShipmentState extends State<ContactShippingShipment> {
                 myTextField(
                   thecontroller: _PickPoint,
                   thehintText: 'Pickup Point',
-                  theicon: Icon(Icons.location_on),
+                  theicon: const Icon(Icons.location_on),
                   theWidth: MediaQuery.sizeOf(context).width * 0.144 / 1.0,
                   theHeight: 45.0,
                   themargin: AppDimensions.ContactTextFieldMargin2,
@@ -212,7 +214,7 @@ class _ContactShippingShipmentState extends State<ContactShippingShipment> {
                 myTextField(
                   thecontroller: _DeliveryPoint,
                   thehintText: 'Delivery Point',
-                  theicon: Icon(Icons.location_on),
+                  theicon: const Icon(Icons.location_on),
                   theWidth: MediaQuery.sizeOf(context).width * 0.144 / 1.0,
                   theHeight: 45.0,
                   themargin: AppDimensions.ContactTextFieldMargin2,
@@ -223,26 +225,26 @@ class _ContactShippingShipmentState extends State<ContactShippingShipment> {
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 25),
+              margin: const EdgeInsets.symmetric(horizontal: 25),
               child: Text(
                 "Shipment Type",
                 style: title1(),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Row(
               children: [
                 myTextField(
                   thecontroller: _Type,
                   thehintText: 'Type',
-                  theicon: Icon(Icons.abc),
+                  theicon: const Icon(Icons.abc),
                   theWidth: MediaQuery.sizeOf(context).width * 0.144 / 1.0,
                   theHeight: 45.0,
                   themargin: AppDimensions.ContactTextFieldMargin,
                   thesuffixIcon: IconButton(
-                      onPressed: () {}, icon: Icon(Icons.arrow_drop_down)),
+                      onPressed: () {}, icon: const Icon(Icons.arrow_drop_down)),
                   obsecureText: false,
                   thecontentPadding: AppDimensions.ContactTextFieldPadding,
                   themaxLength: null,
@@ -250,19 +252,19 @@ class _ContactShippingShipmentState extends State<ContactShippingShipment> {
                 myTextField(
                   thecontroller: _abc,
                   thehintText: null,
-                  theicon: Icon(Icons.abc),
+                  theicon: const Icon(Icons.abc),
                   theWidth: MediaQuery.sizeOf(context).width * 0.144 / 1.0,
                   theHeight: 45.0,
                   themargin: AppDimensions.ContactTextFieldMargin,
                   thesuffixIcon: IconButton(
-                      onPressed: () {}, icon: Icon(Icons.arrow_drop_down)),
+                      onPressed: () {}, icon: const Icon(Icons.arrow_drop_down)),
                   obsecureText: false,
                   thecontentPadding: AppDimensions.ContactTextFieldPadding,
                   themaxLength: null,
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Padding(
@@ -291,7 +293,7 @@ class _ContactShippingShipmentState extends State<ContactShippingShipment> {
                   width: MediaQuery.sizeOf(context).width * 0.144 / 0.47,
                   height: MediaQuery.sizeOf(context).height * 0.144 / 2,
                   decoration: BoxDecoration(
-                      color: Color.fromRGBO(0, 39, 106, 1),
+                      color: const Color.fromRGBO(0, 39, 106, 1),
                       borderRadius: BorderRadius.circular(10)),
                   child: Text(
                     "Add",

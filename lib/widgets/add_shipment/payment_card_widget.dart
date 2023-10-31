@@ -1,14 +1,18 @@
+// ignore_for_file: avoid_unnecessary_containers
+
 import 'package:flutter/material.dart';
 import 'package:truck_tracking/screens/Add_shipment/transparent_background.dart';
 
 
 class PaymentCardWidget extends StatelessWidget {
+  const PaymentCardWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Container(
-          margin: EdgeInsets.only(left: 40),
+          margin: const EdgeInsets.only(left: 40),
           child: TransparentBackground(
               theWidth: MediaQuery.sizeOf(context).width * 0.09 / 1.3,
               theHeight: 80.0,
@@ -20,7 +24,7 @@ class PaymentCardWidget extends StatelessWidget {
               )),
         ),
         Container(
-          margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           child: TransparentBackground(
               theWidth: MediaQuery.sizeOf(context).width * 0.09 / 1.3,
               theHeight: 80.0,
@@ -31,7 +35,7 @@ class PaymentCardWidget extends StatelessWidget {
               )),
         ),
         Container(
-          margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           child: TransparentBackground(
               theWidth: MediaQuery.sizeOf(context).width * 0.09 / 1.3,
               theHeight: 80.0,
@@ -43,7 +47,7 @@ class PaymentCardWidget extends StatelessWidget {
               )),
         ),
         Container(
-          margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           child: TransparentBackground(
               theWidth: MediaQuery.sizeOf(context).width * 0.09 / 1.65,
               theHeight: 70.0,
