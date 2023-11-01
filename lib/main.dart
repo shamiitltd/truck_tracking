@@ -15,6 +15,7 @@ import 'package:truck_tracking/screens/Settings/setting_page.dart';
 import 'package:truck_tracking/screens/dashboard/dashboard.dart';
 import 'package:truck_tracking/screens/Shipping/shippingpage.dart';
 
+// new git comment
 void main() async {
   try{
     final GoogleMapsFlutterPlatform mapsImplementation = GoogleMapsFlutterPlatform.instance;
