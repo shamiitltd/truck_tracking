@@ -1,3 +1,5 @@
+// ignore_for_file: library_prefixes, depend_on_referenced_packages, empty_catches
+
 import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -603,7 +605,7 @@ class MapRecordPageOSMState extends State<MapRecordPageOSM> {
                           'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                       // urlTemplate:'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
                       userAgentPackageName: packageName,
-                      subdomains: ['a', 'b', 'c'],
+                      subdomains: const ['a', 'b', 'c'],
                     ),
                     PolylineLayer(
                       polylines: [

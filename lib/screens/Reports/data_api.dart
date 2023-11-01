@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api, sized_box_for_whitespace
+
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -96,7 +98,7 @@ class _DriverListState extends State<DriverList> {
 class DriverRow extends StatelessWidget {
   final Driver driver;
 
-  DriverRow({required this.driver});
+  const DriverRow({super.key, required this.driver});
 
   @override
   Widget build(BuildContext context) {

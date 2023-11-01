@@ -1,3 +1,5 @@
+// ignore_for_file: sized_box_for_whitespace, unnecessary_string_interpolations
+
 import 'package:flutter/material.dart';
 import 'package:truck_tracking/config/fonts/fonts.dart';
 import 'package:truck_tracking/config/json/order.dart';
@@ -42,7 +44,7 @@ void showOrdersPopup(BuildContext context, List<Order> orders, Function(double, 
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
-                  child: Text('Close'),
+                  child: const Text('Close'),
                 ),
               ],
             ),
@@ -58,7 +60,7 @@ void showOrderDetailsPopup(BuildContext context, Order order, Function(double, d
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        title: Text('Order Details'),
+        title: const Text('Order Details'),
         content: Container(
           width: 400,
           height: 400,
@@ -82,13 +84,13 @@ void showOrderDetailsPopup(BuildContext context, Order order, Function(double, d
             onPressed: () {
               Navigator.of(context).pop();
             },
-            child: Text('Close'),
+            child: const Text('Close'),
           ),
           ElevatedButton(
             onPressed: () {
               _trackOrder(context, order, updateLocationCallback);
             },
-            child: Text('Track'),
+            child: const Text('Track'),
           ),
         ],
       );

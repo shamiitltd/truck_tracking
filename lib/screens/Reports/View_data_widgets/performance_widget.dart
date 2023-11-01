@@ -1,7 +1,9 @@
+// ignore_for_file: sized_box_for_whitespace
+
 import 'package:flutter/material.dart';
 import 'package:truck_tracking/config/colors/colors.dart';
 import 'package:truck_tracking/screens/Reports/API_calls/performance_api_call.dart';
-import 'package:truck_tracking/screens/Reports/report_widget.dart';
+import 'package:truck_tracking/screens/Reports/report_screen.dart';
 
 
 Widget performance(BuildContext context){
@@ -16,9 +18,9 @@ Widget performance(BuildContext context){
               children: [
                 HeadingRow(v1: 'Driver id', v2: 'Name', 
                 v3: 'Total Trips', v4: 'Completed Trips', v5: 'Average Rating'),
-                Divider(thickness: 2,color: AppColors.loginTextColor,),                    
+                const Divider(thickness: 2,color: AppColors.loginTextColor,),                    
                 SizedBox(height: MediaQuery.of(context).size.height *.6,
-                child: PerformanceApi()
+                child: const PerformanceApi()
                 ),
               ],
             ),          

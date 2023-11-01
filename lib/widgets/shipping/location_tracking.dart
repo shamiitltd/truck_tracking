@@ -1,6 +1,6 @@
+// ignore_for_file: prefer_final_fields, avoid_function_literals_in_foreach_calls
+
 import 'dart:async';
-import 'dart:ui';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_polyline_points_plus/flutter_polyline_points_plus.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -56,7 +56,7 @@ class _LocationTrackingState extends State<LocationTracking> with TickerProvider
       });
       setState(() {
         _polylines.add(Polyline(
-          polylineId: PolylineId("route"),
+          polylineId: const PolylineId("route"),
           points: polylineCoordinates,
         ));
       });
@@ -91,12 +91,12 @@ class _LocationTrackingState extends State<LocationTracking> with TickerProvider
             ),
             markers:{
               Marker(
-                markerId: MarkerId("currentLocation"),
+                markerId: const MarkerId("currentLocation"),
                 position: _markerPosition,
                 
               ),
               Marker(
-                markerId: MarkerId("secondLocation"),
+                markerId: const MarkerId("secondLocation"),
                 position: _secondMarkerPosition,
               ),
             },

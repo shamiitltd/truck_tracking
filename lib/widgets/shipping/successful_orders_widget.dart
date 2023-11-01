@@ -1,3 +1,5 @@
+// ignore_for_file: sized_box_for_whitespace
+
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:truck_tracking/config/json/read_json_data.dart';
@@ -20,11 +22,11 @@ class SuccessfulOrdersWidget extends StatelessWidget {
           future: readJsonData(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return CircularProgressIndicator();
+              return const CircularProgressIndicator();
             } else if (snapshot.hasError) {
               return Text('Error: ${snapshot.error}');
             } else if (!snapshot.hasData) {
-              return Text('No data available');
+              return const Text('No data available');
             } else {
               final orders = snapshot.data;
               final successfulOrders =
@@ -104,7 +106,7 @@ class SuccessfulOrdersWidget extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  FittedBox(
+                                  const FittedBox(
                                     fit: BoxFit.contain,
                                     child: Text(
                                       'Successful Order',
@@ -113,7 +115,7 @@ class SuccessfulOrdersWidget extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 3,
                                   ),
                                   FittedBox(

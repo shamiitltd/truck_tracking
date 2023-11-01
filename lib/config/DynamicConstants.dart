@@ -1,6 +1,8 @@
 
 //Dynamic variables
 
+// ignore_for_file: constant_identifier_names
+
 int selectedIndex = 0;
 int sepFlag = 0; //serperate both drawer and bottom nav
 

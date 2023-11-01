@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages, non_constant_identifier_names
+
 import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';

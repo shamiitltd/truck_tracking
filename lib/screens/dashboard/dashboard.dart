@@ -1,12 +1,22 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
+// ignore_for_file: sized_box_for_whitespace
+
 import 'package:flutter/material.dart';
-import 'package:truck_tracking/widgets/dashboard/add_driver_form.dart';
-import 'package:truck_tracking/widgets/dashboard/add_vehicle_form.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:truck_tracking/config/colors/colors.dart';
 import 'package:truck_tracking/config/fonts/fonts.dart';
 import 'package:truck_tracking/config/padding/padding.dart';
 import 'package:truck_tracking/shared/leftdrawer.dart';
-import 'package:truck_tracking/widgets/dashboard/stepper_widget.dart';
+import 'package:truck_tracking/widgets/dashboard/Fleet_events%20&%20ADNOC/ADNOC%20events/adnoc_fleet_event.dart';
+import 'package:truck_tracking/widgets/dashboard/Fleet_events%20&%20ADNOC/Fleet_events/Fleet_events.dart';
+import 'package:truck_tracking/widgets/dashboard/appBar/Add_driver/add_driver_form.dart';
+import 'package:truck_tracking/widgets/dashboard/appBar/Add_vehicle/add_vehicle_form.dart';
+import 'package:truck_tracking/widgets/dashboard/appBar/notification_icon.dart';
+import 'package:truck_tracking/widgets/dashboard/total_driving_time_widget/total_driving_time.dart';
+import 'package:truck_tracking/widgets/dashboard/total_trips_widget/total_trips.dart';
+import 'package:truck_tracking/widgets/dashboard/vehicle_category_widget/vehicle_category.dart';
+import 'package:truck_tracking/widgets/dashboard/trips_duration_widget/trips_duration.dart';
+
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -22,111 +32,187 @@ class _DashboardState extends State<Dashboard> {
       backgroundColor: AppColors.backgroundColor,
       body: Row(
         children: [
-          Padding(padding: AppDimensions.smallPadding),
+          const Padding(padding: AppDimensions.smallPadding),
           Container(
             padding: AppDimensions.mediumPadding,
             width: 284,
-            child: LeftDrawer(),
+            child: const LeftDrawer(),
           ),
-          SizedBox(
+          const SizedBox(
             width: AppDimensions.defuaultPadding,
           ),
           Expanded(
             child: Padding(
-              padding: AppDimensions.mediumPadding, // Use the same padding as the LeftDrawer
+              padding: AppDimensions
+                  .mediumPadding, // Use the same padding as the LeftDrawer
               child: Container(
                 decoration: BoxDecoration(
-                  color: AppColors.whitePageColor,
+                  color: const Color.fromARGB(255, 241, 242, 239),
                   borderRadius: BorderRadius.circular(AppBorderRadius.large),
                 ),
-                child: Column(
-                  children: [
-                    Container(
-                      height: 45, 
-                      width: double.infinity,
-                      margin: EdgeInsets.all(12),
-                      decoration: BoxDecoration(
-                       color:AppColors.WelcomeContainerColor,
-                       borderRadius: BorderRadius.circular(AppBorderRadius.small),
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 45,
+                        width: double.infinity,
+                        margin: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: AppColors.WelcomeContainerColor,
+                          borderRadius:
+                              BorderRadius.circular(AppBorderRadius.small),
+                        ),
+                        child: Row(
+                          children: [
+                            const SizedBox(
+                              width: 15,
+                            ),
+                            Text("Welcome Back!",
+                                style: AppFonts.medium
+                                    .copyWith(color: Colors.black)),
+                            const Spacer(),
+                            TextButton.icon(
+                                onPressed: () {
+                                  showDialog(
+                                      context: context,
+                                      builder: (context) => AlertDialog(
+                                            title: Text("Driver Information",
+                                                style: AppFonts.bold.copyWith(
+                                                    color: Colors.black)),
+                                            content: Container(
+                                              height: 600,
+                                              width: 650,
+                                              child: const Driver_Info_form(),
+                                            ),   
+                
+                                          ));
+                                },
+                                icon: const Icon(
+                                  Icons.add,
+                                  color: Colors.black,
+                                  size: 24.0,
+                                ),
+                                label: Text('Add Driver',
+                                    style: AppFonts.medium
+                                        .copyWith(color: Colors.black))),
+                            TextButton.icon(
+                                onPressed: () {
+                                  showDialog(
+                                      context: context,
+                                      builder: (context) => AlertDialog(
+                                            title: Text("Vehicle Information",
+                                                style: AppFonts.bold.copyWith(
+                                                    color: Colors.black)),
+                                            content: Container(
+                                              height: 600,
+                                              width: 650,
+                                              child: const Vehicle_Info_form(),
+                                            ),                                       
+                                          ));
+                                },
+                                icon: const Icon(
+                                  Icons.add,
+                                  color: Colors.black,
+                                  size: 24.0,
+                                ),
+                                label: Text('Add Vehicle',
+                                    style: AppFonts.medium
+                                        .copyWith(color: Colors.black))),
+                            
+                            const SizedBox(width: 30),
+                            const NotificationIcon()
+                          ],
+                        ),
                       ),
-                      child: Row(
-                        children: [
-                          SizedBox(width: 15,),
-                          Text("Welcome Back!",style:AppFonts.medium.copyWith(color:Colors.black)),
-                          Spacer(),
-                          TextButton.icon(
-                          onPressed: () {
-                             showDialog(context: context, builder: (context)=>AlertDialog(
-                              title: Text("Driver Information",style:AppFonts.bold.copyWith(color:Colors.black)),
-                              content: Driver_Info_form(),
-                              actions: [
-                                TextButton(onPressed: (){}, child:Text("Submit",style:AppFonts.medium))
-                              ],
-                             )  
-                             );                           
-                            ;
-                          },
-                          icon: const Icon(
-                            Icons.add ,
-                            color: Colors.black,
-                            size: 24.0,
-                          ),
-                          label: Text('Add Driver',style:AppFonts.medium.copyWith(color:Colors.black))
-                          ),
-                          TextButton.icon(
-                          onPressed: () {
-                              showDialog(context: context, builder: (context)=>AlertDialog(
-                              title: Text("Vehicle Information",style:AppFonts.bold.copyWith(color:Colors.black)),
-                              content: Vehicle_Info_form(),
-                              actions: [
-                                TextButton(onPressed: (){}, child:Text("Submit",style:AppFonts.medium))
-                              ],
-                             )  
-                             ); 
-                          },
-                          icon: const Icon(
-                            Icons.add ,
-                            color: Colors.black,
-                            size: 24.0,
-                          ),
-                          label: Text('Add Vehicle',style:AppFonts.medium.copyWith(color:Colors.black))
-                          ),
-                          ///////////////////////////////////////////////////////////////////////////////
-                          TextButton.icon(
-                          onPressed: () {
-                             showDialog(context: context, builder: (context)=>AlertDialog(
-                              title: Text("Stepper widget",style:AppFonts.bold.copyWith(color:Colors.black)),
-                              content: Stepper_widget(),
-                              actions: [
-                                TextButton(onPressed: (){
-                                  FirebaseFirestore.instance.collection('drivers').doc(Stepper_widget().email).set({
-                                    "name":Stepper_widget().name,
-                                    "email":Stepper_widget().email,
-                                    "contact":Stepper_widget().contact,
-                                    "address":Stepper_widget().address,
-                                    "pincode":Stepper_widget().pincode,
-                                    "state":Stepper_widget().state,
-                                    
-                                    });
-                                }, child:Text("Submit",style:AppFonts.medium))
-                              ],
-                              )
-                             );
-                            },
-                            icon: const Icon(
-                            Icons.add ,
-                            color: Colors.black,
-                            size: 24.0,
-                          ),
-                          label: Text('Add Stepper',style:AppFonts.medium.copyWith(color:Colors.black))
-                          ),
-                          SizedBox(width:30),
-
-                          
-                        ],
-                      ),
-                    )
-                  ],
+                      Container(
+                          margin: const EdgeInsets.all(12),
+                          child: StaggeredGrid.count(
+                            crossAxisCount: 4,
+                            mainAxisSpacing: 10,
+                            crossAxisSpacing: 10,
+                            children: [
+                              StaggeredGridTile.count(
+                                crossAxisCellCount: 1,
+                                mainAxisCellCount: 1,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: const Tripsduration(),
+                                ),
+                              ),
+                              StaggeredGridTile.count(
+                                crossAxisCellCount: 2,
+                                mainAxisCellCount: 1,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: const Vehicle_Catagories(),
+                                ),
+                              ),
+                              StaggeredGridTile.count(
+                                crossAxisCellCount: 1,
+                                mainAxisCellCount: 1,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: const TotalDrivingTimeWidget(),
+                                ),
+                              ),
+                              StaggeredGridTile.count(
+                                crossAxisCellCount: 1,
+                                mainAxisCellCount: 1,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: const TotalTripsWidget(),
+                                ),
+                              ),
+                              StaggeredGridTile.count(
+                                    crossAxisCellCount: 1,
+                                    mainAxisCellCount: 1,
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: const TotalDrivingTimeWidget(),
+                                    ),
+                                  ),
+                              
+                                  StaggeredGridTile.count(
+                                    crossAxisCellCount: 1,
+                                    mainAxisCellCount: 1,
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: const AdnocEventFleet(),
+                                    ),
+                                  ),
+                                  StaggeredGridTile.count(
+                                    crossAxisCellCount: 1,
+                                    mainAxisCellCount: 1,
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: const FleetEvent(),
+                                    ),
+                                  ),
+                            ],
+                          ))
+                    ],
+                  ),
                 ),
               ),
             ),

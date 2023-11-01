@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names, non_constant_identifier_names, prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 
@@ -41,6 +43,24 @@ static const Color indigoShade900 = Color(0xFF1A237E);
 static const Color greenShade100 = Color(0xFFC8E6C9);
 static const Color reportIconColor = Colors.black45;
 static const Color reportTextColor = Colors.black87;
+static const Color pancardcolor=Color.fromARGB(255, 124, 210, 250);
+static const Color licencsecolor=Color.fromARGB(255, 200, 124, 250);
+static const Color aadharcolor=Color.fromARGB(255, 250, 183, 124);
+
+  static const Color purplebar = Color(0xff9A80FF);
+  static const Color bluebar = Color(0xff0F7AF1);
+  static const Color cyanbar = Color(0xff7CE1DA);
+  static const Color vehiclecatgradient1 = Color(0xFF07A298);
+  static const Color vehiclecatgradient2 = Color(0xFF6AE7DF);
+
+static const Color trips_graphPurple = Color(0xFF673AB7);
+static Color trips_graphBlue = Colors.blue.shade500;
+static Color drivingTime_graphLightBlue = Colors.blue.shade50;  
+
+// Adnoc events
+  static const Color LinkWate = Color.fromARGB(224, 206, 225, 246);
+  static Color blueGrey = Colors.blueGrey.shade100;
+  static Color lightblue = Color.fromRGBO(227, 232, 243, 10);
 
 
 int bnBarColor = 200;

@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_typing_uninitialized_variables, library_private_types_in_public_api
+
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -35,9 +37,9 @@ class _VehiclesApiState extends State<VehiclesApi> {
               future: getUserApi (),
               builder: (context , snapshot){
                 if(snapshot.connectionState == ConnectionState.waiting){
-                  return Center(child: CircularProgressIndicator());
+                  return const Center(child: CircularProgressIndicator());
                 }else {
-                  return data.length==null?Center(child: CircularProgressIndicator())
+                  return data.length==null?const Center(child: CircularProgressIndicator())
                   :ListView.builder(
                     itemCount: data.length,
                       itemBuilder: (context, index){

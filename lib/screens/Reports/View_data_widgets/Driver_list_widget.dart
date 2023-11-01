@@ -1,7 +1,9 @@
+// ignore_for_file: sized_box_for_whitespace
+
 import 'package:flutter/material.dart';
 import 'package:truck_tracking/config/colors/colors.dart';
 import 'package:truck_tracking/screens/Reports/API_calls/driver_list_api_call.dart';
-import 'package:truck_tracking/screens/Reports/report_widget.dart';
+import 'package:truck_tracking/screens/Reports/report_screen.dart';
 
 Widget driverList(BuildContext context){
  return Container(
@@ -14,9 +16,9 @@ Widget driverList(BuildContext context){
             child:Column(
               children: [
                 HeadingRow(v1: 'Id', v2: 'Name', v3: 'Age', v4: 'License_number', v5: 'Phone'),
-                Divider(thickness: 2,color: AppColors.loginTextColor,),                    
+                const Divider(thickness: 2,color: AppColors.loginTextColor,),                    
                 SizedBox(height: MediaQuery.of(context).size.height *.6,
-                child: DriverListApi()
+                child: const DriverListApi()
                 // child: DriverList()
                 ),
               ],

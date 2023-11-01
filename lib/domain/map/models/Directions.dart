@@ -24,7 +24,7 @@ class Directions {
     // Bounds
     final northeast = data['bounds']['northeast'];
     final southwest = data['bounds']['southwest'];
-    var bounds;
+    LatLngBounds bounds;
     try {
       bounds = LatLngBounds(
         northeast: LatLng(northeast['lat'], northeast['lng']),
@@ -65,7 +65,7 @@ class Directions {
     }
     final northeast = map['waypoints'][0]['location'];
     final southwest = map['waypoints'][1]['location'];
-    var bounds;
+    LatLngBounds bounds;
     try {
       bounds = LatLngBounds(
         northeast: LatLng(northeast[1], northeast[0]),
