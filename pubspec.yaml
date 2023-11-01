@@ -97,22 +97,22 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/shipping/orders.json
-    - assets/dashboard/notification_icon/
-    - assets/reportsdata/
     - assets/add_shipment/
-    - assets/dashboard/active_inactive_widget_data/radial_chart_data_active_inactive.json
-    - assets/vehicle_maintenence/vehicle_maintenence_data.json
-    - assets/dashboard/trips_duration_widget_data/tripsduration.json
-    - assets/dashboard/vehicle_category_widget_data/vehicle_catagories.json
-    - assets/login_page/images/4758652_1473.jpg
-    - assets/login_page/images/4758651_1472.jpg
-    - assets/login_page/images/google_logo.png
-    - assets/dashboard/adnoc&fleetevents/ADNOCEvent.json
-    - assets/dashboard/adnoc&fleetevents/fleet_event.json
     - assets/add_shipment/images/mastercard.png
     - assets/add_shipment/images/rupay.png
     - assets/add_shipment/images/visa.png
+    - assets/dashboard/active_inactive_widget_data/radial_chart_data_active_inactive.json
+    - assets/dashboard/adnoc&fleetevents/ADNOCEvent.json
+    - assets/dashboard/adnoc&fleetevents/fleet_event.json
+    - assets/dashboard/notification_icon/
+    - assets/dashboard/trips_duration_widget_data/tripsduration.json
+    - assets/dashboard/vehicle_category_widget_data/vehicle_catagories.json
+    - assets/login_page/images/4758651_1472.jpg
+    - assets/login_page/images/4758652_1473.jpg
+    - assets/login_page/images/google_logo.png
+    - assets/reportsdata/
+    - assets/shipping/orders.json
+    - assets/vehicle_maintenence/vehicle_maintenence_data.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

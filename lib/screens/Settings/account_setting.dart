@@ -1,7 +1,7 @@
 // ignore_for_file: non_constant_identifier_names, use_key_in_widget_constructors, prefer_final_fields, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:truck_tracking/config/Padding/padding.dart';
+import 'package:truck_tracking/config/padding/padding.dart';
 import 'package:truck_tracking/config/fonts/textstyle_subhagya.dart';
 import 'package:truck_tracking/widgets/add_shipment/textfield_widget.dart';
 
