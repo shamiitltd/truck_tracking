@@ -1,0 +1,27 @@
+
+[
+    {
+      "driver_id": 1,
+      "name": "Rajesh Kumar",
+      "total_trips": 1000,
+      "accidents": 3,
+      "traffic_violations": 5,
+      "safety_score": 3.2
+    },
+    {
+      "driver_id": 2,
+      "name": "Priya Sharma",
+      "total_trips": 1100,
+      "accidents": 2,
+      "traffic_violations": 4,
+      "safety_score": 3.5
+    },
+    {
+      "driver_id": 3,
+      "name": "Amit Patel",
+      "total_trips": 900,
+      "accidents": 4,
+      "traffic_violations": 6,
+      "safety_score": 2.8
+    }
+  ]

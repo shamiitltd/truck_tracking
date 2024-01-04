@@ -1,0 +1,22 @@
+[
+    {
+      "total_vehicles": 1300,
+      "running_vehicles": 20,
+      "vehicle_type": "heavy vehicle"
+    },
+    {
+      "total_vehicles": 1500,
+      "running_vehicles": 80,
+      "vehicle_type": "light bus"
+    },
+    {
+      "total_vehicles": 1000,
+      "running_vehicles": 20,
+      "vehicle_type": "heavy bus"
+    },
+    {
+      "total_vehicles": 1000,
+      "running_vehicles": 30,
+      "vehicle_type": "heavy bus"
+    }
+  ]

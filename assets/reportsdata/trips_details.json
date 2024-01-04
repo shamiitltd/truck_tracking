@@ -1,0 +1,40 @@
+
+[
+    {
+      "driver_id": 1,
+      "driver_name": "Rajesh Kumar",
+      "trips": [
+        {
+          "trip_id": 101,
+          "date": "2023-09-15",
+          "distance_km": 50,
+          "fare": 30.0
+        },
+        {
+          "trip_id": 102,
+          "date": "2023-09-16",
+          "distance_km": 35,
+          "fare": 25.0
+        }
+      ]
+    },
+    {
+      "driver_id": 2,
+      "driver_name": "Priya Sharma",
+      "trips": [
+        {
+          "trip_id": 201,
+          "date": "2023-09-15",
+          "distance_km": 40,
+          "fare": 28.0
+        },
+        {
+          "trip_id": 202,
+          "date": "2023-09-16",
+          "distance_km": 45,
+          "fare": 32.0
+        }
+      ]
+    }
+    
+  ]

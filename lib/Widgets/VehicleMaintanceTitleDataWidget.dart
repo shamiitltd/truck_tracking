@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class VehicleMaintanceTitleDataWidget extends StatelessWidget {
   VehicleMaintanceTitleDataWidget({
@@ -48,43 +49,49 @@ class TitleDataWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        width: MediaQuery.sizeOf(context).width * 0.1 / 1.7,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius,
-          color: Boxcolor,
-        ),
-        padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 15.0),
-        child: Container(
-          height: MediaQuery.sizeOf(context).height * 0.1 / 3.4,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  Icon(TheIcon, color: Colors.blueGrey),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  Container(
-                    width: MediaQuery.sizeOf(context).width * 0.1 / 0.88,
-                    child: Text(
-                      Title,
-                      style:
-                          TextStyle(fontSize: 13, fontWeight: FontWeight.w500),
-                    ),
-                  ),
-                ],
-              ),
-              Text(
-                Data.toString(),
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              )
-            ],
+    return ResponsiveBuilder(
+      builder: (context, sizingInformation) => Container(
+          width: MediaQuery.sizeOf(context).width * 0.1 / 1.7,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius,
+            color: Boxcolor,
           ),
-        ));
+          padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 15.0),
+          child: Container(
+            height: MediaQuery.sizeOf(context).height * 0.1 / 3.4,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Icon(TheIcon, color: Colors.blueGrey),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Container(
+                      width: MediaQuery.sizeOf(context).width * 0.1 / 0.88,
+                      child: Text(
+                        Title,
+                        style: TextStyle(
+                            fontSize: sizingInformation.deviceScreenType ==
+                                    DeviceScreenType.desktop
+                                ? 13
+                                : 10,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                  ],
+                ),
+                Text(
+                  Data.toString(),
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                )
+              ],
+            ),
+          )),
+    );
   }
 }

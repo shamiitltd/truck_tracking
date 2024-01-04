@@ -1,7 +1,10 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:flutter/material.dart';
 
 class AppDimensions {
-  static const defuaultPadding = 16.0;
+
+  static const  defuaultPadding = 16.0;
   // Padding
   static const EdgeInsetsGeometry smallPadding = EdgeInsets.all(8.0);
   static const EdgeInsetsGeometry mediumPadding = EdgeInsets.all(16.0);
@@ -35,6 +38,7 @@ class AppDimensions {
       BoxConstraints(maxWidth: mediumBoxSize, maxHeight: mediumBoxSize);
   static const BoxConstraints largeBoxConstraints =
       BoxConstraints(maxWidth: largeBoxSize, maxHeight: largeBoxSize);
+
 
   // Help And Setting Page
   //Padding
