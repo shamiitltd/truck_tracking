@@ -67,7 +67,7 @@ class TitleDataWidget extends StatelessWidget {
           child: Container(
             height:
                 sizingInformation.deviceScreenType == DeviceScreenType.desktop
-                    ? MediaQuery.sizeOf(context).height * 0.1 / 3.4
+                    ? MediaQuery.sizeOf(context).height * 0.1 / 2.5
                     : 30,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
